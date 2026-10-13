@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ru"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>PvP Tiers</title>
+<title>AngelTiers</title>
 <style>
 :root{--bg:#14151a;--card:#1d1f27;--line:#2a2d38;--tx:#eceef4;--mu:#8b90a0;--ac:#f5b942}
 *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--tx);font:15px system-ui,sans-serif}
@@ -26,7 +26,7 @@ input,select{background:var(--card);color:var(--tx);border:1px solid var(--line)
 .mu{color:var(--mu);font-size:13px}
 .ad{border-color:var(--ac)}
 </style></head><body><div class="w">
-<h1>PvP <span>Tiers</span></h1>
+<h1>Angel<span>Tiers</span></h1>
 <div class="tabs" id="tabs"></div>
 <div class="bar"><input id="q" placeholder="Поиск игрока…"></div>
 
@@ -69,7 +69,7 @@ function render(){
       ?MODES.filter(([m])=>p.tiers?.[m]).map(([m,ic])=>`<span class="t ${p.tiers[m][0]==="H"?"h":""}" title="${m}">${ic} ${p.tiers[m]}</span>`).join("")
       :`<span class="t ${p.tiers[mode][0]==="H"?"h":""}">${p.tiers[mode]}</span>`;
     return`<div class="row" data-n="${esc(p.name)}"><div class="rk r${i+1}">${i+1}</div><div class="av" style="background:${color(p.name)}"><img src="https://minotar.net/helm/${encodeURIComponent(p.name)}/72.png" alt="" loading="lazy" onerror="this.replaceWith(document.createTextNode(this.dataset.l))" data-l="${esc(p.name[0]||"?").toUpperCase()}"></div><div class="nm">${esc(p.name)}<small>${p.s} очков</small></div><div class="tg">${tg}</div></div>`;
-  }).join("")||`<div class="mu">Пока никого нет.</div>`;
+  }).join("")||`<div class="mu">${window.ERR?"Не удалось прочитать players.json (проверь кавычки и запятые в файле).":"Пока никого нет."}</div>`;
 }
 
 /* ---------- админка ---------- */
@@ -99,7 +99,9 @@ async function published(){
 
 async function init(){
   tabs();
-  try{P=await published()}catch(e){P=[]}
+  try{P=await published()}catch(e){P=[];window.ERR=1;return init2()}
+  init2()}
+function init2(){
   if(ADMIN){
     $("adm").hidden=false;grid();
     try{const d=localStorage.getItem("tiers_draft");if(d)P=JSON.parse(d)}catch(e){}
