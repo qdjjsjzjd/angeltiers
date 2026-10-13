@@ -1,0 +1,4 @@
+[
+  {"name": "Example1", "tiers": {"DIAMONDPOT": "HT1", "CRYSTALPVP": "LT2", "MACE": "HT3"}},
+  {"name": "Example2", "tiers": {"DIAMONDPOT": "LT1", "UHC": "HT2"}}
+]
