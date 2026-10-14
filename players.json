@@ -10,13 +10,21 @@
   {
     "name": "y0zaraa",
     "tiers": {
-      "OP": "HT3",
-      "BEAST": "HT3",
       "DIAMONDPOT": "HT3",
+      "BEAST": "HT3",
       "UHC": "LT3",
       "AXE": "LT3",
-      "MACE": "LT3"
-    }
+      "MACE": "LT3",
+      "OP": "HT3"
+    },
+    "titles": [
+      "staff",
+      "ss",
+      "mod",
+      "seniortester",
+      "tester",
+      "famous"
+    ]
   },
   {
     "name": "Maximo4ka129",
