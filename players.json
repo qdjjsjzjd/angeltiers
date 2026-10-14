@@ -27,13 +27,14 @@
   {
     "name": "Fanat_1973",
     "tiers": {
-      "AXE": "LT3",
-      "BEAST": "LT4",
-      "NETHERSMP": "LT4",
-      "CRYSTALPVP": "LT4",
       "NETHERITEPOT": "HT5",
+      "BEAST": "LT4",
+      "CARTPVP": "LT5",
+      "CRYSTALPVP": "LT4",
+      "NETHERSMP": "LT4",
+      "AXE": "LT3",
       "SPEARMACE": "LT4",
-      "CARTPVP": "LT5"
+      "BEDPVP": "LT4"
     }
   },
   {
