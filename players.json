@@ -69,15 +69,15 @@
   {
     "name": "54135",
     "tiers": {
-      "BEAST": "HT4",
-      "NETHERSMP": "LT4",
-      "OP": "LT4",
-      "AXE": "LT4",
       "NETHERITEPOT": "LT4",
+      "BEAST": "LT3",
+      "NETHERSMP": "LT4",
       "DIAMONDSMP": "HT5",
       "UHC": "LT4",
-      "CREEPER": "HT5",
-      "MACE": "LT5"
+      "AXE": "LT4",
+      "MACE": "LT5",
+      "OP": "LT4",
+      "CREEPER": "HT5"
     }
   },
   {
