@@ -39,6 +39,10 @@ input,select{background:var(--card);color:var(--tx);border:1px solid var(--line)
 .mg{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:14px;text-align:left}
 .mg div{display:flex;justify-content:space-between;align-items:center;gap:6px;background:var(--bg);border-radius:8px;padding:7px 9px;font-size:12px;color:var(--mu)}
 .ic{width:20px;height:20px;image-rendering:pixelated;vertical-align:-4px;display:inline-block}.t .ic{width:16px;height:16px;vertical-align:-3px}.mg .ic{width:18px;height:18px}
+.tt{font-size:10px;font-weight:700;letter-spacing:.3px;padding:2px 7px;border-radius:6px;white-space:nowrap;color:var(--c);background:color-mix(in srgb,var(--c) 16%,transparent);border:1px solid color-mix(in srgb,var(--c) 40%,transparent)}
+.nl{display:flex;align-items:center;gap:6px;flex-wrap:wrap}.nt{overflow:hidden;text-overflow:ellipsis}
+.ttc{display:flex;gap:6px;justify-content:center;flex-wrap:wrap;margin:6px 0}
+.ck{display:flex;gap:6px;align-items:center;font-size:12px;background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:6px 9px;cursor:pointer}
 .sx{display:flex;justify-content:space-between;align-items:center}
 .row{flex-wrap:wrap}
 @media(max-width:600px){.tg{max-width:100%;width:100%;justify-content:flex-start;order:5;margin-left:74px}}
@@ -53,6 +57,7 @@ input,select{background:var(--card);color:var(--tx);border:1px solid var(--line)
   <div class="bar"><input id="nn" placeholder="Ник игрока (новый или существующий)">
     <button class="b" id="sv">Сохранить</button><button class="b" id="dl" hidden>Удалить</button></div>
   <div class="g" id="gr"></div>
+  <div class="mu" style="margin-top:10px">Титулы:</div><div class="bar" id="tt2" style="margin-top:4px"></div>
   <div class="bar" style="margin-top:12px">
     <button class="b" id="pb" style="background:var(--ac);color:#111;border-color:var(--ac);font-weight:600">☁ Опубликовать на сайт</button>
     <button class="b" id="ex">⬇ Скачать players.json</button>
@@ -71,6 +76,8 @@ const TIERS=["HT1","LT1","HT2","LT2","HT3","LT3","HT4","LT4","HT5","LT5"];
 const PTS=[60,44,32,20,16,10,6,4,2,1];
 const pts=t=>t?PTS[TIERS.indexOf(t)]:0;
 const tc=t=>"c"+t[2];
+const TITLES=[{k:"owner",l:"ВЛАДЕЛЕЦ",c:"#d0392b"},{k:"staff",l:"СТАФФ",c:"#ef5b4b"},{k:"restricted",l:"RESTRICTED",c:"#e6e8ee"},{k:"ss",l:"ПРОВЕРЯЮЩИЙ (SS)",c:"#25a05a"},{k:"mod",l:"МОДЕРАЦИЯ",c:"#3a9be0"},{k:"seniortester",l:"СТАРШИЙ ТЕСТЕР",c:"#ee8a2a"},{k:"tester",l:"ТЕСТЕР",c:"#34d27a"},{k:"famous",l:"FAMOUS",c:"#f3c614"}];
+const badges=p=>(p.titles||[]).map(k=>TITLES.find(t=>t.k===k)).filter(Boolean).sort((a,b)=>TITLES.indexOf(a)-TITLES.indexOf(b)).map(t=>`<span class="tt" style="--c:${t.c}">${t.l}</span>`).join("");
 const icon=(m,e)=>`<img class="ic" src="icons/${m.toLowerCase()}.png" alt="" onerror="this.outerHTML='${e}'">`;
 const total=p=>Object.values(p.tiers||{}).reduce((a,t)=>a+pts(t),0);
 const SECRET="#panel-k7x2q9m4";   // админка открывается по адресу  сайт/#panel-k7x2q9m4 (можешь заменить на свою)
@@ -95,7 +102,7 @@ function render(){
     const tg=mode==="ALL"
       ?MODES.filter(([m])=>p.tiers?.[m]).sort((x,y)=>pts(p.tiers[y[0]])-pts(p.tiers[x[0]])).map(([m,ic])=>`<span class="t ${tc(p.tiers[m])}" title="${m}">${icon(m,ic)} ${p.tiers[m]}</span>`).join("")
       :`<span class="t ${tc(p.tiers[mode])}">${p.tiers[mode]}</span>`;
-    return`<div class="row ${i<3?"top"+(i+1):""}" data-n="${esc(p.name)}"><div class="rk r${i+1}">${i+1}</div><div class="av" style="background:${color(p.name)}"><img src="https://minotar.net/helm/${encodeURIComponent(p.name)}/72.png" alt="" loading="lazy" onerror="this.replaceWith(document.createTextNode(this.dataset.l))" data-l="${esc(p.name[0]||"?").toUpperCase()}"></div><div class="nm">${esc(p.name)}<small>${p.s} очков</small></div><div class="tg">${tg}</div></div>`;
+    return`<div class="row ${i<3?"top"+(i+1):""}" data-n="${esc(p.name)}"><div class="rk r${i+1}">${i+1}</div><div class="av" style="background:${color(p.name)}"><img src="https://minotar.net/helm/${encodeURIComponent(p.name)}/72.png" alt="" loading="lazy" onerror="this.replaceWith(document.createTextNode(this.dataset.l))" data-l="${esc(p.name[0]||"?").toUpperCase()}"></div><div class="nm"><div class="nl"><span class="nt">${esc(p.name)}</span>${badges(p)}</div><small>${p.s} очков</small></div><div class="tg">${tg}</div></div>`;
   }).join("")||`<div class="mu">${window.ERR?"Не удалось прочитать players.json (проверь кавычки и запятые в файле).":"Пока никого нет."}</div>`;
 }
 
@@ -103,25 +110,30 @@ function openP(n){
   const p=find(n);if(!p)return;
   const all=[...P].sort((a,b)=>total(b)-total(a)||a.name.localeCompare(b.name));
   const rank=all.indexOf(p)+1;
-  $("mc").innerHTML=`<button class="x">×</button><img src="https://minotar.net/armor/bust/${encodeURIComponent(p.name)}/240.png" alt="" onerror="this.style.display='none'"><h2>${esc(p.name)}</h2><div class="mu">#${rank} в общем рейтинге · ${total(p)} очков</div><div class="mg">${[...MODES].sort((x,y)=>pts(p.tiers?.[y[0]])-pts(p.tiers?.[x[0]])).map(([m,ic])=>`<div><span>${icon(m,ic)} ${m}</span>${p.tiers?.[m]?`<span class="t ${tc(p.tiers[m])}">${p.tiers[m]}</span>`:"<span>—</span>"}</div>`).join("")}</div>`;
+  $("mc").innerHTML=`<button class="x">×</button><img src="https://minotar.net/armor/bust/${encodeURIComponent(p.name)}/240.png" alt="" onerror="this.style.display='none'"><h2>${esc(p.name)}</h2><div class="ttc">${badges(p)}</div><div class="mu">#${rank} в общем рейтинге · ${total(p)} очков</div><div class="mg">${[...MODES].sort((x,y)=>pts(p.tiers?.[y[0]])-pts(p.tiers?.[x[0]])).map(([m,ic])=>`<div><span>${icon(m,ic)} ${m}</span>${p.tiers?.[m]?`<span class="t ${tc(p.tiers[m])}">${p.tiers[m]}</span>`:"<span>—</span>"}</div>`).join("")}</div>`;
   $("md").hidden=false;
 }
 /* ---------- админка ---------- */
 const find=n=>P.find(x=>x.name.toLowerCase()===n.trim().toLowerCase());
 const draft=()=>{try{localStorage.setItem("tiers_draft",JSON.stringify(P))}catch(e){}};
+function tgrid(sel=[]){
+  $("tt2").innerHTML=TITLES.map(t=>`<label class="ck" style="color:${t.c}"><input type="checkbox" data-t="${t.k}" ${sel.includes(t.k)?"checked":""}> ${t.l}</label>`).join("");
+}
 function grid(t={}){
   $("gr").innerHTML=MODES.map(([m])=>`<div><label>${m}</label><select data-m="${m}"><option value="">—</option>${TIERS.map(x=>`<option ${t[m]===x?"selected":""}>${x}</option>`).join("")}</select></div>`).join("");
 }
 function save(){
   const name=$("nn").value.trim(); if(!name)return;
   const tiers={}; document.querySelectorAll("#gr select").forEach(s=>{if(s.value)tiers[s.dataset.m]=s.value});
+  const titles=[...document.querySelectorAll("#tt2 input:checked")].map(i=>i.dataset.t);
   const ex=find(name);
-  if(ex){ex.tiers=tiers}else{P.push({name,tiers})}
+  if(ex){ex.tiers=tiers;if(titles.length)ex.titles=titles;else delete ex.titles}
+  else{const o={name,tiers};if(titles.length)o.titles=titles;P.push(o)}
   draft();render();$("dl").hidden=false;
 }
 function del(){
   const ex=find($("nn").value); if(!ex||!confirm("Удалить "+ex.name+"?"))return;
-  P=P.filter(x=>x!==ex);draft();render();$("nn").value="";grid();$("dl").hidden=true;
+  P=P.filter(x=>x!==ex);draft();render();$("nn").value="";grid();tgrid();$("dl").hidden=true;
 }
 function exportJson(){
   const blob=new Blob([JSON.stringify(P,null,2)],{type:"application/json"});
@@ -158,9 +170,9 @@ async function init(){
   init2()}
 function init2(){
   if(ADMIN){
-    $("adm").hidden=false;grid();
+    $("adm").hidden=false;grid();tgrid();
     try{const d=localStorage.getItem("tiers_draft");if(d)P=JSON.parse(d)}catch(e){}
-    $("nn").oninput=e=>{const p=find(e.target.value);$("dl").hidden=!p;grid(p?.tiers)};
+    $("nn").oninput=e=>{const p=find(e.target.value);$("dl").hidden=!p;grid(p?.tiers);tgrid(p?.titles)};
     $("sv").onclick=save;$("dl").onclick=del;$("ex").onclick=exportJson;$("pb").onclick=publish;
     if(tok())$("tk").placeholder="Токен сохранён ✓ (вставь новый, чтобы заменить)";
     $("tks").onclick=()=>{const v=$("tk").value.trim();if(!v)return;try{localStorage.setItem("gh_token",v)}catch(e){}$("tk").value="";$("tk").placeholder="Токен сохранён ✓";ps("Токен сохранён в этом браузере.")};
@@ -168,7 +180,7 @@ function init2(){
       try{localStorage.removeItem("tiers_draft")}catch(e){}
       try{P=await published()}catch(e){P=[]}render()};
     $("ls").onclick=e=>{const r=e.target.closest(".row");if(!r)return;
-      const p=find(r.dataset.n);$("nn").value=p.name;grid(p.tiers);$("dl").hidden=false;scrollTo(0,0)};
+      const p=find(r.dataset.n);$("nn").value=p.name;grid(p.tiers);tgrid(p.titles);$("dl").hidden=false;scrollTo(0,0)};
   }else{
     $("ls").onclick=e=>{const r=e.target.closest(".row");if(r)openP(r.dataset.n)};
   }
