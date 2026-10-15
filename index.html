@@ -55,14 +55,14 @@ input,select{background:var(--card);color:var(--tx);border:1px solid var(--line)
 .ms{color:var(--mu);font-size:13px;margin:14px 0 6px}
 .mi{display:flex;align-items:center;gap:12px;padding:10px;border-radius:10px;cursor:pointer}.mi:hover,.mi.on{background:var(--bg)}.mi .ic{width:28px;height:28px}.mie{width:28px;text-align:center;font-size:20px}
 .fc{position:relative;overflow:hidden;border-radius:16px;padding:14px 14px 14px 140px;min-height:190px;margin-bottom:10px;cursor:pointer;border:1px solid var(--line);background:linear-gradient(115deg,var(--g) -20%,#17181d 70%)}
-.fc.f1{--g:#b3281c}.fc.f2{--g:#c58a1f}.fc.f3{--g:#5775ad}
-.fc .sk{position:absolute;left:10px;bottom:-14px;height:190px;image-rendering:pixelated}
+.fc{--g:#23252d}.fc.f1{--g:#b3281c}.fc.f2{--g:#c58a1f}.fc.f3{--g:#5775ad}
+.fc .sk{position:absolute;left:0;bottom:-6px;width:136px;height:196px;object-fit:contain;object-position:center bottom}
 .fn{font-size:20px;font-weight:700}.fc .nl{margin:4px 0}
 .ft{display:flex;gap:8px;margin-top:12px}
 .tl{flex:1;max-width:96px;border-radius:12px;padding:8px 2px;text-align:center}
 .tl .ic{width:34px;height:34px;display:block;margin:0 auto}.tl b{display:block;margin-top:4px;font-size:17px}
 .ph{display:flex;justify-content:space-between;align-items:flex-end;text-align:left;gap:8px}
-.ph img{height:170px;image-rendering:pixelated}
+.ph .ps3{height:190px;width:130px;object-fit:contain;object-position:right bottom;margin-bottom:-6px}
 .pl{flex:1;min-width:0}.pl h2{font-size:28px;margin:2px 0 4px}
 .ps{display:flex;gap:26px;margin-top:10px}.ps b{display:block;font-size:30px}.ps span{color:var(--mu);font-size:13px}
 .pg{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-top:14px}
@@ -132,6 +132,7 @@ $("mn").onclick=e=>{
   else if(e.target.id==="mn"||e.target.closest(".mx"))$("mn").hidden=true;
 };
 
+const skin=(p,cls)=>`<img class="${cls}" src="https://mc-heads.net/body/${encodeURIComponent(p.name)}/300" data-u="${encodeURIComponent(p.name)}" alt="" onerror="if(this.dataset.f){this.style.display='none'}else{this.dataset.f=1;this.src='https://minotar.net/armor/body/'+this.dataset.u+'/200.png'}">`;
 const best=p=>MODES.filter(([m])=>p.tiers?.[m]).sort((a,b)=>pts(p.tiers[b[0]])-pts(p.tiers[a[0]]));
 const ava=p=>`<div class="av" style="background:${color(p.name)}"><img src="https://minotar.net/helm/${encodeURIComponent(p.name)}/72.png" alt="" loading="lazy" onerror="this.replaceWith(document.createTextNode(this.dataset.l))" data-l="${esc(p.name[0]||"?").toUpperCase()}"></div>`;
 function row(p){
@@ -141,7 +142,7 @@ function row(p){
 function feat(p){
   const T=mode==="ALL"?best(p).slice(0,3):[[mode,(MODES.find(x=>x[0]===mode)||[])[1]]];
   const tiles=T.map(([m,ic])=>`<div class="tl" style="background:${MC[m]||"#2a2d38"}">${icon(m,ic)}<b>${p.tiers[m]}</b></div>`).join("");
-  return`<div class="fc f${p.r}" data-n="${esc(p.name)}"><img class="sk" src="https://minotar.net/armor/body/${encodeURIComponent(p.name)}/200.png" alt="" onerror="this.style.display='none'"><div><div class="fn">${p.r}. ${esc(p.name)}</div><div class="nl">${badges(p)}</div><div class="mu">${p.s} очков</div><div class="ft">${tiles}</div></div></div>`;
+  return`<div class="fc f${p.r}" data-n="${esc(p.name)}">${skin(p,"sk")}<div><div class="fn">${p.r}. ${esc(p.name)}</div><div class="nl">${badges(p)}</div><div class="mu">${p.s} очков</div><div class="ft">${tiles}</div></div></div>`;
 }
 function render(){
   const q=$("q").value.trim().toLowerCase();
@@ -151,7 +152,7 @@ function render(){
   L.forEach((p,i)=>p.r=i+1);
   L=L.filter(p=>p.name.toLowerCase().includes(q));
   $("cnt").textContent="Игроков: "+L.length;
-  $("ls").innerHTML=L.map(p=>p.r<=3?feat(p):row(p)).join("")||`<div class="mu">${window.ERR?"Не удалось прочитать players.json (проверь кавычки и запятые в файле).":"Пока никого нет."}</div>`;
+  $("ls").innerHTML=L.map(feat).join("")||`<div class="mu">${window.ERR?"Не удалось прочитать players.json (проверь кавычки и запятые в файле).":"Пока никого нет."}</div>`;
 }
 
 function histHtml(p){
@@ -175,7 +176,7 @@ function openP(n){
   const all=[...P].sort((a,b)=>total(b)-total(a)||a.name.localeCompare(b.name));
   const rank=all.indexOf(p)+1;
   const tiles=[...MODES].sort((x,y)=>pts(p.tiers?.[y[0]])-pts(p.tiers?.[x[0]])).map(([m,ic])=>{const t=p.tiers?.[m];return`<div class="pt${t?"":" em"}" style="background:${MC[m]||"#2a2d38"}" title="${m}">${icon(m,ic)}<b>${t||"—"}</b></div>`}).join("");
-  $("mc").innerHTML=`<button class="x">×</button><div class="mu" style="text-align:left">Профиль игрока</div><div class="ph"><div class="pl"><h2>${esc(p.name)}</h2><div class="ttc" style="justify-content:flex-start">${badges(p)}</div><div class="ps"><div><b>${total(p)}</b><span>очков</span></div><div><b>#${rank}</b><span>в лидерборде</span></div></div></div><img src="https://minotar.net/armor/body/${encodeURIComponent(p.name)}/200.png" alt="" onerror="this.style.display='none'"></div><div class="pg">${tiles}</div><div class="pb"><button class="b" id="lk" title="Скопировать ссылку">🔗</button><button class="b" id="hb" style="flex:1">📜 История тиров</button></div><div id="hist" hidden></div><div class="mu" style="margin-top:14px">angeltiers.abrdns.com</div>`;
+  $("mc").innerHTML=`<button class="x">×</button><div class="mu" style="text-align:left">Профиль игрока</div><div class="ph"><div class="pl"><h2>${esc(p.name)}</h2><div class="ttc" style="justify-content:flex-start">${badges(p)}</div><div class="ps"><div><b>${total(p)}</b><span>очков</span></div><div><b>#${rank}</b><span>в лидерборде</span></div></div></div>${skin(p,"ps3")}</div><div class="pg">${tiles}</div><div class="pb"><button class="b" id="lk" title="Скопировать ссылку">🔗</button><button class="b" id="hb" style="flex:1">📜 История тиров</button></div><div id="hist" hidden></div><div class="mu" style="margin-top:14px">angeltiers.abrdns.com</div>`;
   $("lk").onclick=async()=>{const u=location.origin+location.pathname+"?p="+encodeURIComponent(p.name);try{await navigator.clipboard.writeText(u);$("lk").textContent="✓"}catch(e){prompt("Ссылка:",u)}setTimeout(()=>{$("lk").textContent="🔗"},1500)};
   $("hb").onclick=()=>{const h=$("hist");if(h.hidden){h.innerHTML=histHtml(p);h.hidden=false;$("hb").textContent="▲ Скрыть историю"}else{h.hidden=true;$("hb").textContent="📜 История тиров"}};
   $("md").hidden=false;
