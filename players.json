@@ -41,10 +41,19 @@
       "AXE": "LT3",
       "MACE": "LT3",
       "SPEARMACE": "LT4",
-      "BEDPVP": "LT4"
+      "BEDPVP": "LT4",
+      "OP": "LT4"
     },
     "titles": [
       "staff"
+    ],
+    "history": [
+      {
+        "m": "OP",
+        "f": null,
+        "t": "LT4",
+        "d": "2026-10-16"
+      }
     ]
   },
   {
