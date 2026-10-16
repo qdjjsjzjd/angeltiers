@@ -108,9 +108,17 @@
       "UHC": "LT4",
       "AXE": "LT4",
       "MACE": "HT5",
-      "OP": "LT4",
+      "OP": "HT4",
       "CREEPER": "HT5"
-    }
+    },
+    "history": [
+      {
+        "m": "OP",
+        "f": "LT4",
+        "t": "HT4",
+        "d": "2026-10-16"
+      }
+    ]
   },
   {
     "name": "Player775",
