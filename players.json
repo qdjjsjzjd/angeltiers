@@ -58,7 +58,8 @@
       "MACE": "LT3",
       "SPEARMACE": "LT4",
       "BEDPVP": "LT4",
-      "OP": "LT4"
+      "OP": "LT4",
+      "CREEPER": "LT4"
     },
     "titles": [
       "staff"
@@ -69,6 +70,12 @@
         "f": null,
         "t": "LT4",
         "d": "2026-10-16"
+      },
+      {
+        "m": "CREEPER",
+        "f": null,
+        "t": "LT4",
+        "d": "2026-10-17"
       }
     ]
   },
