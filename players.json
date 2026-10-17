@@ -103,7 +103,7 @@
     "tiers": {
       "NETHERITEPOT": "LT4",
       "BEAST": "LT3",
-      "NETHERSMP": "LT4",
+      "NETHERSMP": "HT4",
       "DIAMONDSMP": "HT5",
       "UHC": "LT4",
       "AXE": "LT4",
@@ -117,6 +117,12 @@
         "f": "LT4",
         "t": "HT4",
         "d": "2026-10-16"
+      },
+      {
+        "m": "NETHERSMP",
+        "f": "LT4",
+        "t": "HT4",
+        "d": "2026-10-17"
       }
     ]
   },
