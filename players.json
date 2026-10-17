@@ -91,7 +91,7 @@
       "NETHERITEPOT": "HT4",
       "BEAST": "LT3",
       "CARTPVP": "LT3",
-      "CRYSTALPVP": "LT4",
+      "CRYSTALPVP": "HT4",
       "NETHERSMP": "LT4",
       "UHC": "LT3",
       "AXE": "LT3",
@@ -104,6 +104,12 @@
         "f": null,
         "t": "HT4",
         "d": "2026-10-16"
+      },
+      {
+        "m": "CRYSTALPVP",
+        "f": "LT4",
+        "t": "HT4",
+        "d": "2026-10-17"
       }
     ]
   },
