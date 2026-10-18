@@ -3,11 +3,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>AngelTiers</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap">
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231d1f27'/%3E%3Cellipse cx='32' cy='12' rx='14' ry='5' fill='none' stroke='%23f5b942' stroke-width='3.5'/%3E%3Cpath d='M16 53 32 21 48 53M23 41h18' fill='none' stroke='%23f5b942' stroke-width='6.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&family=Pixelify+Sans:wght@500;600;700&display=swap">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231b1b1b'/%3E%3Cellipse cx='32' cy='12' rx='14' ry='5' fill='none' stroke='%23f5b942' stroke-width='3.5'/%3E%3Cpath d='M16 53 32 21 48 53M23 41h18' fill='none' stroke='%23f5b942' stroke-width='6.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
 <style>
-:root{--bg:#14151a;--card:#1d1f27;--line:#2a2d38;--tx:#eceef4;--mu:#8b90a0;--ac:#f5b942}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--tx);font:15px Rubik,system-ui,sans-serif}
+:root{--bg:#121212;--card:#1b1b1b;--line:#2b2b2b;--tx:#ededed;--mu:#8c8c8c;--ac:#f5b942;--px:"Pixelify Sans",Onest,system-ui,sans-serif}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--tx);font:15px Onest,system-ui,sans-serif}
 .w{max-width:900px;margin:0 auto;padding:16px}
 h1{margin:0 0 12px;font-size:24px;display:flex;align-items:center;gap:10px}h1 em{font-style:normal}h1 span{color:var(--ac)}.lg{width:38px;height:38px;flex:none}
 .tabs{display:flex;gap:6px;overflow-x:auto;padding-bottom:8px}
@@ -28,7 +28,7 @@ input,select{background:var(--card);color:var(--tx);border:1px solid var(--line)
 .g label{font-size:12px;color:var(--mu);display:block;margin-bottom:2px}.g select{width:100%}
 .mu{color:var(--mu);font-size:13px}
 .ad{border-color:var(--ac)}
-.c1{background:#f5b94233;color:#f5b942}.c2{background:#c9d1e033;color:#c9d1e0}.c3{background:#d08a5433;color:#e0a070}.c4{background:#6aa0ff22;color:#8db6ff}.c5{background:#8b90a022;color:#aab0c0}.cr{background:#9b6bff22;color:#b794ff}
+.c1{background:#f5b94233;color:#f5b942}.c2{background:#c9d1e033;color:#c9d1e0}.c3{background:#d08a5433;color:#e0a070}.c4{background:#6aa0ff22;color:#8db6ff}.c5{background:#8c8c8c22;color:#aab0c0}.cr{background:#9b6bff22;color:#b794ff}
 .row{cursor:pointer;transition:transform .12s,border-color .12s}.row:hover{border-color:var(--ac);transform:translateY(-1px)}
 .row.top1{border-color:#f5b94266}.row.top2{border-color:#c9d1e044}.row.top3{border-color:#d08a5444}
 #md{position:fixed;inset:0;background:#000a;display:grid;place-items:center;padding:16px;z-index:9}
@@ -54,8 +54,8 @@ input,select{background:var(--card);color:var(--tx);border:1px solid var(--line)
 .mx{background:none;border:0;color:var(--tx);font-size:26px;cursor:pointer}
 .ms{color:var(--mu);font-size:13px;margin:14px 0 6px}
 .mi{display:flex;align-items:center;gap:12px;padding:10px;border-radius:10px;cursor:pointer}.mi:hover,.mi.on{background:var(--bg)}.mi .ic{width:28px;height:28px}.mie{width:28px;text-align:center;font-size:20px}
-.fc{position:relative;overflow:hidden;border-radius:16px;padding:14px 14px 14px 140px;min-height:160px;margin-bottom:10px;cursor:pointer;border:1px solid var(--line);background:linear-gradient(115deg,var(--g) -20%,#17181d 70%)}
-.fc{--g:#23252d}.fc.f1{--g:#b3281c}.fc.f2{--g:#c58a1f}.fc.f3{--g:#5775ad}
+.fc{position:relative;overflow:hidden;border-radius:16px;padding:14px 14px 14px 140px;min-height:160px;margin-bottom:10px;cursor:pointer;border:1px solid var(--line);background:linear-gradient(115deg,var(--g) -20%,#181818 70%)}
+.fc{--g:#242424}.fc.f1{--g:#b3281c}.fc.f2{--g:#c58a1f}.fc.f3{--g:#5775ad}
 .fc .sk{position:absolute;left:14px;top:50%;transform:translateY(-50%);width:110px;height:110px;object-fit:contain}
 .fn{font-size:20px;font-weight:700}.fc .nl{margin:4px 0}
 .ft{display:flex;gap:8px;margin-top:12px}
@@ -68,11 +68,13 @@ input,select{background:var(--card);color:var(--tx);border:1px solid var(--line)
 .pg{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-top:14px}
 .pt{border-radius:12px;padding:8px 0;text-align:center}.pt .ic{width:30px;height:30px;display:block;margin:0 auto}.pt b{display:block;margin-top:4px;font-size:15px}.pt.em{opacity:.35}
 .pb{display:flex;gap:8px;margin-top:14px}.pb .b{padding:12px}
+h1,.sec,.fn,.pl h2,.mh b,.ps b{font-family:var(--px);letter-spacing:.3px}
+h1{font-size:26px}.fn{font-size:21px}
 .sx{display:flex;justify-content:space-between;align-items:center}
 .row{flex-wrap:wrap}
 @media(max-width:600px){.tg{max-width:100%;width:100%;justify-content:flex-start;order:5;margin-left:74px}}
 </style></head><body><div class="w">
-<div class="hd"><h1><svg class="lg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="14" fill="#1d1f27"/><ellipse cx="32" cy="12" rx="14" ry="5" fill="none" stroke="#f5b942" stroke-width="3.5"/><path d="M16 53 32 21 48 53M23 41h18" fill="none" stroke="#f5b942" stroke-width="6.5" stroke-linecap="round" stroke-linejoin="round"/></svg><em>Angel<span>Tiers</span></em></h1><button class="mb" id="mbtn" aria-label="Меню">☰</button></div>
+<div class="hd"><h1><svg class="lg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="14" fill="#1b1b1b"/><ellipse cx="32" cy="12" rx="14" ry="5" fill="none" stroke="#f5b942" stroke-width="3.5"/><path d="M16 53 32 21 48 53M23 41h18" fill="none" stroke="#f5b942" stroke-width="6.5" stroke-linecap="round" stroke-linejoin="round"/></svg><em>Angel<span>Tiers</span></em></h1><button class="mb" id="mbtn" aria-label="Меню">☰</button></div>
 <div class="sec" id="sec"></div>
 <div class="bar"><input id="q" placeholder="Поиск игрока по нику…"></div>
 <div class="mu" id="cnt" style="margin-bottom:8px"></div>
@@ -98,19 +100,19 @@ input,select{background:var(--card);color:var(--tx);border:1px solid var(--line)
 <div id="mn" hidden><div class="mp" id="mp"></div></div>
 <div id="md" hidden><div class="mc" id="mc"></div></div>
 <script>
-const MODES=[["DIAMONDPOT","🧪"],["NETHERITEPOT","🛡️"],["BEAST","⚔️"],["CARTPVP","🚃"],["CRYSTALPVP","💎"],["NETHERSMP","🚪"],["DIAMONDSMP","🔮"],["UHC","🪣"],["AXE","🪓"],["MACE","🔨"],["SPEARMACE","🔱"],["BEDPVP","🛏️"],["OP","🌀"],["CREEPER","💚"]];
+const MODES=[["DIAMONDPOT","🧪"],["NETHERITEPOT","🛡️"],["BEAST","⚔️"],["CARTPVP","🚃"],["CRYSTALPVP","💎"],["NETHERSMP","🚪"],["DIAMONDSMP","🔮"],["UHC","🪣"],["AXE","🪓"],["MACE","🔨"],["SPEARMACE","🔱"],["OP","🌀"],["CREEPER","💚"]];
 const TIERS=["HT1","LT1","HT2","LT2","HT3","LT3","HT4","LT4","HT5","LT5"];
 const PTS=[60,44,32,20,16,10,6,4,2,1];
-const MC={DIAMONDPOT:"#5c1a36",NETHERITEPOT:"#5a1c1c",BEAST:"#1c3a57",CARTPVP:"#5a2d1a",CRYSTALPVP:"#46206b",NETHERSMP:"#5f3a1a",DIAMONDSMP:"#38205c",UHC:"#5c4a14",AXE:"#1d4a4d",MACE:"#2c3140",SPEARMACE:"#33262f",BEDPVP:"#5c1d24",OP:"#174a35",CREEPER:"#1a4d1c"};
+const MC={DIAMONDPOT:"#5c1a36",NETHERITEPOT:"#5a1c1c",BEAST:"#1c3a57",CARTPVP:"#5a2d1a",CRYSTALPVP:"#46206b",NETHERSMP:"#5f3a1a",DIAMONDSMP:"#38205c",UHC:"#5c4a14",AXE:"#1d4a4d",MACE:"#2c3140",SPEARMACE:"#33262f",OP:"#174a35",CREEPER:"#1a4d1c"};
 const RET=["RHT1","RLT1","RHT2","RLT2"];
 const ALLT=[...TIERS,...RET];
 const base=t=>t.replace(/^R/,"");
 const pts=t=>t?(PTS[TIERS.indexOf(base(t))]||0):0;
 const tc=t=>t[0]==="R"?"cr":"c"+t[2];
-const TITLES=[{k:"owner",l:"ВЛАДЕЛЕЦ",c:"#d0392b"},{k:"staff",l:"СТАФФ",c:"#ef5b4b"},{k:"restricted",l:"RESTRICTED",c:"#e6e8ee"},{k:"ss",l:"ПРОВЕРЯЮЩИЙ (SS)",c:"#25a05a"},{k:"mod",l:"МОДЕРАЦИЯ",c:"#3a9be0"},{k:"seniortester",l:"СТАРШИЙ ТЕСТЕР",c:"#ee8a2a"},{k:"tester",l:"ТЕСТЕР",c:"#34d27a"},{k:"famous",l:"FAMOUS",c:"#f3c614"}];
+const TITLES=[{k:"owner",l:"ВЛАДЕЛЕЦ",c:"#ff3b3b"},{k:"admin",l:"АДМИНИСТРАЦИЯ ТИРЛИСТА",c:"#d9484f"},{k:"staff",l:"СТАФФ",c:"#b8434a"},{k:"manager",l:"МЕНЕДЖЕР ТИРЛИСТА",c:"#3a9be0"},{k:"ss",l:"SSER",c:"#25a05a"},{k:"mod",l:"МОДЕРАЦИЯ",c:"#62b3f2"},{k:"seniortester",l:"СТАРШИЙ ТЕСТЕР",c:"#ee8a2a"},{k:"tester",l:"ТЕСТЕР",c:"#34d27a"},{k:"famous",l:"FAMOUS",c:"#f3c614"},{k:"ht1sm",l:"HT1 SPEAR-MACE",c:"#e0357f"},{k:"restricted",l:"RESTRICTED",c:"#e6e6e6"}];
 const badges=p=>(p.titles||[]).map(k=>TITLES.find(t=>t.k===k)).filter(Boolean).sort((a,b)=>TITLES.indexOf(a)-TITLES.indexOf(b)).map(t=>`<span class="tt" style="--c:${t.c}">${t.l}</span>`).join("");
 const icon=(m,e)=>`<img class="ic" src="icons/${m.toLowerCase()}.png" alt="" onerror="this.outerHTML='${e}'">`;
-const total=p=>Object.values(p.tiers||{}).reduce((a,t)=>a+pts(t),0);
+const total=p=>MODES.reduce((a,[m])=>a+pts((p.tiers||{})[m]),0);
 const SECRET="#panel-k7x2q9m4";   // админка открывается по адресу  сайт/#panel-k7x2q9m4 (можешь заменить на свою)
 const ADMIN=location.hash===SECRET;
 let mode="ALL",P=[];
@@ -141,7 +143,7 @@ function row(p){
 }
 function feat(p){
   const T=mode==="ALL"?best(p).slice(0,3):[[mode,(MODES.find(x=>x[0]===mode)||[])[1]]];
-  const tiles=T.map(([m,ic])=>`<div class="tl" style="background:${MC[m]||"#2a2d38"}">${icon(m,ic)}<b>${p.tiers[m]}</b></div>`).join("");
+  const tiles=T.map(([m,ic])=>`<div class="tl" style="background:${MC[m]||"#2b2b2b"}">${icon(m,ic)}<b>${p.tiers[m]}</b></div>`).join("");
   return`<div class="fc f${p.r}" data-n="${esc(p.name)}">${skin(p,"sk")}<div><div class="fn">${p.r}. ${esc(p.name)}</div><div class="nl">${badges(p)}</div><div class="mu">${p.s} очков</div><div class="ft">${tiles}</div></div></div>`;
 }
 function render(){
@@ -175,7 +177,7 @@ function openP(n){
   const p=find(n);if(!p)return;
   const all=[...P].sort((a,b)=>total(b)-total(a)||a.name.localeCompare(b.name));
   const rank=all.indexOf(p)+1;
-  const tiles=[...MODES].sort((x,y)=>pts(p.tiers?.[y[0]])-pts(p.tiers?.[x[0]])).map(([m,ic])=>{const t=p.tiers?.[m];return`<div class="pt${t?"":" em"}" style="background:${MC[m]||"#2a2d38"}" title="${m}">${icon(m,ic)}<b>${t||"—"}</b></div>`}).join("");
+  const tiles=[...MODES].sort((x,y)=>pts(p.tiers?.[y[0]])-pts(p.tiers?.[x[0]])).map(([m,ic])=>{const t=p.tiers?.[m];return`<div class="pt${t?"":" em"}" style="background:${MC[m]||"#2b2b2b"}" title="${m}">${icon(m,ic)}<b>${t||"—"}</b></div>`}).join("");
   $("mc").innerHTML=`<button class="x">×</button><div class="mu" style="text-align:left">Профиль игрока</div><div class="ph"><div class="pl"><h2>${esc(p.name)}</h2><div class="ttc" style="justify-content:flex-start">${badges(p)}</div><div class="ps"><div><b>${total(p)}</b><span>очков</span></div><div><b>#${rank}</b><span>в лидерборде</span></div></div></div>${skin(p,"ps3")}</div><div class="pg">${tiles}</div><div class="pb"><button class="b" id="lk" title="Скопировать ссылку">🔗</button><button class="b" id="hb" style="flex:1">📜 История тиров</button></div><div id="hist" hidden></div><div class="mu" style="margin-top:14px">angeltiers.abrdns.com</div>`;
   $("lk").onclick=async()=>{const u=location.origin+location.pathname+"?p="+encodeURIComponent(p.name);try{await navigator.clipboard.writeText(u);$("lk").textContent="✓"}catch(e){prompt("Ссылка:",u)}setTimeout(()=>{$("lk").textContent="🔗"},1500)};
   $("hb").onclick=()=>{const h=$("hist");if(h.hidden){h.innerHTML=histHtml(p);h.hidden=false;$("hb").textContent="▲ Скрыть историю"}else{h.hidden=true;$("hb").textContent="📜 История тиров"}};
