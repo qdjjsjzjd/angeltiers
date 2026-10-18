@@ -54,10 +54,10 @@
       "CARTPVP": "LT4",
       "CRYSTALPVP": "LT4",
       "NETHERSMP": "LT4",
+      "UHC": "LT4",
       "AXE": "LT3",
       "MACE": "LT3",
       "SPEARMACE": "LT4",
-      "BEDPVP": "LT4",
       "OP": "LT4",
       "CREEPER": "LT4"
     },
@@ -82,6 +82,12 @@
         "f": "LT5",
         "t": "LT4",
         "d": "2026-10-18"
+      },
+      {
+        "m": "UHC",
+        "f": null,
+        "t": "LT4",
+        "d": "2026-10-19"
       }
     ]
   },
