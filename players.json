@@ -253,5 +253,19 @@
         "d": "2026-10-18"
       }
     ]
+  },
+  {
+    "name": "spooky_jopa",
+    "tiers": {
+      "SPEARMACE": "HT5"
+    },
+    "history": [
+      {
+        "m": "SPEARMACE",
+        "f": null,
+        "t": "HT5",
+        "d": "2026-10-18"
+      }
+    ]
   }
 ]
