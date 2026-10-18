@@ -164,9 +164,17 @@
   {
     "name": "Player775",
     "tiers": {
-      "BEAST": "HT5",
+      "BEAST": "LT4",
       "SPEARMACE": "LT5"
-    }
+    },
+    "history": [
+      {
+        "m": "BEAST",
+        "f": "HT5",
+        "t": "LT4",
+        "d": "2026-10-18"
+      }
+    ]
   },
   {
     "name": "GOGALEND",
