@@ -51,7 +51,7 @@
     "tiers": {
       "NETHERITEPOT": "HT5",
       "BEAST": "LT4",
-      "CARTPVP": "LT5",
+      "CARTPVP": "LT4",
       "CRYSTALPVP": "LT4",
       "NETHERSMP": "LT4",
       "AXE": "LT3",
@@ -76,6 +76,12 @@
         "f": null,
         "t": "LT4",
         "d": "2026-10-17"
+      },
+      {
+        "m": "CARTPVP",
+        "f": "LT5",
+        "t": "LT4",
+        "d": "2026-10-18"
       }
     ]
   },
