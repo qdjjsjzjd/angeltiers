@@ -364,7 +364,7 @@
   {
     "name": "Londonsky1337",
     "tiers": {
-      "BEAST": "HT3"
+      "BEAST": "LT2"
     },
     "history": [
       {
@@ -377,6 +377,12 @@
         "m": "BEAST",
         "f": "LT3",
         "t": "HT3",
+        "d": "2026-10-20"
+      },
+      {
+        "m": "BEAST",
+        "f": "HT3",
+        "t": "LT2",
         "d": "2026-10-20"
       }
     ]
