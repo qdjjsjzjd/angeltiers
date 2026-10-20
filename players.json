@@ -389,5 +389,19 @@
     "titles": [
       "ss"
     ]
+  },
+  {
+    "name": "shamblBrosX",
+    "tiers": {
+      "BEAST": "HT3"
+    },
+    "history": [
+      {
+        "m": "BEAST",
+        "f": null,
+        "t": "HT3",
+        "d": "2026-10-20"
+      }
+    ]
   }
 ]
