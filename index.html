@@ -74,43 +74,28 @@ h1{font-size:26px}.fn{font-size:21px}
 .row{flex-wrap:wrap}
 @media(max-width:600px){.tg{max-width:100%;width:100%;justify-content:flex-start;order:5;margin-left:74px}}
 
-/* ===== REDESIGN: небесный люкс ===== */
+/* ===== REDESIGN (лёгкая версия) ===== */
 body{position:relative;overflow-x:hidden}
-body::before{content:"";position:fixed;inset:-25%;z-index:-2;pointer-events:none;background:radial-gradient(40% 32% at 18% 18%,rgba(245,185,66,.20),transparent 70%),radial-gradient(36% 36% at 82% 28%,rgba(140,90,255,.18),transparent 70%),radial-gradient(42% 40% at 50% 92%,rgba(40,200,170,.13),transparent 70%);animation:drift 20s ease-in-out infinite alternate}
-body::after{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:.55;background-image:radial-gradient(1.2px 1.2px at 20px 30px,#fff,transparent),radial-gradient(1px 1px at 90px 120px,#fff,transparent),radial-gradient(1.4px 1.4px at 160px 60px,#ffe9a8,transparent),radial-gradient(1px 1px at 230px 170px,#fff,transparent),radial-gradient(1.2px 1.2px at 60px 200px,#cfd8ff,transparent);background-size:260px 230px;animation:twinkle 5s ease-in-out infinite alternate}
-@keyframes drift{from{transform:translate3d(-3%,-2%,0) scale(1)}to{transform:translate3d(3%,3%,0) scale(1.12)}}
-@keyframes twinkle{from{opacity:.25}to{opacity:.7}}
-@keyframes shim{to{background-position:200% 0}}
-@keyframes rise{from{opacity:0;transform:translateY(18px) scale(.97)}to{opacity:1;transform:none}}
-@keyframes shine{0%,62%{transform:translateX(-130%)}100%{transform:translateX(130%)}}
+body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(60% 40% at 15% 8%,rgba(245,185,66,.16),transparent 70%),radial-gradient(55% 45% at 92% 30%,rgba(140,90,255,.13),transparent 70%),radial-gradient(60% 45% at 50% 100%,rgba(40,200,170,.10),transparent 70%)}
+@keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
 @keyframes sweep{0%,55%{transform:translateX(-130%)}100%{transform:translateX(130%)}}
-@keyframes glow{0%,100%{box-shadow:0 0 0 1px color-mix(in srgb,var(--g) 40%,transparent),0 8px 28px -10px color-mix(in srgb,var(--g) 60%,transparent)}50%{box-shadow:0 0 0 1px color-mix(in srgb,var(--g) 75%,transparent),0 10px 46px -6px color-mix(in srgb,var(--g) 90%,transparent)}}
-@keyframes bob{0%,100%{transform:translateY(-50%)}50%{transform:translateY(calc(-50% - 5px))}}
-@keyframes bobh{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
-h1 span{background:linear-gradient(90deg,#f5b942,#fff3c4,#f5b942);background-size:200% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shim 4s linear infinite}
-.lg{filter:drop-shadow(0 0 9px rgba(245,185,66,.6))}
-.sec{text-shadow:0 0 20px rgba(245,185,66,.3)}
-.mb{background:rgba(27,27,27,.7);backdrop-filter:blur(8px);transition:box-shadow .2s,transform .2s}.mb:active{transform:scale(.94)}
+h1 span{background:linear-gradient(90deg,#f5b942,#ffe9a0,#f5b942);-webkit-background-clip:text;background-clip:text;color:transparent}
+.lg{filter:drop-shadow(0 0 8px rgba(245,185,66,.55))}
+.sec{text-shadow:0 0 18px rgba(245,185,66,.28)}
 input:focus{outline:none;border-color:var(--ac);box-shadow:0 0 0 3px rgba(245,185,66,.18)}
-input{background:rgba(27,27,27,.7)}
-.fc{animation:rise .55s cubic-bezier(.2,.8,.2,1) backwards;transition:transform .2s,box-shadow .2s,border-color .2s;border-color:rgba(255,255,255,.07);box-shadow:0 6px 20px -12px #000}
-.fc:hover{transform:translateY(-3px);border-color:rgba(245,185,66,.45)}
-.fc:nth-child(2){animation-delay:.05s}.fc:nth-child(3){animation-delay:.1s}.fc:nth-child(4){animation-delay:.15s}.fc:nth-child(5){animation-delay:.2s}.fc:nth-child(6){animation-delay:.25s}.fc:nth-child(7){animation-delay:.3s}.fc:nth-child(n+8){animation-delay:.35s}
-.fc.f1,.fc.f2,.fc.f3{animation:rise .55s cubic-bezier(.2,.8,.2,1) backwards,glow 3.6s ease-in-out .6s infinite;border-color:transparent}
-.fc.f1{--hc:#ffd34d}.fc.f2{--hc:#e4eaf5}.fc.f3{--hc:#e6a878}
-.fc.f1::after,.fc.f2::after,.fc.f3::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(105deg,transparent 40%,rgba(255,255,255,.13) 50%,transparent 60%);transform:translateX(-130%);animation:sweep 6s ease-in-out infinite}
-.fc.f1::before,.fc.f2::before,.fc.f3::before{content:"";position:absolute;left:34px;top:calc(50% - 74px);width:66px;height:17px;border:3px solid var(--hc);border-radius:50%;box-shadow:0 0 14px var(--hc),inset 0 0 8px var(--hc);animation:bobh 4s ease-in-out infinite;pointer-events:none;z-index:2}
-.fc .sk{animation:bob 4s ease-in-out infinite;filter:drop-shadow(0 8px 10px rgba(0,0,0,.55))}
-.fc .fn{text-shadow:0 2px 14px rgba(0,0,0,.5)}
-.tl,.pt{position:relative;overflow:hidden;transition:transform .15s}.tl:hover,.pt:hover{transform:scale(1.06)}
-.tl::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(110deg,transparent 35%,rgba(255,255,255,.3) 50%,transparent 65%);transform:translateX(-130%);animation:shine 5s ease-in-out infinite}
-.tl:nth-child(2)::after{animation-delay:.4s}.tl:nth-child(3)::after{animation-delay:.8s}
-.tt{box-shadow:0 0 12px -3px var(--c)}
-#md,#mn{backdrop-filter:blur(10px)}
-.mc,.mp{background:rgba(24,24,24,.84);backdrop-filter:blur(16px);box-shadow:0 20px 60px -20px #000,0 0 0 1px rgba(255,255,255,.06)}
-.mc{animation:rise .35s cubic-bezier(.2,.8,.2,1)}
+.fc{content-visibility:auto;contain-intrinsic-size:auto 170px;border-color:rgba(255,255,255,.07);box-shadow:0 6px 18px -12px #000}
+.fc:nth-child(-n+8){animation:rise .4s ease-out backwards}
+.fc:nth-child(2){animation-delay:.04s}.fc:nth-child(3){animation-delay:.08s}.fc:nth-child(4){animation-delay:.12s}.fc:nth-child(5){animation-delay:.16s}.fc:nth-child(6){animation-delay:.2s}.fc:nth-child(7){animation-delay:.24s}.fc:nth-child(8){animation-delay:.28s}
+.fc.f1{--g:#c9971c;--hc:#ffd34d}.fc.f2{--g:#8e99ad;--hc:#e4eaf5}.fc.f3{--g:#b46a3c;--hc:#e6a878}
+.fc.f1,.fc.f2,.fc.f3{border-color:transparent;box-shadow:0 0 0 1px color-mix(in srgb,var(--g) 60%,transparent),0 10px 34px -12px color-mix(in srgb,var(--g) 85%,transparent)}
+.fc.f1::after,.fc.f2::after,.fc.f3::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(105deg,transparent 40%,rgba(255,255,255,.12) 50%,transparent 60%);transform:translateX(-130%);will-change:transform;animation:sweep 6s ease-in-out infinite}
+.fc.f1::before,.fc.f2::before,.fc.f3::before{content:"";position:absolute;left:34px;top:calc(50% - 74px);width:66px;height:17px;border:3px solid var(--hc);border-radius:50%;box-shadow:0 0 12px var(--hc),inset 0 0 6px var(--hc);pointer-events:none;z-index:2}
+.tt{box-shadow:0 0 10px -3px var(--c)}
+.mc,.mp{background:#1a1a1a;box-shadow:0 20px 60px -20px #000,0 0 0 1px rgba(255,255,255,.06)}
+.mc{animation:rise .25s ease-out}
 .pt{box-shadow:inset 0 0 0 1px rgba(255,255,255,.06)}
-.b{transition:transform .15s,border-color .15s}.b:hover{border-color:var(--ac)}.b:active{transform:scale(.97)}
+.b:active,.mb:active{transform:scale(.96)}
+@media (hover:hover){.fc{transition:transform .2s,border-color .2s}.fc:hover{transform:translateY(-3px)}.tl,.pt{transition:transform .15s}.tl:hover,.pt:hover{transform:scale(1.06)}}
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
 </style></head><body><div class="w">
 <div class="hd"><h1><svg class="lg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="14" fill="#1b1b1b"/><ellipse cx="32" cy="12" rx="14" ry="5" fill="none" stroke="#f5b942" stroke-width="3.5"/><path d="M16 53 32 21 48 53M23 41h18" fill="none" stroke="#f5b942" stroke-width="6.5" stroke-linecap="round" stroke-linejoin="round"/></svg><em>Angel<span>Tiers</span></em></h1><button class="mb" id="mbtn" aria-label="Меню">☰</button></div>
@@ -173,7 +158,7 @@ $("mn").onclick=e=>{
   else if(e.target.id==="mn"||e.target.closest(".mx"))$("mn").hidden=true;
 };
 
-const skin=(p,cls)=>`<img class="${cls}" src="https://mc-heads.net/head/${encodeURIComponent(p.name)}/300" data-u="${encodeURIComponent(p.name)}" alt="" onerror="if(this.dataset.f){this.style.display='none'}else{this.dataset.f=1;this.src='https://minotar.net/helm/'+this.dataset.u+'/200.png'}">`;
+const skin=(p,cls)=>`<img class="${cls}" src="https://mc-heads.net/head/${encodeURIComponent(p.name)}/200" loading="lazy" decoding="async" data-u="${encodeURIComponent(p.name)}" alt="" onerror="if(this.dataset.f){this.style.display='none'}else{this.dataset.f=1;this.src='https://minotar.net/helm/'+this.dataset.u+'/200.png'}">`;
 const best=p=>MODES.filter(([m])=>p.tiers?.[m]).sort((a,b)=>pts(p.tiers[b[0]])-pts(p.tiers[a[0]]));
 const ava=p=>`<div class="av" style="background:${color(p.name)}"><img src="https://minotar.net/helm/${encodeURIComponent(p.name)}/72.png" alt="" loading="lazy" onerror="this.replaceWith(document.createTextNode(this.dataset.l))" data-l="${esc(p.name[0]||"?").toUpperCase()}"></div>`;
 function row(p){
@@ -301,6 +286,6 @@ function init2(){
   render();
   const pq=new URLSearchParams(location.search).get("p");if(pq&&find(pq))openP(pq);
 }
-$("q").oninput=render;
+let qt;$("q").oninput=()=>{clearTimeout(qt);qt=setTimeout(render,120)};
 init();
 </script></body></html>
