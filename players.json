@@ -343,11 +343,18 @@
   {
     "name": "Deart746",
     "tiers": {
+      "BEAST": "LT4",
       "AXE": "LT4"
     },
     "history": [
       {
         "m": "AXE",
+        "f": null,
+        "t": "LT4",
+        "d": "2026-10-20"
+      },
+      {
+        "m": "BEAST",
         "f": null,
         "t": "LT4",
         "d": "2026-10-20"
