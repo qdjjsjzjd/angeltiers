@@ -416,7 +416,6 @@
     "tiers": {
       "DIAMONDPOT": "LT3",
       "NETHERITEPOT": "LT3",
-      "BEAST": "HT3",
       "OP": "LT3"
     },
     "history": [
@@ -443,20 +442,12 @@
         "f": null,
         "t": "LT3",
         "d": "2026-10-20"
-      }
-    ]
-  },
-  {
-    "name": "FOITH2",
-    "tiers": {
-      "BEAST": "HT3"
-    },
-    "history": [
+      },
       {
         "m": "BEAST",
-        "f": null,
-        "t": "HT3",
-        "d": "2026-10-20"
+        "f": "HT3",
+        "t": null,
+        "d": "2026-10-21"
       }
     ]
   },
@@ -505,26 +496,6 @@
         "m": "OP",
         "f": null,
         "t": "LT3",
-        "d": "2026-10-20"
-      }
-    ]
-  },
-  {
-    "name": "dema11031103",
-    "tiers": {
-      "BEAST": "LT2"
-    },
-    "history": [
-      {
-        "m": "BEAST",
-        "f": null,
-        "t": "HT1",
-        "d": "2026-10-20"
-      },
-      {
-        "m": "BEAST",
-        "f": "HT1",
-        "t": "LT2",
         "d": "2026-10-20"
       }
     ]
