@@ -438,5 +438,54 @@
         "d": "2026-10-20"
       }
     ]
+  },
+  {
+    "name": "bossnahui",
+    "tiers": {
+      "DIAMONDPOT": "LT3",
+      "BEAST": "LT3",
+      "NETHERSMP": "LT3",
+      "UHC": "LT3",
+      "MACE": "LT3",
+      "OP": "LT3"
+    },
+    "history": [
+      {
+        "m": "DIAMONDPOT",
+        "f": null,
+        "t": "LT3",
+        "d": "2026-10-20"
+      },
+      {
+        "m": "BEAST",
+        "f": null,
+        "t": "LT3",
+        "d": "2026-10-20"
+      },
+      {
+        "m": "NETHERSMP",
+        "f": null,
+        "t": "LT3",
+        "d": "2026-10-20"
+      },
+      {
+        "m": "UHC",
+        "f": null,
+        "t": "LT3",
+        "d": "2026-10-20"
+      },
+      {
+        "m": "MACE",
+        "f": null,
+        "t": "LT3",
+        "d": "2026-10-20"
+      },
+      {
+        "m": "OP",
+        "f": null,
+        "t": "LT3",
+        "d": "2026-10-20"
+      }
+    ]
   }
 ]
