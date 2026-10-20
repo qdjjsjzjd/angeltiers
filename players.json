@@ -364,7 +364,10 @@
   {
     "name": "Londonsky1337",
     "tiers": {
-      "BEAST": "LT2"
+      "DIAMONDPOT": "LT3",
+      "NETHERITEPOT": "LT3",
+      "BEAST": "LT2",
+      "AXE": "LT3"
     },
     "history": [
       {
@@ -383,6 +386,24 @@
         "m": "BEAST",
         "f": "HT3",
         "t": "LT2",
+        "d": "2026-10-20"
+      },
+      {
+        "m": "DIAMONDPOT",
+        "f": null,
+        "t": "LT3",
+        "d": "2026-10-20"
+      },
+      {
+        "m": "NETHERITEPOT",
+        "f": null,
+        "t": "LT3",
+        "d": "2026-10-20"
+      },
+      {
+        "m": "AXE",
+        "f": null,
+        "t": "LT3",
         "d": "2026-10-20"
       }
     ],
