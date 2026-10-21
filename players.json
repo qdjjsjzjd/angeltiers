@@ -561,6 +561,7 @@
   {
     "name": "Ogrizok_Yabloka",
     "tiers": {
+      "BEAST": "HT5",
       "MACE": "LT4"
     },
     "history": [
@@ -568,6 +569,12 @@
         "m": "MACE",
         "f": null,
         "t": "LT4",
+        "d": "2026-10-21"
+      },
+      {
+        "m": "BEAST",
+        "f": null,
+        "t": "HT5",
         "d": "2026-10-21"
       }
     ]
