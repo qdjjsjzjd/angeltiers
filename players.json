@@ -557,5 +557,19 @@
         "d": "2026-10-21"
       }
     ]
+  },
+  {
+    "name": "Ogrizok_Yabloka",
+    "tiers": {
+      "MACE": "LT4"
+    },
+    "history": [
+      {
+        "m": "MACE",
+        "f": null,
+        "t": "LT4",
+        "d": "2026-10-21"
+      }
+    ]
   }
 ]
