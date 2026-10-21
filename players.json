@@ -515,5 +515,19 @@
         "d": "2026-10-21"
       }
     ]
+  },
+  {
+    "name": "forlandac",
+    "tiers": {
+      "BEAST": "LT3"
+    },
+    "history": [
+      {
+        "m": "BEAST",
+        "f": null,
+        "t": "LT3",
+        "d": "2026-10-21"
+      }
+    ]
   }
 ]
