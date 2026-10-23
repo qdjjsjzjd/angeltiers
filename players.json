@@ -18,6 +18,7 @@
       "UHC": "LT3",
       "AXE": "LT3",
       "MACE": "LT3",
+      "SPEARMACE": "LT3",
       "OP": "HT3"
     },
     "titles": [
@@ -35,6 +36,12 @@
         "f": null,
         "t": "LT3",
         "d": "2026-10-17"
+      },
+      {
+        "m": "SPEARMACE",
+        "f": null,
+        "t": "LT3",
+        "d": "2026-10-24"
       }
     ]
   },
@@ -141,7 +148,7 @@
     "name": "54135",
     "tiers": {
       "NETHERITEPOT": "LT4",
-      "BEAST": "LT3",
+      "BEAST": "HT5",
       "NETHERSMP": "HT4",
       "DIAMONDSMP": "HT5",
       "UHC": "LT4",
@@ -162,6 +169,12 @@
         "f": "LT4",
         "t": "HT4",
         "d": "2026-10-17"
+      },
+      {
+        "m": "BEAST",
+        "f": "LT3",
+        "t": "HT5",
+        "d": "2026-10-24"
       }
     ]
   },
@@ -535,7 +548,8 @@
     "tiers": {
       "BEAST": "LT4",
       "NETHERSMP": "LT3",
-      "DIAMONDSMP": "LT4"
+      "DIAMONDSMP": "LT4",
+      "UHC": "HT4"
     },
     "history": [
       {
@@ -555,6 +569,12 @@
         "f": null,
         "t": "LT4",
         "d": "2026-10-21"
+      },
+      {
+        "m": "UHC",
+        "f": null,
+        "t": "HT4",
+        "d": "2026-10-24"
       }
     ]
   },
@@ -562,6 +582,7 @@
     "name": "Ogrizok_Yabloka",
     "tiers": {
       "BEAST": "HT5",
+      "AXE": "LT4",
       "MACE": "LT4"
     },
     "history": [
@@ -576,6 +597,12 @@
         "f": null,
         "t": "HT5",
         "d": "2026-10-21"
+      },
+      {
+        "m": "AXE",
+        "f": null,
+        "t": "LT4",
+        "d": "2026-10-24"
       }
     ]
   },
@@ -590,6 +617,69 @@
         "f": null,
         "t": "HT3",
         "d": "2026-10-21"
+      }
+    ]
+  },
+  {
+    "name": "Aciko",
+    "tiers": {
+      "BEAST": "LT3"
+    },
+    "history": [
+      {
+        "m": "BEAST",
+        "f": null,
+        "t": "LT3",
+        "d": "2026-10-24"
+      }
+    ]
+  },
+  {
+    "name": "Alvin21O",
+    "tiers": {
+      "SPEARMACE": "LT3"
+    },
+    "history": [
+      {
+        "m": "SPEARMACE",
+        "f": null,
+        "t": "LT3",
+        "d": "2026-10-24"
+      }
+    ]
+  },
+  {
+    "name": "YollTop",
+    "tiers": {
+      "DIAMONDPOT": "HT4",
+      "BEAST": "LT3"
+    },
+    "history": [
+      {
+        "m": "DIAMONDPOT",
+        "f": null,
+        "t": "HT4",
+        "d": "2026-10-24"
+      },
+      {
+        "m": "BEAST",
+        "f": null,
+        "t": "LT3",
+        "d": "2026-10-24"
+      }
+    ]
+  },
+  {
+    "name": "zzhhasss",
+    "tiers": {
+      "BEAST": "LT3"
+    },
+    "history": [
+      {
+        "m": "BEAST",
+        "f": null,
+        "t": "LT3",
+        "d": "2026-10-24"
       }
     ]
   }
