@@ -649,11 +649,53 @@
   {
     "name": "Alvin21O",
     "tiers": {
-      "SPEARMACE": "LT3"
+      "DIAMONDPOT": "LT3",
+      "CRYSTALPVP": "LT3",
+      "NETHERSMP": "LT3",
+      "UHC": "LT3",
+      "MACE": "HT4",
+      "SPEARMACE": "LT3",
+      "OP": "LT3"
     },
     "history": [
       {
         "m": "SPEARMACE",
+        "f": null,
+        "t": "LT3",
+        "d": "2026-10-24"
+      },
+      {
+        "m": "DIAMONDPOT",
+        "f": null,
+        "t": "LT3",
+        "d": "2026-10-24"
+      },
+      {
+        "m": "CRYSTALPVP",
+        "f": null,
+        "t": "LT3",
+        "d": "2026-10-24"
+      },
+      {
+        "m": "NETHERSMP",
+        "f": null,
+        "t": "LT3",
+        "d": "2026-10-24"
+      },
+      {
+        "m": "UHC",
+        "f": null,
+        "t": "LT3",
+        "d": "2026-10-24"
+      },
+      {
+        "m": "MACE",
+        "f": null,
+        "t": "HT4",
+        "d": "2026-10-24"
+      },
+      {
+        "m": "OP",
         "f": null,
         "t": "LT3",
         "d": "2026-10-24"
