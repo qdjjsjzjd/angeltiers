@@ -4,8 +4,17 @@
     "tiers": {
       "BEAST": "LT3",
       "NETHERSMP": "LT3",
+      "SPEARMACE": "LT4",
       "OP": "LT3"
-    }
+    },
+    "history": [
+      {
+        "m": "SPEARMACE",
+        "f": null,
+        "t": "LT4",
+        "d": "2026-10-25"
+      }
+    ]
   },
   {
     "name": "y0zaraa",
