@@ -126,6 +126,11 @@ h1 span{background:linear-gradient(90deg,#f5b942,#ffe9a0,#f5b942);-webkit-backgr
 .mwide{display:flex;align-items:center;gap:12px;padding:12px;background:var(--bg);border-radius:14px;margin-bottom:6px;cursor:pointer;font-size:17px}
 @media (hover:hover){.pc{transition:border-color .2s}.pc:hover{border-color:rgba(245,185,66,.45)}}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+.ah{display:flex;justify-content:space-between;align-items:center;margin:16px 0 8px}.ah span{color:var(--mu)}
+.ag{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.ai{display:flex;gap:10px;align-items:center;background:#101013;border-radius:12px;padding:9px;opacity:.38;filter:grayscale(1)}
+.ai.on{opacity:1;filter:none;box-shadow:inset 0 0 0 1px rgba(245,185,66,.4)}
+.ae{font-size:24px}.ai b{font-size:13px;display:block}.ai small{color:var(--mu);font-size:11px;line-height:1.25;display:block}
 </style></head><body><div class="w">
 <div class="topbar"><h1><svg class="lg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="14" fill="#1b1b1b"/><ellipse cx="32" cy="12" rx="14" ry="5" fill="none" stroke="#f5b942" stroke-width="3.5"/><path d="M16 53 32 21 48 53M23 41h18" fill="none" stroke="#f5b942" stroke-width="6.5" stroke-linecap="round" stroke-linejoin="round"/></svg><em>Angel<span>Tiers</span></em></h1><div class="hb"><button class="mb" id="sbtn" aria-label="Поиск">🔍</button><button class="mb" id="mbtn" aria-label="Меню">☰</button></div></div>
 <div class="tabs2" id="tb"></div>
@@ -137,7 +142,7 @@ h1 span{background:linear-gradient(90deg,#f5b942,#ffe9a0,#f5b942);-webkit-backgr
 <div id="adm" class="pn ad" hidden>
   <b>Админ-режим</b> <span class="mu">— изменения сохраняются в этом браузере, пока не скачаешь и не зальёшь players.json на хост</span>
   <div class="bar"><input id="nn" placeholder="Ник игрока (новый или существующий)">
-    <button class="b" id="sv">Сохранить</button><button class="b" id="dl" hidden>Удалить</button></div>
+    <button class="b" id="sv">Сохранить</button><button class="b" id="rn">Переименовать</button><button class="b" id="dl" hidden>Удалить</button></div>
   <div class="g" id="gr"></div>
   <div class="mu" style="margin-top:10px">Титулы:</div><div class="bar" id="tt2" style="margin-top:4px"></div>
   <label class="ck" style="margin-top:10px;width:fit-content"><input type="checkbox" id="hl" checked> Записывать изменения тиров в историю</label>
@@ -205,15 +210,48 @@ function feat(p){
   const tiles=T.map(([m,ic])=>`<div class="tl" style="background:${MC[m]||"#2b2b2b"}">${icon(m,ic)}<b>${p.tiers[m]}</b></div>`).join("");
   return`<div class="fc f${p.r}" data-n="${esc(p.name)}">${skin(p,"sk")}<div><div class="fn">${p.r}. ${esc(p.name)}</div><div class="nl">${badges(p)}</div><div class="mu">${p.s} очков</div><div class="ft">${tiles}</div></div></div>`;
 }
+const ixb=t=>TIERS.indexOf(base(t));
+let CTX={rank:new Map(),first:new Map()};
+function buildCtx(){
+  const all=[...P].sort((a,b)=>total(b)-total(a)||a.name.localeCompare(b.name));
+  const rank=new Map(all.map((p,i)=>[p.name,i+1]));
+  const first=new Map();
+  MODES.forEach(([m])=>{let best=null;P.forEach(p=>(p.history||[]).forEach(h=>{if(h.m===m&&h.t&&h.d&&ixb(h.t)>=0&&ixb(h.t)<=3&&(!best||h.d<best.d))best={n:p.name,d:h.d}}));if(best){if(!first.has(best.n))first.set(best.n,[]);first.get(best.n).push(m)}});
+  CTX={rank,first};
+}
+const ACH=[
+{k:"top1",i:"👑",n:"Король",d:"1 место в общем рейтинге",f:c=>c.rank===1},
+{k:"top3",i:"🥇",n:"Пьедестал",d:"Топ-3 общего рейтинга",f:c=>c.rank<=3},
+{k:"top10",i:"🏆",n:"Элита",d:"Топ-10 общего рейтинга",f:c=>c.rank<=10},
+{k:"ht1",i:"💎",n:"Вершина",d:"HT1 хотя бы в одном режиме",f:c=>c.min===0},
+{k:"t2",i:"🔥",n:"Высший класс",d:"HT2 или выше в режиме",f:c=>c.min>=0&&c.min<=2},
+{k:"uni5",i:"🎯",n:"Универсал",d:"Тиры в 5 режимах",f:c=>c.n>=5},
+{k:"uni10",i:"🌟",n:"Мастер на все руки",d:"Тиры в 10 режимах",f:c=>c.n>=10},
+{k:"solid",i:"🛡️",n:"Стабильный",d:"LT3 или выше в 3 режимах",f:c=>c.good3>=3},
+{k:"p50",i:"⭐",n:"50 очков",d:"Набрать 50 очков",f:c=>c.pts>=50},
+{k:"p100",i:"✨",n:"100 очков",d:"Набрать 100 очков",f:c=>c.pts>=100},
+{k:"p200",i:"🌠",n:"200 очков",d:"Набрать 200 очков",f:c=>c.pts>=200},
+{k:"up3",i:"📈",n:"Восходящий",d:"Повысить тир 3 раза",f:c=>c.ups>=3},
+{k:"first",i:"🚩",n:"Первопроходец",d:"Первым получить LT2+ в режиме",f:c=>c.firsts.length>0},
+{k:"ret",i:"🏛️",n:"Легенда",d:"Ретайр-тир (RHT/RLT)",f:c=>c.ret},
+{k:"fam",i:"🎖️",n:"Знаменитость",d:"Титул FAMOUS",f:c=>(c.p.titles||[]).includes("famous")}
+];
+function achOf(p){
+  const ts=MODES.map(([m])=>(p.tiers||{})[m]).filter(t=>t&&ixb(t)>=0);
+  const ix=ts.map(ixb);
+  const c={p,rank:CTX.rank.get(p.name)||999,pts:total(p),n:ts.length,min:ix.length?Math.min(...ix):-1,good3:ix.filter(i=>i<=5).length,ups:(p.history||[]).filter(h=>h.f&&h.t&&ixb(h.t)>=0&&ixb(h.t)<ixb(h.f)).length,ret:ts.some(t=>t[0]==="R"),firsts:CTX.first.get(p.name)||[]};
+  return ACH.map(a=>({a,got:!!a.f(c)}));
+}
 const pl=n=>{const a=n%100,b=n%10;return n+" "+(a>10&&a<15?"очков":b===1?"очко":b>1&&b<5?"очка":"очков")};
 const RB=r=>r<=3?"r"+r:"r0";
 const TCOL=t=>t[0]==="R"?"#b794ff":({HT1:"#ffd45a",LT1:"#e6b13a",HT2:"#6fb7ff",LT2:"#7fa6d6",HT3:"#f0a060",LT3:"#d48650",HT4:"#b5b9c4",LT4:"#9a9eaa",HT5:"#8a8f9c",LT5:"#7a7f8a"})[t]||"#8a8f9c";
 const circ=(p,m,e)=>{const t=p.tiers?.[m];return t?`<div class="ci" style="--tc:${TCOL(t)}"><div class="cc">${icon(m,e)}</div><span class="cp">${t}</span></div>`:`<div class="ci em"><div class="cc"></div><span class="cp">—</span></div>`};
 function card(p){
   const T=mode==="ALL"?best(p):[[mode,(MODES.find(x=>x[0]===mode)||[])[1]]];
-  return`<div class="pc" data-n="${esc(p.name)}"><div class="ph2"><div class="rb ${RB(p.r)}"><i>${p.r}.</i>${skin(p,"sk")}</div><div class="pi"><div class="pn2">${esc(p.name)}</div><div class="pp">${pl(p.s)}</div><div class="nl">${badges(p)}</div></div></div><div class="cr">${T.map(([m,e])=>circ(p,m,e)).join("")}</div></div>`;
+  return`<div class="pc" data-n="${esc(p.name)}"><div class="ph2"><div class="rb ${RB(p.r)}"><i>${p.r}.</i>${skin(p,"sk")}</div><div class="pi"><div class="pn2">${esc(p.name)}</div><div class="pp">${pl(p.s)}${(()=>{const g=achOf(p).filter(x=>x.got).length;return g?` · 🏅${g}`:""})()}</div><div class="nl">${badges(p)}</div></div></div><div class="cr">${T.map(([m,e])=>circ(p,m,e)).join("")}</div></div>`;
 }
 function render(){
+  buildCtx();
   const q=$("q").value.trim().toLowerCase();
   let L=P.map(p=>({...p,s:mode==="ALL"?total(p):pts((p.tiers||{})[mode])}));
   if(mode!=="ALL")L=L.filter(p=>(p.tiers||{})[mode]);
@@ -245,7 +283,9 @@ function openP(n){
   const all=[...P].sort((a,b)=>total(b)-total(a)||a.name.localeCompare(b.name));
   const rank=all.indexOf(p)+1;
   const T=[...MODES].sort((x,y)=>pts(p.tiers?.[y[0]])-pts(p.tiers?.[x[0]]));
-  $("mc").innerHTML=`<div class="mhd"><span class="pill">✦ ANGELTIERS</span><button class="x">×</button></div><div class="pr1">${skin(p,"ps3")}</div><h2>${esc(p.name)}</h2><div class="ttc" style="justify-content:flex-start">${badges(p)}</div><div class="ov"><div class="rb ${RB(rank)}"><i>${rank}.</i></div><b>OVERALL</b><span>(${pl(total(p))})</span></div><div class="cr wrap">${T.map(([m,e])=>circ(p,m,e)).join("")}</div><div class="pb"><button class="b" id="cn" title="Скопировать ник">📋</button><button class="b" id="lk" title="Скопировать ссылку">🔗</button><button class="b" id="hb" style="flex:1">📜 История тиров</button></div><div id="hist" hidden></div>`;
+  const A=achOf(p),got=A.filter(x=>x.got).length;
+  const ah=`<div class="ah"><b>Достижения</b><span>${got}/${A.length}</span></div><div class="ag">${[...A].sort((x,y)=>y.got-x.got).map(({a,got})=>`<div class="ai${got?" on":""}"><span class="ae">${a.i}</span><div><b>${a.n}</b><small>${a.k==="first"&&got?"Первым получил LT2+: "+(CTX.first.get(p.name)||[]).map(lb).join(", "):a.d}</small></div></div>`).join("")}</div>`;
+  $("mc").innerHTML=`<div class="mhd"><span class="pill">✦ ANGELTIERS</span><button class="x">×</button></div><div class="pr1">${skin(p,"ps3")}</div><h2>${esc(p.name)}</h2><div class="ttc" style="justify-content:flex-start">${badges(p)}</div><div class="ov"><div class="rb ${RB(rank)}"><i>${rank}.</i></div><b>OVERALL</b><span>(${pl(total(p))})</span></div><div class="cr wrap">${T.map(([m,e])=>circ(p,m,e)).join("")}</div>${ah}<div class="pb"><button class="b" id="cn" title="Скопировать ник">📋</button><button class="b" id="lk" title="Скопировать ссылку">🔗</button><button class="b" id="hb" style="flex:1">📜 История тиров</button></div><div id="hist" hidden></div>`;
   const cp=async(id,txt,ic)=>{try{await navigator.clipboard.writeText(txt);$(id).textContent="✓"}catch(e){prompt("Скопируй:",txt)}setTimeout(()=>{$(id).textContent=ic},1500)};
   $("cn").onclick=()=>cp("cn",p.name,"📋");
   $("lk").onclick=()=>cp("lk",location.origin+location.pathname+"?p="+encodeURIComponent(p.name),"🔗");
@@ -272,6 +312,15 @@ function save(){
   if(ex){ex.tiers=tiers;if(titles.length)ex.titles=titles;else delete ex.titles;if(ch.length)ex.history=[...(ex.history||[]),...ch]}
   else{const o={name,tiers};if(titles.length)o.titles=titles;if(ch.length)o.history=ch;P.push(o)}
   draft();render();$("dl").hidden=false;
+}
+function ren(){
+  const p=find($("nn").value);
+  if(!p){alert("Сначала выбери игрока: впиши его старый ник или нажми на него в списке.");return}
+  const n=(prompt("Новый ник для "+p.name+":",p.name)||"").trim();
+  if(!n||n===p.name)return;
+  const ex=find(n);if(ex&&ex!==p){alert("Игрок с ником "+n+" уже есть.");return}
+  p.name=n;draft();render();$("nn").value=n;$("dl").hidden=false;
+  ps("Ник изменён. Нажми «Опубликовать на сайт».");
 }
 function del(){
   const ex=find($("nn").value); if(!ex||!confirm("Удалить "+ex.name+"?"))return;
@@ -315,7 +364,7 @@ function init2(){
     $("adm").hidden=false;grid();tgrid();
     try{const d=localStorage.getItem("tiers_draft");if(d)P=JSON.parse(d)}catch(e){}
     $("nn").oninput=e=>{const p=find(e.target.value);$("dl").hidden=!p;grid(p?.tiers);tgrid(p?.titles)};
-    $("sv").onclick=save;$("dl").onclick=del;$("ex").onclick=exportJson;$("pb").onclick=publish;
+    $("sv").onclick=save;$("dl").onclick=del;$("ex").onclick=exportJson;$("pb").onclick=publish;$("rn").onclick=ren;
     if(tok())$("tk").placeholder="Токен сохранён ✓ (вставь новый, чтобы заменить)";
     $("tks").onclick=()=>{const v=$("tk").value.trim();if(!v)return;try{localStorage.setItem("gh_token",v)}catch(e){}$("tk").value="";$("tk").placeholder="Токен сохранён ✓";ps("Токен сохранён в этом браузере.")};
     $("rs").onclick=async()=>{if(!confirm("Отбросить все локальные правки?"))return;
