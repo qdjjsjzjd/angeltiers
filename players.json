@@ -458,6 +458,7 @@
     "tiers": {
       "DIAMONDPOT": "LT3",
       "NETHERITEPOT": "LT3",
+      "BEAST": "HT3",
       "OP": "LT3"
     },
     "history": [
