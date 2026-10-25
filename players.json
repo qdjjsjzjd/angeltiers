@@ -84,7 +84,7 @@
       "NETHERITEPOT": "HT5",
       "BEAST": "LT4",
       "CARTPVP": "LT4",
-      "CRYSTALPVP": "LT4",
+      "CRYSTALPVP": "LT3",
       "NETHERSMP": "LT4",
       "UHC": "LT4",
       "AXE": "LT3",
@@ -94,7 +94,7 @@
       "CREEPER": "LT4"
     },
     "titles": [
-      "staff",
+      "admin",
       "seniortester"
     ],
     "history": [
@@ -121,6 +121,12 @@
         "f": null,
         "t": "LT4",
         "d": "2026-10-19"
+      },
+      {
+        "m": "CRYSTALPVP",
+        "f": "LT4",
+        "t": "LT3",
+        "d": "2026-10-26"
       }
     ]
   },
@@ -154,7 +160,7 @@
       "UHC": "LT3",
       "AXE": "LT3",
       "MACE": "LT4",
-      "OP": "HT4"
+      "OP": "LT3"
     },
     "history": [
       {
@@ -168,6 +174,12 @@
         "f": "LT4",
         "t": "HT4",
         "d": "2026-10-17"
+      },
+      {
+        "m": "OP",
+        "f": "HT4",
+        "t": "LT3",
+        "d": "2026-10-26"
       }
     ]
   },
@@ -459,6 +471,7 @@
       "DIAMONDPOT": "LT3",
       "NETHERITEPOT": "LT3",
       "BEAST": "HT3",
+      "UHC": "LT3",
       "OP": "LT3"
     },
     "history": [
@@ -491,6 +504,12 @@
         "f": "HT3",
         "t": null,
         "d": "2026-10-21"
+      },
+      {
+        "m": "UHC",
+        "f": null,
+        "t": "LT3",
+        "d": "2026-10-26"
       }
     ]
   },
@@ -726,7 +745,8 @@
     "tiers": {
       "DIAMONDPOT": "HT4",
       "BEAST": "LT3",
-      "SPEARMACE": "HT4"
+      "SPEARMACE": "HT4",
+      "CREEPER": "LT3"
     },
     "history": [
       {
@@ -746,6 +766,12 @@
         "f": null,
         "t": "HT4",
         "d": "2026-10-25"
+      },
+      {
+        "m": "CREEPER",
+        "f": null,
+        "t": "LT3",
+        "d": "2026-10-26"
       }
     ]
   },
@@ -760,6 +786,48 @@
         "f": null,
         "t": "LT3",
         "d": "2026-10-24"
+      }
+    ]
+  },
+  {
+    "name": "SWAGA_NO",
+    "tiers": {
+      "BEAST": "HT4"
+    },
+    "history": [
+      {
+        "m": "BEAST",
+        "f": null,
+        "t": "HT4",
+        "d": "2026-10-26"
+      }
+    ]
+  },
+  {
+    "name": "myraflote",
+    "tiers": {
+      "UHC": "LT3",
+      "AXE": "LT3",
+      "SPEARMACE": "LT3"
+    },
+    "history": [
+      {
+        "m": "UHC",
+        "f": null,
+        "t": "LT3",
+        "d": "2026-10-26"
+      },
+      {
+        "m": "AXE",
+        "f": null,
+        "t": "LT3",
+        "d": "2026-10-26"
+      },
+      {
+        "m": "SPEARMACE",
+        "f": null,
+        "t": "LT3",
+        "d": "2026-10-26"
       }
     ]
   }
