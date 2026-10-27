@@ -640,7 +640,7 @@
       "NETHERSMP": "LT3",
       "UHC": "LT3",
       "MACE": "HT4",
-      "SPEARMACE": "LT3",
+      "SPEARMACE": "HT3",
       "OP": "LT3"
     },
     "history": [
@@ -685,6 +685,12 @@
         "f": null,
         "t": "LT3",
         "d": "2026-10-24"
+      },
+      {
+        "m": "SPEARMACE",
+        "f": "LT3",
+        "t": "HT3",
+        "d": "2026-10-27"
       }
     ],
     "titles": [
