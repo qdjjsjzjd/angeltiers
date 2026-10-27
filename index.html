@@ -131,11 +131,25 @@ h1 span{background:linear-gradient(90deg,#f5b942,#ffe9a0,#f5b942);-webkit-backgr
 .ai{display:flex;gap:10px;align-items:center;background:#101013;border-radius:12px;padding:9px;opacity:.38;filter:grayscale(1)}
 .ai.on{opacity:1;filter:none;box-shadow:inset 0 0 0 1px rgba(245,185,66,.4)}
 .ae{font-size:24px}.ai b{font-size:13px;display:block}.ai small{color:var(--mu);font-size:11px;line-height:1.25;display:block}
+.secrow{display:flex;align-items:center;justify-content:space-between;gap:8px}.secrow .sec{margin:10px 0 8px}
+.jn{background:var(--ac);color:#111;border-color:var(--ac);font-weight:700;padding:8px 12px}
+a.b{display:block;text-align:center;text-decoration:none;margin-top:14px;padding:13px;color:#111}
+.b.ac{background:var(--ac);color:#111;border-color:var(--ac);font-weight:700}
+.mwide.jn{background:var(--ac);color:#111;font-weight:700}
+.fi{display:flex;align-items:center;gap:12px;padding:12px;margin-bottom:8px;contain-intrinsic-size:auto 66px}
+.fav{width:44px;height:44px;border-radius:10px;image-rendering:pixelated;flex:none}
+.cvp{width:100%;border-radius:14px;border:1px solid var(--line);margin-top:12px;display:block}
+.sg{display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px}.sg .b{padding:11px 4px;font-size:12px}
+.sg .b.on{background:var(--ac);color:#111;border-color:var(--ac);font-weight:700}
+.sl{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin:8px 0}
+.si{display:flex;align-items:center;gap:8px;background:#101013;border-radius:12px;padding:8px 10px;cursor:pointer;opacity:.5;font-size:13px}.si.on{opacity:1}
+.si .ic{width:24px;height:24px}.si .k{margin-left:auto;font-size:18px}
+.shh{display:flex;align-items:center;gap:12px}.shh>div{flex:1;min-width:0}
 </style></head><body><div class="w">
 <div class="topbar"><h1><svg class="lg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="14" fill="#1b1b1b"/><ellipse cx="32" cy="12" rx="14" ry="5" fill="none" stroke="#f5b942" stroke-width="3.5"/><path d="M16 53 32 21 48 53M23 41h18" fill="none" stroke="#f5b942" stroke-width="6.5" stroke-linecap="round" stroke-linejoin="round"/></svg><em>Angel<span>Tiers</span></em></h1><div class="hb"><button class="mb" id="sbtn" aria-label="Поиск">🔍</button><button class="mb" id="mbtn" aria-label="Меню">☰</button></div></div>
 <div class="tabs2" id="tb"></div>
 <div class="bar" id="sb" hidden><input id="q" placeholder="Поиск игрока по нику…"></div>
-<div class="sec" id="sec"></div>
+<div class="secrow"><div class="sec" id="sec"></div><button class="b jn" id="jb">⚔️ В рейтинг</button></div>
 <div class="mu" id="cnt" style="margin-bottom:6px"></div>
 <div class="th"><span>#</span><span>ИГРОК</span></div>
 
@@ -164,6 +178,7 @@ const MODES=[["DIAMONDPOT","🧪"],["NETHERITEPOT","🛡️"],["BEAST","⚔️"]
 const TIERS=["HT1","LT1","HT2","LT2","HT3","LT3","HT4","LT4","HT5","LT5"];
 const PTS=[60,44,28,16,10,6,4,3,2,1];
 const MC={DIAMONDPOT:"#5c1a36",NETHERITEPOT:"#5a1c1c",BEAST:"#1c3a57",CARTPVP:"#5a2d1a",CRYSTALPVP:"#46206b",NETHERSMP:"#5f3a1a",DIAMONDSMP:"#38205c",UHC:"#5c4a14",AXE:"#1d4a4d",MACE:"#2c3140",SPEARMACE:"#33262f",OP:"#174a35",CREEPER:"#1a4d1c"};
+const JOIN_URL="https://discord.gg/RZdtGK94A4";   // сюда вставь ссылку на Discord-сервер, например "https://discord.gg/xxxx"
 const RET=["RHT1","RLT1","RHT2","RLT2"];
 const ALLT=[...TIERS,...RET];
 const base=t=>t.replace(/^R/,"");
@@ -180,21 +195,23 @@ const $=id=>document.getElementById(id);
 const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 const color=n=>{let h=0;for(const c of n)h=(h*31+c.charCodeAt(0))%360;return`hsl(${h} 45% 45%)`};
 
-const LB={DIAMONDPOT:"DiaPot",NETHERITEPOT:"NethPot",BEAST:"Beast",CARTPVP:"Cart",CRYSTALPVP:"Crystal",NETHERSMP:"NethSMP",DIAMONDSMP:"DiaSMP",UHC:"UHC",AXE:"Axe",MACE:"Mace",SPEARMACE:"SpearMace",OP:"OP",CREEPER:"Creeper"};
+const LB={CHANGES:"Изменения",DIAMONDPOT:"DiaPot",NETHERITEPOT:"NethPot",BEAST:"Beast",CARTPVP:"Cart",CRYSTALPVP:"Crystal",NETHERSMP:"NethSMP",DIAMONDSMP:"DiaSMP",UHC:"UHC",AXE:"Axe",MACE:"Mace",SPEARMACE:"SpearMace",OP:"OP",CREEPER:"Creeper"};
 const lb=m=>m==="ALL"?"Общий":(LB[m]||m);
 function tabs(){
   const em=(MODES.find(x=>x[0]===mode)||[])[1];
-  $("sec").innerHTML=mode==="ALL"?"🏆 Общий рейтинг":icon(mode,em)+" "+lb(mode);
-  $("tb").innerHTML=[["ALL","🏆"],...MODES].map(([m,e])=>`<button class="tb${m===mode?" on":""}" data-m="${m}">${m==="ALL"?`<span class="tbe">${e}</span>`:icon(m,e)}<span>${lb(m)}</span></button>`).join("");
+  $("sec").innerHTML=mode==="ALL"?"🏆 Общий рейтинг":mode==="CHANGES"?"🕘 Последние изменения":icon(mode,em)+" "+lb(mode);
+  $("tb").innerHTML=[["ALL","🏆"],["CHANGES","🕘"],...MODES].map(([m,e])=>`<button class="tb${m===mode?" on":""}" data-m="${m}">${m==="ALL"||m==="CHANGES"?`<span class="tbe">${e}</span>`:icon(m,e)}<span>${lb(m)}</span></button>`).join("");
   const a=$("tb").querySelector(".on");if(a)$("tb").scrollLeft=a.offsetLeft-($("tb").clientWidth-a.offsetWidth)/2;
-  $("mp").innerHTML=`<div class="mh"><b>Меню</b><button class="mx">×</button></div><div class="mwide" data-m="ALL"><span class="mie">🏆</span><span>Общий рейтинг</span></div><div class="ms">Тир-листы</div><div class="mgrid">${MODES.map(([m,e])=>`<div class="mt${m===mode?" on":""}" data-m="${m}"><span class="mi2" style="background:${MC[m]||"#2a2a30"}">${icon(m,e)}</span><span>${lb(m)}</span></div>`).join("")}</div>`;
+  $("mp").innerHTML=`<div class="mh"><b>Меню</b><button class="mx">×</button></div><div class="mwide" data-m="ALL"><span class="mie">🏆</span><span>Общий рейтинг</span></div><div class="mwide" data-m="CHANGES"><span class="mie">🕘</span><span>Последние изменения</span></div><div class="mwide jn" data-j="1"><span class="mie">⚔️</span><span>Хочу в рейтинг</span></div><div class="ms">Тир-листы</div><div class="mgrid">${MODES.map(([m,e])=>`<div class="mt${m===mode?" on":""}" data-m="${m}"><span class="mi2" style="background:${MC[m]||"#2a2a30"}">${icon(m,e)}</span><span>${lb(m)}</span></div>`).join("")}</div>`;
 }
 $("tb").onclick=e=>{const b=e.target.closest("[data-m]");if(b){mode=b.dataset.m;tabs();render()}};
+$("jb").onclick=()=>openJoin();
 $("sbtn").onclick=()=>{const b=$("sb");b.hidden=!b.hidden;if(!b.hidden)$("q").focus()};
 $("mbtn").onclick=()=>{$("mn").hidden=false};
 $("mn").onclick=e=>{
   const b=e.target.closest("[data-m]");
   if(b){mode=b.dataset.m;tabs();render();$("mn").hidden=true;scrollTo(0,0)}
+  else if(e.target.closest("[data-j]")){$("mn").hidden=true;openJoin()}
   else if(e.target.id==="mn"||e.target.closest(".mx"))$("mn").hidden=true;
 };
 
@@ -211,13 +228,15 @@ function feat(p){
   return`<div class="fc f${p.r}" data-n="${esc(p.name)}">${skin(p,"sk")}<div><div class="fn">${p.r}. ${esc(p.name)}</div><div class="nl">${badges(p)}</div><div class="mu">${p.s} очков</div><div class="ft">${tiles}</div></div></div>`;
 }
 const ixb=t=>TIERS.indexOf(base(t));
-let CTX={rank:new Map(),first:new Map()};
+let CTX={rank:new Map(),first:new Map(),lead:new Map()};
 function buildCtx(){
   const all=[...P].sort((a,b)=>total(b)-total(a)||a.name.localeCompare(b.name));
   const rank=new Map(all.map((p,i)=>[p.name,i+1]));
   const first=new Map();
   MODES.forEach(([m])=>{let best=null;P.forEach(p=>(p.history||[]).forEach(h=>{if(h.m===m&&h.t&&h.d&&ixb(h.t)>=0&&ixb(h.t)<=3&&(!best||h.d<best.d))best={n:p.name,d:h.d}}));if(best){if(!first.has(best.n))first.set(best.n,[]);first.get(best.n).push(m)}});
-  CTX={rank,first};
+  const lead=new Map();
+  MODES.forEach(([m])=>{const L=P.filter(p=>p.tiers?.[m]&&ixb(p.tiers[m])>=0);if(L.length<2)return;const b=Math.min(...L.map(p=>ixb(p.tiers[m])));const W=L.filter(p=>ixb(p.tiers[m])===b);if(W.length===1){const n=W[0].name;if(!lead.has(n))lead.set(n,[]);lead.get(n).push(m)}});
+  CTX={rank,first,lead};
 }
 const ACH=[
 {k:"top1",i:"👑",n:"Король",d:"1 место в общем рейтинге",f:c=>c.rank===1},
@@ -234,12 +253,22 @@ const ACH=[
 {k:"up3",i:"📈",n:"Восходящий",d:"Повысить тир 3 раза",f:c=>c.ups>=3},
 {k:"first",i:"🚩",n:"Первопроходец",d:"Первым получить LT2+ в режиме",f:c=>c.firsts.length>0},
 {k:"ret",i:"🏛️",n:"Легенда",d:"Ретайр-тир (RHT/RLT)",f:c=>c.ret},
+{k:"start",i:"🌱",n:"Первый шаг",d:"Получить первый тир",f:c=>c.n>=1},
+{k:"all",i:"🧩",n:"Коллекционер",d:"Тиры во всех режимах",f:c=>c.n>=MODES.length},
+{k:"h3x3",i:"🔱",n:"Тройная угроза",d:"HT3 или выше в 3 режимах",f:c=>c.ht3>=3},
+{k:"h1x2",i:"🏔️",n:"Двойная вершина",d:"HT1 в 2 режимах",f:c=>c.ht1n>=2},
+{k:"lead",i:"🥷",n:"Лидер режима",d:"Единственный с лучшим тиром в режиме",f:c=>c.leads.length>0},
+{k:"up10",i:"🚀",n:"Неудержимый",d:"Повысить тир 10 раз",f:c=>c.ups>=10},
+{k:"flawless",i:"💠",n:"Без слабых мест",d:"5+ режимов, все не ниже LT3",f:c=>c.n>=5&&c.good3===c.n},
+{k:"p300",i:"🌌",n:"300 очков",d:"Набрать 300 очков",f:c=>c.pts>=300},
+{k:"ret1",i:"🦅",n:"Живая легенда",d:"Ретайр RHT1 или RLT1",f:c=>c.ret1},
+{k:"crew",i:"🛠️",n:"Команда",d:"Есть титул команды сайта",f:c=>(c.p.titles||[]).some(t=>t!=="restricted"&&t!=="famous")},
 {k:"fam",i:"🎖️",n:"Знаменитость",d:"Титул FAMOUS",f:c=>(c.p.titles||[]).includes("famous")}
 ];
 function achOf(p){
   const ts=MODES.map(([m])=>(p.tiers||{})[m]).filter(t=>t&&ixb(t)>=0);
   const ix=ts.map(ixb);
-  const c={p,rank:CTX.rank.get(p.name)||999,pts:total(p),n:ts.length,min:ix.length?Math.min(...ix):-1,good3:ix.filter(i=>i<=5).length,ups:(p.history||[]).filter(h=>h.f&&h.t&&ixb(h.t)>=0&&ixb(h.t)<ixb(h.f)).length,ret:ts.some(t=>t[0]==="R"),firsts:CTX.first.get(p.name)||[]};
+  const c={p,rank:CTX.rank.get(p.name)||999,pts:total(p),n:ts.length,min:ix.length?Math.min(...ix):-1,good3:ix.filter(i=>i<=5).length,ups:(p.history||[]).filter(h=>h.f&&h.t&&ixb(h.t)>=0&&ixb(h.t)<ixb(h.f)).length,ret:ts.some(t=>t[0]==="R"),firsts:CTX.first.get(p.name)||[],ht3:ix.filter(i=>i<=4).length,ht1n:ix.filter(i=>i===0).length,leads:CTX.lead.get(p.name)||[],ret1:ts.some(t=>t==="RHT1"||t==="RLT1")};
   return ACH.map(a=>({a,got:!!a.f(c)}));
 }
 const pl=n=>{const a=n%100,b=n%10;return n+" "+(a>10&&a<15?"очков":b===1?"очко":b>1&&b<5?"очка":"очков")};
@@ -250,8 +279,88 @@ function card(p){
   const T=mode==="ALL"?best(p):[[mode,(MODES.find(x=>x[0]===mode)||[])[1]]];
   return`<div class="pc" data-n="${esc(p.name)}"><div class="ph2"><div class="rb ${RB(p.r)}"><i>${p.r}.</i>${skin(p,"sk")}</div><div class="pi"><div class="pn2">${esc(p.name)}</div><div class="pp">${pl(p.s)}${(()=>{const g=achOf(p).filter(x=>x.got).length;return g?` · 🏅${g}`:""})()}</div><div class="nl">${badges(p)}</div></div></div><div class="cr">${T.map(([m,e])=>circ(p,m,e)).join("")}</div></div>`;
 }
+function chg(h){
+  const t=esc(h.t||""),f=esc(h.f||"");
+  if(!h.f)return{ch:`Получил ${t}`,cl:"nw"};
+  if(!h.t)return{ch:`${f} → убран`,cl:"dn"};
+  if(ixb(h.t)===ixb(h.f))return{ch:`${f} → ${t}`,cl:"rt"};
+  return ixb(h.t)<ixb(h.f)?{ch:`${f} → ${t} ▲`,cl:"up"}:{ch:`${f} → ${t} ▼`,cl:"dn"};
+}
+function feed(q){
+  const E=[];P.forEach(p=>(p.history||[]).forEach((h,i)=>{if(p.name.toLowerCase().includes(q))E.push({p,h,i})}));
+  E.sort((a,b)=>(b.h.d||"").localeCompare(a.h.d||"")||b.i-a.i);
+  if(!E.length)return '<div class="mu">Изменений пока нет: они появятся, когда тиры игроков начнут меняться через админку.</div>';
+  return E.slice(0,60).map(({p,h})=>{const e=(MODES.find(x=>x[0]===h.m)||[])[1]||"";const {ch,cl}=chg(h);const dt=h.d?new Date(h.d+"T00:00").toLocaleDateString("ru-RU",{day:"numeric",month:"short"}):"";
+    return`<div class="pc fi" data-n="${esc(p.name)}"><img class="fav" src="https://minotar.net/helm/${encodeURIComponent(p.name)}/64.png" alt="" loading="lazy" onerror="this.style.visibility='hidden'"><div style="flex:1;min-width:0"><div class="pn2" style="font-size:16px">${esc(p.name)}</div><div class="mu">${icon(h.m,e)} ${esc(lb(h.m))} · ${dt}</div></div><div class="hv ${cl}">${ch}</div></div>`}).join("");
+}
+function openJoin(){
+  $("mc").innerHTML=`<div class="mhd"><span class="pill">✦ ANGELTIERS</span><button class="x">×</button></div><h2>Хочу в рейтинг</h2><div class="mu" style="line-height:1.5">Чтобы попасть в тирлист, нужно пройти тест у наших тестеров.</div><div class="ag" style="grid-template-columns:1fr;margin-top:12px"><div class="ai on"><span class="ae">1️⃣</span><div><b>Зайди на наш сервер</b><small>Ссылка на Discord ниже</small></div></div><div class="ai on"><span class="ae">2️⃣</span><div><b>Открой тикет</b><small>Выбери режим, в котором хочешь получить тир</small></div></div><div class="ai on"><span class="ae">3️⃣</span><div><b>Пройди бой с тестером</b><small>По результату получишь свой тир</small></div></div></div>${JOIN_URL?`<a class="b ac" href="${esc(JOIN_URL)}" target="_blank" rel="noopener">Перейти на сервер</a>`:`<div class="mu" style="margin-top:12px">Ссылку на сервер скоро добавим.</div>`}`;
+  $("md").hidden=false;
+}
+const FMT={h:[1200,630],v:[900,1500],s:[1080,1080]};
+const imgCache={};
+const loadImg=(src,cors)=>new Promise(r=>{if(imgCache[src]!==undefined)return r(imgCache[src]);const i=new Image();if(cors)i.crossOrigin="anonymous";const t=setTimeout(()=>r(null),5000);i.onload=()=>{clearTimeout(t);imgCache[src]=i;r(i)};i.onerror=()=>{clearTimeout(t);imgCache[src]=null;r(null)};i.src=src});
+const skinImg=async name=>{const n=encodeURIComponent(name);return(await loadImg(`https://mc-heads.net/head/${n}/400`,1))||(await loadImg(`https://minotar.net/helm/${n}/400.png`,1))||null};
+function rr(c,x,y,w,h,r){c.beginPath();c.moveTo(x+r,y);c.arcTo(x+w,y,x+w,y+h,r);c.arcTo(x+w,y+h,x,y+h,r);c.arcTo(x,y+h,x,y,r);c.arcTo(x,y,x+w,y,r);c.closePath()}
+let drawTok=0;
+async function drawCard(p,fmt,sel,rank){
+  const tok=++drawTok,[W,H]=FMT[fmt];
+  try{await document.fonts.load("700 40px Onest");await document.fonts.load("500 30px Onest")}catch(e){}
+  const modes=MODES.filter(([m])=>sel.has(m));
+  const [sk,...ics]=await Promise.all([skinImg(p.name),...modes.map(([m])=>loadImg("icons/"+m.toLowerCase()+".png"))]);
+  if(tok!==drawTok)return;
+  const cv=$("cv");if(!cv)return;
+  cv.width=W;cv.height=H;const c=cv.getContext("2d"),F="Onest, system-ui, sans-serif";
+  const g=c.createLinearGradient(0,0,W,H);g.addColorStop(0,"#202024");g.addColorStop(1,"#131315");c.fillStyle=g;c.fillRect(0,0,W,H);
+  c.strokeStyle="#34343a";c.lineWidth=4;rr(c,8,8,W-16,H-16,40);c.stroke();
+  const pad=Math.round(W*.055),n=modes.length,cols=n>10?7:5;
+  const Lm={h:{ss:300,sx:pad,sy:60,tx:400,al:"left",ly:92,ny:166,py:218,gx:400,gy:262,gw:W-400-pad},
+            v:{ss:460,sx:(W-460)/2,sy:230,tx:W/2,al:"center",ly:84,ny:160,py:208,gx:pad,gy:720,gw:W-2*pad},
+            s:{ss:300,sx:pad,sy:pad+6,tx:pad+340,al:"left",ly:112,ny:192,py:246,gx:pad,gy:430,gw:W-2*pad}}[fmt];
+  c.textAlign=Lm.al;c.textBaseline="alphabetic";
+  c.fillStyle="#8c8c8c";c.font=`500 ${Math.round(W*.024)}px ${F}`;c.fillText("Профиль игрока",Lm.tx,Lm.ly);
+  let fs=fmt==="s"?78:fmt==="v"?76:68;const maxW=Lm.al==="center"?W-2*pad:W-Lm.tx-pad;
+  c.font=`700 ${fs}px ${F}`;while(c.measureText(p.name).width>maxW&&fs>28){fs-=2;c.font=`700 ${fs}px ${F}`}
+  c.fillStyle="#fff";c.fillText(p.name,Lm.tx,Lm.ny);
+  c.fillStyle="#8c8c8c";c.font=`500 ${Math.round(W*.027)}px ${F}`;c.fillText((rank?`#${rank} · `:"")+pl(total(p)),Lm.tx,Lm.py);
+  if(sk){const r=Math.min(Lm.ss/sk.width,Lm.ss/sk.height);c.imageSmoothingEnabled=true;c.drawImage(sk,Lm.sx+(Lm.ss-sk.width*r)/2,Lm.sy+(Lm.ss-sk.height*r)/2,sk.width*r,sk.height*r)}
+  const gap=14,tw=(Lm.gw-(cols-1)*gap)/cols,rows=Math.max(1,Math.ceil(n/cols)),th=Math.min(tw*1.25,(H-118-Lm.gy-(rows-1)*gap)/rows);
+  modes.forEach(([m],i)=>{
+    const t=p.tiers?.[m],x=Lm.gx+(i%cols)*(tw+gap),y=Lm.gy+Math.floor(i/cols)*(th+gap);
+    c.save();c.globalAlpha=t?1:.35;c.fillStyle=MC[m]||"#2a2a30";rr(c,x,y,tw,th,22);c.fill();
+    const is=Math.min(tw*.55,th*.48),ic=ics[i];
+    if(ic){c.imageSmoothingEnabled=false;c.drawImage(ic,x+(tw-is)/2,y+th*.12,is,is)}
+    c.fillStyle="#fff";c.textAlign="center";c.font=`800 ${Math.round(th*.22)}px ${F}`;c.fillText(t||"—",x+tw/2,y+th*.88);
+    c.restore();
+  });
+  c.textAlign="center";c.fillStyle="#f5b942";c.font=`700 ${Math.round(W*.027)}px ${F}`;
+  try{c.letterSpacing="6px"}catch(e){}
+  c.fillText("ANGELTIERS",W/2,H-52);
+  try{c.letterSpacing="0px"}catch(e){}
+  c.fillStyle="#6b6b72";c.font=`500 ${Math.round(W*.018)}px ${F}`;c.fillText("angeltiers.abrdns.com",W/2,H-24);
+  return !!sk;
+}
+function shotView(p){
+  let fmt="h";
+  const sel=new Set(MODES.filter(([m])=>p.tiers?.[m]).map(x=>x[0]));
+  if(!sel.size)MODES.forEach(([m])=>sel.add(m));
+  const rank=CTX.rank.get(p.name)||0;
+  $("mc").innerHTML=`<div class="shh"><button class="b" id="bk">←</button><div><b style="font-size:18px">Скриншот профиля</b><div class="mu">${esc(p.name)}</div></div><button class="x">×</button></div><canvas id="cv" class="cvp"></canvas><div class="mu" id="sknote" style="margin-top:6px"></div><div class="ah"><b>Формат карточки</b></div><div class="sg"><button class="b on" data-f="h">Горизонтальный</button><button class="b" data-f="v">Вертикальный</button><button class="b" data-f="s">Квадратный</button></div><div class="ah"><div><b>Тиры в карточке</b><div class="mu" id="selc"></div></div><button class="b" id="seltg">Выбрать</button></div><div id="sel" hidden><div class="sl"></div><div class="bar"><button class="b" id="sa">Выбрать все</button><button class="b" id="sc">Очистить</button></div></div><div class="pb"><button class="b" id="bk2">Назад</button><button class="b ac" id="dlp" style="flex:1">⬇ Скачать PNG</button></div>`;
+  const list=()=>{$("sel").querySelector(".sl").innerHTML=MODES.map(([m,e])=>`<div class="si${sel.has(m)?" on":""}" data-m="${m}">${icon(m,e)}<span>${lb(m)}</span><span class="k">${sel.has(m)?"☑":"☐"}</span></div>`).join("");$("selc").textContent=`Выбрано: ${sel.size} из ${MODES.length}`};
+  const redraw=()=>drawCard(p,fmt,sel,rank).then(r=>{if(r!==undefined&&$("sknote"))$("sknote").textContent=r?"":"Скин не загрузился: карточка будет без него."});
+  list();redraw();
+  $("bk").onclick=$("bk2").onclick=()=>openP(p.name);
+  $("mc").querySelectorAll("[data-f]").forEach(b=>b.onclick=()=>{fmt=b.dataset.f;$("mc").querySelectorAll("[data-f]").forEach(x=>x.classList.toggle("on",x===b));redraw()});
+  $("seltg").onclick=()=>{const s=$("sel");s.hidden=!s.hidden;$("seltg").textContent=s.hidden?"Выбрать":"Скрыть выбор"};
+  $("sel").onclick=e=>{const it=e.target.closest(".si");if(it){const m=it.dataset.m;sel.has(m)?sel.delete(m):sel.add(m);list();redraw()}};
+  $("sa").onclick=()=>{MODES.forEach(([m])=>sel.add(m));list();redraw()};
+  $("sc").onclick=()=>{sel.clear();list();redraw()};
+  $("dlp").onclick=()=>{try{$("cv").toBlob(b=>{if(!b){alert("Не удалось создать картинку");return}const a=document.createElement("a");a.href=URL.createObjectURL(b);a.download=`angeltiers-${p.name}.png`;a.click();setTimeout(()=>URL.revokeObjectURL(a.href),4000)},"image/png")}catch(e){alert("Не удалось сохранить картинку: браузер не даёт экспортировать скин.")}};
+}
 function render(){
   buildCtx();
+  const th0=document.querySelector(".th");if(th0)th0.hidden=mode==="CHANGES";
+  if(mode==="CHANGES"){$("cnt").textContent="";$("ls").innerHTML=feed($("q").value.trim().toLowerCase());return}
   const q=$("q").value.trim().toLowerCase();
   let L=P.map(p=>({...p,s:mode==="ALL"?total(p):pts((p.tiers||{})[mode])}));
   if(mode!=="ALL")L=L.filter(p=>(p.tiers||{})[mode]);
@@ -284,10 +393,11 @@ function openP(n){
   const rank=all.indexOf(p)+1;
   const T=[...MODES].sort((x,y)=>pts(p.tiers?.[y[0]])-pts(p.tiers?.[x[0]]));
   const A=achOf(p),got=A.filter(x=>x.got).length;
-  const ah=`<div class="ah"><b>Достижения</b><span>${got}/${A.length}</span></div><div class="ag">${[...A].sort((x,y)=>y.got-x.got).map(({a,got})=>`<div class="ai${got?" on":""}"><span class="ae">${a.i}</span><div><b>${a.n}</b><small>${a.k==="first"&&got?"Первым получил LT2+: "+(CTX.first.get(p.name)||[]).map(lb).join(", "):a.d}</small></div></div>`).join("")}</div>`;
-  $("mc").innerHTML=`<div class="mhd"><span class="pill">✦ ANGELTIERS</span><button class="x">×</button></div><div class="pr1">${skin(p,"ps3")}</div><h2>${esc(p.name)}</h2><div class="ttc" style="justify-content:flex-start">${badges(p)}</div><div class="ov"><div class="rb ${RB(rank)}"><i>${rank}.</i></div><b>OVERALL</b><span>(${pl(total(p))})</span></div><div class="cr wrap">${T.map(([m,e])=>circ(p,m,e)).join("")}</div>${ah}<div class="pb"><button class="b" id="cn" title="Скопировать ник">📋</button><button class="b" id="lk" title="Скопировать ссылку">🔗</button><button class="b" id="hb" style="flex:1">📜 История тиров</button></div><div id="hist" hidden></div>`;
+  const ah=`<div class="ah"><b>Достижения</b><span>${got}/${A.length}</span></div><div class="ag">${[...A].sort((x,y)=>y.got-x.got).map(({a,got})=>`<div class="ai${got?" on":""}"><span class="ae">${a.i}</span><div><b>${a.n}</b><small>${a.k==="first"&&got?"Первым получил LT2+: "+(CTX.first.get(p.name)||[]).map(lb).join(", "):a.k==="lead"&&got?"Лучший тир в: "+(CTX.lead.get(p.name)||[]).map(lb).join(", "):a.d}</small></div></div>`).join("")}</div>`;
+  $("mc").innerHTML=`<div class="mhd"><span class="pill">✦ ANGELTIERS</span><button class="x">×</button></div><div class="pr1">${skin(p,"ps3")}</div><h2>${esc(p.name)}</h2><div class="ttc" style="justify-content:flex-start">${badges(p)}</div><div class="ov"><div class="rb ${RB(rank)}"><i>${rank}.</i></div><b>OVERALL</b><span>(${pl(total(p))})</span></div><div class="cr wrap">${T.map(([m,e])=>circ(p,m,e)).join("")}</div>${ah}<div class="pb"><button class="b" id="cn" title="Скопировать ник">📋</button><button class="b" id="lk" title="Скопировать ссылку">🔗</button><button class="b" id="sh" title="Скриншот профиля">📷</button><button class="b" id="hb" style="flex:1">📜 История тиров</button></div><div id="hist" hidden></div>`;
   const cp=async(id,txt,ic)=>{try{await navigator.clipboard.writeText(txt);$(id).textContent="✓"}catch(e){prompt("Скопируй:",txt)}setTimeout(()=>{$(id).textContent=ic},1500)};
   $("cn").onclick=()=>cp("cn",p.name,"📋");
+  $("sh").onclick=()=>shotView(p);
   $("lk").onclick=()=>cp("lk",location.origin+location.pathname+"?p="+encodeURIComponent(p.name),"🔗");
   $("hb").onclick=()=>{const h=$("hist");if(h.hidden){h.innerHTML=histHtml(p);h.hidden=false;$("hb").textContent="▲ Скрыть историю"}else{h.hidden=true;$("hb").textContent="📜 История тиров"}};
   $("md").hidden=false;
