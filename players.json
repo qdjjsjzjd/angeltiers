@@ -925,6 +925,7 @@
     "tiers": {
       "DIAMONDPOT": "LT3",
       "NETHERITEPOT": "LT3",
+      "BEAST": "LT3",
       "CARTPVP": "HT3",
       "CRYSTALPVP": "LT3",
       "NETHERSMP": "LT3",
@@ -998,6 +999,12 @@
       },
       {
         "m": "OP",
+        "f": null,
+        "t": "LT3",
+        "d": "2026-10-29"
+      },
+      {
+        "m": "BEAST",
         "f": null,
         "t": "LT3",
         "d": "2026-10-29"
