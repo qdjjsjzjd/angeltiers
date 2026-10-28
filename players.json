@@ -539,6 +539,7 @@
       "DIAMONDPOT": "HT4",
       "BEAST": "LT3",
       "CARTPVP": "LT3",
+      "CRYSTALPVP": "HT4",
       "MACE": "LT3",
       "OP": "LT3"
     },
@@ -571,6 +572,12 @@
         "m": "OP",
         "f": null,
         "t": "LT3",
+        "d": "2026-10-29"
+      },
+      {
+        "m": "CRYSTALPVP",
+        "f": null,
+        "t": "HT4",
         "d": "2026-10-29"
       }
     ],
