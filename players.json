@@ -843,7 +843,16 @@
   {
     "name": "YAR1LA_PLAYS",
     "tiers": {
-      "MACE": "LT2"
+      "DIAMONDPOT": "HT3",
+      "NETHERITEPOT": "LT3",
+      "BEAST": "HT3",
+      "CRYSTALPVP": "LT3",
+      "NETHERSMP": "HT3",
+      "UHC": "LT3",
+      "AXE": "LT3",
+      "MACE": "LT2",
+      "SPEARMACE": "LT3",
+      "OP": "LT3"
     },
     "history": [
       {
@@ -851,7 +860,64 @@
         "f": null,
         "t": "LT2",
         "d": "2026-10-29"
+      },
+      {
+        "m": "DIAMONDPOT",
+        "f": null,
+        "t": "HT3",
+        "d": "2026-10-29"
+      },
+      {
+        "m": "NETHERITEPOT",
+        "f": null,
+        "t": "LT3",
+        "d": "2026-10-29"
+      },
+      {
+        "m": "BEAST",
+        "f": null,
+        "t": "HT3",
+        "d": "2026-10-29"
+      },
+      {
+        "m": "CRYSTALPVP",
+        "f": null,
+        "t": "LT3",
+        "d": "2026-10-29"
+      },
+      {
+        "m": "NETHERSMP",
+        "f": null,
+        "t": "HT3",
+        "d": "2026-10-29"
+      },
+      {
+        "m": "UHC",
+        "f": null,
+        "t": "LT3",
+        "d": "2026-10-29"
+      },
+      {
+        "m": "AXE",
+        "f": null,
+        "t": "LT3",
+        "d": "2026-10-29"
+      },
+      {
+        "m": "SPEARMACE",
+        "f": null,
+        "t": "LT3",
+        "d": "2026-10-29"
+      },
+      {
+        "m": "OP",
+        "f": null,
+        "t": "LT3",
+        "d": "2026-10-29"
       }
+    ],
+    "titles": [
+      "famous"
     ]
   },
   {
