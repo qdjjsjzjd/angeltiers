@@ -3,11 +3,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>AngelTiers</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&family=Pixelify+Sans:wght@500;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Unbounded:wght@500;700;800&display=swap">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231b1b1b'/%3E%3Cellipse cx='32' cy='12' rx='14' ry='5' fill='none' stroke='%23f5b942' stroke-width='3.5'/%3E%3Cpath d='M16 53 32 21 48 53M23 41h18' fill='none' stroke='%23f5b942' stroke-width='6.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
 <style>
-:root{--bg:#121212;--card:#1b1b1b;--line:#2b2b2b;--tx:#ededed;--mu:#8c8c8c;--ac:#f5b942;--px:"Pixelify Sans",Onest,system-ui,sans-serif}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--tx);font:15px Onest,system-ui,sans-serif}
+:root{--bg:#121212;--card:#1b1b1b;--line:#2b2b2b;--tx:#ededed;--mu:#8c8c8c;--ac:#f5b942;--px:"Unbounded",Manrope,system-ui,sans-serif}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--tx);font:15px Manrope,system-ui,sans-serif}
 .w{max-width:900px;margin:0 auto;padding:16px}
 h1{margin:0 0 12px;font-size:24px;display:flex;align-items:center;gap:10px}h1 em{font-style:normal}h1 span{color:var(--ac)}.lg{width:38px;height:38px;flex:none}
 .tabs{display:flex;gap:6px;overflow-x:auto;padding-bottom:8px}
@@ -145,8 +145,48 @@ a.b{display:block;text-align:center;text-decoration:none;margin-top:14px;padding
 .si{display:flex;align-items:center;gap:8px;background:#101013;border-radius:12px;padding:8px 10px;cursor:pointer;opacity:.5;font-size:13px}.si.on{opacity:1}
 .si .ic{width:24px;height:24px}.si .k{margin-left:auto;font-size:18px}
 .shh{display:flex;align-items:center;gap:12px}.shh>div{flex:1;min-width:0}
+a.mwide{text-decoration:none;color:inherit}.mwide.tg{background:#229ed9;color:#fff;font-weight:700}
+a.tgb{background:#229ed9;border-color:#229ed9;color:#fff;font-weight:700}
+.foot{margin:22px 0 10px;padding:18px 14px;background:linear-gradient(180deg,#1d1d21,#161618);border:1px solid var(--line);border-radius:18px;text-align:center}
+.foot .ft{font-weight:600;margin-bottom:12px}
+.fb{display:flex;gap:10px}.fb a{flex:1;padding:13px 8px;border-radius:14px;color:#fff;font-weight:700;text-decoration:none}
+.fb .dc{background:#5865f2}.fb .tgl{background:#229ed9}
+.topbar{border-bottom:0;position:relative}
+.topbar::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:linear-gradient(90deg,transparent,#f5b942,transparent)}
+.hero{position:relative;overflow:hidden;border-radius:22px;padding:22px 18px 18px;margin-bottom:14px;border:1px solid rgba(245,185,66,.28);background:radial-gradient(120% 90% at 50% 0,rgba(245,185,66,.22),transparent 62%),linear-gradient(180deg,#1e1d1a,#151515)}
+.hero::before{content:"";position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(rgba(255,255,255,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.045) 1px,transparent 1px);background-size:28px 28px;-webkit-mask-image:linear-gradient(180deg,#000,transparent 85%);mask-image:linear-gradient(180deg,#000,transparent 85%)}
+.hero>*{position:relative}
+.hk{font-size:11px;letter-spacing:.3em;color:var(--ac);font-weight:700}
+.hh{font:700 34px/1.1 var(--px);margin:10px 0 8px}
+.hh span{background:linear-gradient(90deg,#f5b942,#ffe9a0);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hp{color:#b9b9b9;font-size:14px;line-height:1.45}
+.hs{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0}
+.hs span{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.09);border-radius:999px;padding:6px 12px;font-size:13px}
+.hc{display:flex;flex-wrap:wrap;gap:8px}.hc .b{padding:12px 16px}
+.hl2{padding:12px 14px;border-radius:12px;color:#fff;font-weight:700;text-decoration:none;font-size:14px}.hl2.dc{background:#5865f2}.hl2.tgl{background:#229ed9}
+.pc{background:linear-gradient(180deg,#1e1e21,#18181a);border-color:rgba(255,255,255,.07)}
+.pod{display:grid;grid-template-columns:1fr 1.18fr 1fr;gap:8px;align-items:end;margin:4px 0 16px;padding:18px 6px 0;border-radius:20px;background:radial-gradient(70% 60% at 50% 30%,rgba(245,185,66,.14),transparent 70%)}
+.pd{text-align:center;cursor:pointer;min-width:0}
+.pd .hd3{position:relative;display:block;padding-top:16px}
+.pd .sk{display:block;margin:0 auto;width:74px;height:74px;object-fit:contain}
+.p1 .sk{width:98px;height:98px}
+.pd .hd3::before{content:"";position:absolute;left:50%;top:6px;width:46px;height:12px;margin-left:-23px;border:3px solid var(--hc);border-radius:50%;box-shadow:0 0 12px var(--hc),inset 0 0 6px var(--hc)}
+.p1 .hd3::before{width:60px;margin-left:-30px;top:0}
+.p1{--hc:#ffd34d}.p2{--hc:#8ccaf5}.p3{--hc:#e6a878}
+.pd .nm2{font-weight:700;font-size:14px;margin-top:6px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;padding:0 4px}
+.pd .pt2{color:var(--mu);font-size:12px;margin:2px 0 6px}
+.pd .chs{display:flex;justify-content:center;gap:4px;flex-wrap:wrap;min-height:22px}
+.pd .t{font-size:11px;padding:2px 6px}
+.ped{margin-top:8px;border-radius:14px 14px 0 0;display:grid;place-items:center;font:800 40px var(--px);color:#fff;text-shadow:2px 2px 0 rgba(0,0,0,.25)}
+.p1 .ped{height:112px;background:repeating-linear-gradient(115deg,rgba(255,255,255,.18) 0 9px,transparent 9px 18px),linear-gradient(180deg,#f6d544,#c4920f)}
+.p2 .ped{height:86px;background:repeating-linear-gradient(115deg,rgba(255,255,255,.18) 0 9px,transparent 9px 18px),linear-gradient(180deg,#72c4f4,#3a84c6)}
+.p3 .ped{height:68px;background:repeating-linear-gradient(115deg,rgba(255,255,255,.18) 0 9px,transparent 9px 18px),linear-gradient(180deg,#eeab74,#c27a40)}
+.tabs2{background:rgba(14,14,16,.85)}
+h1{font-size:15px}.hh{font-size:26px;line-height:1.2}.sec{font-size:19px}.ps b{font-size:26px}.mc h2{font-size:24px}
+.ped{font-size:34px}.pd .nm2{font-size:13px}
 </style></head><body><div class="w">
 <div class="topbar"><h1><svg class="lg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="14" fill="#1b1b1b"/><ellipse cx="32" cy="12" rx="14" ry="5" fill="none" stroke="#f5b942" stroke-width="3.5"/><path d="M16 53 32 21 48 53M23 41h18" fill="none" stroke="#f5b942" stroke-width="6.5" stroke-linecap="round" stroke-linejoin="round"/></svg><em>Angel<span>Tiers</span></em></h1><div class="hb"><button class="mb" id="sbtn" aria-label="Поиск">🔍</button><button class="mb" id="mbtn" aria-label="Меню">☰</button></div></div>
+<div class="hero"><div class="hk">MINECRAFT PVP · СНГ</div><div class="hh">Докажи свою<br><span>силу и власть</span></div><div class="hp">Рейтинг лучших PvP-игроков по режимам. Пройди тест, получи тир и поднимись в топ.</div><div class="hs" id="hs"></div><div class="hc"><button class="b jn" id="jb2">⚔️ Хочу в рейтинг</button><a class="hl2 dc" href="https://discord.gg/RZdtGK94A4" target="_blank" rel="noopener">💬 Discord</a><a class="hl2 tgl" href="https://t.me/angeltierlist" target="_blank" rel="noopener">✈️ Telegram</a></div></div>
 <div class="tabs2" id="tb"></div>
 <div class="bar" id="sb" hidden><input id="q" placeholder="Поиск игрока по нику…"></div>
 <div class="secrow"><div class="sec" id="sec"></div><button class="b jn" id="jb">⚔️ В рейтинг</button></div>
@@ -169,6 +209,7 @@ a.b{display:block;text-align:center;text-decoration:none;margin-top:14px;padding
 </div>
 
 <div id="ls"></div>
+<div class="foot"><div class="ft">Присоединяйся к сообществу AngelTiers</div><div class="fb"><a class="dc" href="https://discord.gg/RZdtGK94A4" target="_blank" rel="noopener">💬 Discord</a><a class="tgl" href="https://t.me/angeltierlist" target="_blank" rel="noopener">✈️ Telegram</a></div></div>
 <div class="mu" id="ft" style="margin-top:14px;text-align:center"></div>
 </div>
 <div id="mn" hidden><div class="mp" id="mp"></div></div>
@@ -178,6 +219,7 @@ const MODES=[["DIAMONDPOT","🧪"],["NETHERITEPOT","🛡️"],["BEAST","⚔️"]
 const TIERS=["HT1","LT1","HT2","LT2","HT3","LT3","HT4","LT4","HT5","LT5"];
 const PTS=[60,44,28,16,10,6,4,3,2,1];
 const MC={DIAMONDPOT:"#5c1a36",NETHERITEPOT:"#5a1c1c",BEAST:"#1c3a57",CARTPVP:"#5a2d1a",CRYSTALPVP:"#46206b",NETHERSMP:"#5f3a1a",DIAMONDSMP:"#38205c",UHC:"#5c4a14",AXE:"#1d4a4d",MACE:"#2c3140",SPEARMACE:"#33262f",OP:"#174a35",CREEPER:"#1a4d1c"};
+const TG_URL="https://t.me/angeltierlist";
 const JOIN_URL="https://discord.gg/RZdtGK94A4";   // сюда вставь ссылку на Discord-сервер, например "https://discord.gg/xxxx"
 const RET=["RHT1","RLT1","RHT2","RLT2"];
 const ALLT=[...TIERS,...RET];
@@ -202,10 +244,10 @@ function tabs(){
   $("sec").innerHTML=mode==="ALL"?"🏆 Общий рейтинг":mode==="CHANGES"?"🕘 Последние изменения":icon(mode,em)+" "+lb(mode);
   $("tb").innerHTML=[["ALL","🏆"],["CHANGES","🕘"],...MODES].map(([m,e])=>`<button class="tb${m===mode?" on":""}" data-m="${m}">${m==="ALL"||m==="CHANGES"?`<span class="tbe">${e}</span>`:icon(m,e)}<span>${lb(m)}</span></button>`).join("");
   const a=$("tb").querySelector(".on");if(a)$("tb").scrollLeft=a.offsetLeft-($("tb").clientWidth-a.offsetWidth)/2;
-  $("mp").innerHTML=`<div class="mh"><b>Меню</b><button class="mx">×</button></div><div class="mwide" data-m="ALL"><span class="mie">🏆</span><span>Общий рейтинг</span></div><div class="mwide" data-m="CHANGES"><span class="mie">🕘</span><span>Последние изменения</span></div><div class="mwide jn" data-j="1"><span class="mie">⚔️</span><span>Хочу в рейтинг</span></div><div class="ms">Тир-листы</div><div class="mgrid">${MODES.map(([m,e])=>`<div class="mt${m===mode?" on":""}" data-m="${m}"><span class="mi2" style="background:${MC[m]||"#2a2a30"}">${icon(m,e)}</span><span>${lb(m)}</span></div>`).join("")}</div>`;
+  $("mp").innerHTML=`<div class="mh"><b>Меню</b><button class="mx">×</button></div><div class="mwide" data-m="ALL"><span class="mie">🏆</span><span>Общий рейтинг</span></div><div class="mwide" data-m="CHANGES"><span class="mie">🕘</span><span>Последние изменения</span></div><div class="mwide jn" data-j="1"><span class="mie">⚔️</span><span>Хочу в рейтинг</span></div><a class="mwide tg" href="https://t.me/angeltierlist" target="_blank" rel="noopener"><span class="mie">✈️</span><span>Telegram-канал</span></a><div class="ms">Тир-листы</div><div class="mgrid">${MODES.map(([m,e])=>`<div class="mt${m===mode?" on":""}" data-m="${m}"><span class="mi2" style="background:${MC[m]||"#2a2a30"}">${icon(m,e)}</span><span>${lb(m)}</span></div>`).join("")}</div>`;
 }
 $("tb").onclick=e=>{const b=e.target.closest("[data-m]");if(b){mode=b.dataset.m;tabs();render()}};
-$("jb").onclick=()=>openJoin();
+$("jb").onclick=()=>openJoin();$("jb2").onclick=()=>openJoin();
 $("sbtn").onclick=()=>{const b=$("sb");b.hidden=!b.hidden;if(!b.hidden)$("q").focus()};
 $("mbtn").onclick=()=>{$("mn").hidden=false};
 $("mn").onclick=e=>{
@@ -294,7 +336,7 @@ function feed(q){
     return`<div class="pc fi" data-n="${esc(p.name)}"><img class="fav" src="https://minotar.net/helm/${encodeURIComponent(p.name)}/64.png" alt="" loading="lazy" onerror="this.style.visibility='hidden'"><div style="flex:1;min-width:0"><div class="pn2" style="font-size:16px">${esc(p.name)}</div><div class="mu">${icon(h.m,e)} ${esc(lb(h.m))} · ${dt}</div></div><div class="hv ${cl}">${ch}</div></div>`}).join("");
 }
 function openJoin(){
-  $("mc").innerHTML=`<div class="mhd"><span class="pill">✦ ANGELTIERS</span><button class="x">×</button></div><h2>Хочу в рейтинг</h2><div class="mu" style="line-height:1.5">Чтобы попасть в тирлист, нужно пройти тест у наших тестеров.</div><div class="ag" style="grid-template-columns:1fr;margin-top:12px"><div class="ai on"><span class="ae">1️⃣</span><div><b>Зайди на наш сервер</b><small>Ссылка на Discord ниже</small></div></div><div class="ai on"><span class="ae">2️⃣</span><div><b>Открой тикет</b><small>Выбери режим, в котором хочешь получить тир</small></div></div><div class="ai on"><span class="ae">3️⃣</span><div><b>Пройди бой с тестером</b><small>По результату получишь свой тир</small></div></div></div>${JOIN_URL?`<a class="b ac" href="${esc(JOIN_URL)}" target="_blank" rel="noopener">Перейти на сервер</a>`:`<div class="mu" style="margin-top:12px">Ссылку на сервер скоро добавим.</div>`}`;
+  $("mc").innerHTML=`<div class="mhd"><span class="pill">✦ ANGELTIERS</span><button class="x">×</button></div><h2>Хочу в рейтинг</h2><div class="mu" style="line-height:1.5">Чтобы попасть в тирлист, нужно пройти тест у наших тестеров.</div><div class="ag" style="grid-template-columns:1fr;margin-top:12px"><div class="ai on"><span class="ae">1️⃣</span><div><b>Зайди на наш сервер</b><small>Ссылка на Discord ниже</small></div></div><div class="ai on"><span class="ae">2️⃣</span><div><b>Открой тикет</b><small>Выбери режим, в котором хочешь получить тир</small></div></div><div class="ai on"><span class="ae">3️⃣</span><div><b>Пройди бой с тестером</b><small>По результату получишь свой тир</small></div></div></div>${JOIN_URL?`<a class="b ac" href="${esc(JOIN_URL)}" target="_blank" rel="noopener">Перейти на сервер</a>`:`<div class="mu" style="margin-top:12px">Ссылку на сервер скоро добавим.</div>`}<a class="b tgb" href="${TG_URL}" target="_blank" rel="noopener">✈️ Telegram-канал</a>`;
   $("md").hidden=false;
 }
 const FMT={h:[1200,630],v:[900,1500],s:[1080,1080]};
@@ -305,12 +347,12 @@ function rr(c,x,y,w,h,r){c.beginPath();c.moveTo(x+r,y);c.arcTo(x+w,y,x+w,y+h,r);
 let drawTok=0;
 async function drawCard(p,fmt,sel,rank){
   const tok=++drawTok,[W,H]=FMT[fmt];
-  try{await document.fonts.load("700 40px Onest");await document.fonts.load("500 30px Onest")}catch(e){}
+  try{await document.fonts.load("700 40px Manrope");await document.fonts.load("500 30px Manrope");await document.fonts.load("700 40px Unbounded")}catch(e){}
   const modes=MODES.filter(([m])=>sel.has(m));
   const [sk,...ics]=await Promise.all([skinImg(p.name),...modes.map(([m])=>loadImg("icons/"+m.toLowerCase()+".png"))]);
   if(tok!==drawTok)return;
   const cv=$("cv");if(!cv)return;
-  cv.width=W;cv.height=H;const c=cv.getContext("2d"),F="Onest, system-ui, sans-serif";
+  cv.width=W;cv.height=H;const c=cv.getContext("2d"),F="Manrope, system-ui, sans-serif",FP="Unbounded, Manrope, system-ui, sans-serif";
   const g=c.createLinearGradient(0,0,W,H);g.addColorStop(0,"#202024");g.addColorStop(1,"#131315");c.fillStyle=g;c.fillRect(0,0,W,H);
   c.strokeStyle="#34343a";c.lineWidth=4;rr(c,8,8,W-16,H-16,40);c.stroke();
   const pad=Math.round(W*.055),n=modes.length,cols=n>10?7:5;
@@ -319,8 +361,8 @@ async function drawCard(p,fmt,sel,rank){
             s:{ss:300,sx:pad,sy:pad+6,tx:pad+340,al:"left",ly:112,ny:192,py:246,gx:pad,gy:430,gw:W-2*pad}}[fmt];
   c.textAlign=Lm.al;c.textBaseline="alphabetic";
   c.fillStyle="#8c8c8c";c.font=`500 ${Math.round(W*.024)}px ${F}`;c.fillText("Профиль игрока",Lm.tx,Lm.ly);
-  let fs=fmt==="s"?78:fmt==="v"?76:68;const maxW=Lm.al==="center"?W-2*pad:W-Lm.tx-pad;
-  c.font=`700 ${fs}px ${F}`;while(c.measureText(p.name).width>maxW&&fs>28){fs-=2;c.font=`700 ${fs}px ${F}`}
+  let fs=fmt==="s"?64:fmt==="v"?62:56;const maxW=Lm.al==="center"?W-2*pad:W-Lm.tx-pad;
+  c.font=`700 ${fs}px ${FP}`;while(c.measureText(p.name).width>maxW&&fs>24){fs-=2;c.font=`700 ${fs}px ${FP}`}
   c.fillStyle="#fff";c.fillText(p.name,Lm.tx,Lm.ny);
   c.fillStyle="#8c8c8c";c.font=`500 ${Math.round(W*.027)}px ${F}`;c.fillText((rank?`#${rank} · `:"")+pl(total(p)),Lm.tx,Lm.py);
   if(sk){const r=Math.min(Lm.ss/sk.width,Lm.ss/sk.height);c.imageSmoothingEnabled=true;c.drawImage(sk,Lm.sx+(Lm.ss-sk.width*r)/2,Lm.sy+(Lm.ss-sk.height*r)/2,sk.width*r,sk.height*r)}
@@ -357,8 +399,20 @@ function shotView(p){
   $("sc").onclick=()=>{sel.clear();list();redraw()};
   $("dlp").onclick=()=>{try{$("cv").toBlob(b=>{if(!b){alert("Не удалось создать картинку");return}const a=document.createElement("a");a.href=URL.createObjectURL(b);a.download=`angeltiers-${p.name}.png`;a.click();setTimeout(()=>URL.revokeObjectURL(a.href),4000)},"image/png")}catch(e){alert("Не удалось сохранить картинку: браузер не даёт экспортировать скин.")}};
 }
+let HS_DONE=false;
+function cu(el,to){const t0=performance.now();(function f(t){const k=Math.min(1,(t-t0)/700);el.textContent=Math.round(to*k);if(k<1)requestAnimationFrame(f)})(t0)}
+function heroStats(){
+  const u=($("ft").textContent||"").replace("Обновлено: ","");
+  $("hs").innerHTML=`<span>👥 <b data-c="${P.length}">${P.length}</b> игроков</span><span>🎮 <b data-c="${MODES.length}">${MODES.length}</b> режимов</span>${u?`<span>🕘 ${esc(u.replace(" г.",""))}</span>`:""}`;
+  if(!HS_DONE&&P.length){HS_DONE=true;$("hs").querySelectorAll("[data-c]").forEach(b=>cu(b,+b.dataset.c))}
+}
+function podium(a){
+  const one=p=>{const T=mode==="ALL"?best(p).slice(0,2):[[mode,(MODES.find(x=>x[0]===mode)||[])[1]]];
+    return`<div class="pd p${p.r}" data-n="${esc(p.name)}"><div class="hd3">${skin(p,"sk")}</div><div class="nm2">${esc(p.name)}</div><div class="pt2">${pl(p.s)}</div><div class="chs">${T.map(([m,e])=>`<span class="t ${tc(p.tiers[m])}">${icon(m,e)} ${p.tiers[m]}</span>`).join("")}</div><div class="ped">${p.r}</div></div>`};
+  return`<div class="pod">${one(a[1])}${one(a[0])}${one(a[2])}</div>`;
+}
 function render(){
-  buildCtx();
+  buildCtx();heroStats();
   const th0=document.querySelector(".th");if(th0)th0.hidden=mode==="CHANGES";
   if(mode==="CHANGES"){$("cnt").textContent="";$("ls").innerHTML=feed($("q").value.trim().toLowerCase());return}
   const q=$("q").value.trim().toLowerCase();
@@ -368,7 +422,7 @@ function render(){
   L.forEach((p,i)=>p.r=i+1);
   L=L.filter(p=>p.name.toLowerCase().includes(q));
   $("cnt").textContent="Игроков: "+L.length;
-  $("ls").innerHTML=L.map(card).join("")||`<div class="mu">${window.ERR?"Не удалось прочитать players.json (проверь кавычки и запятые в файле).":"Пока никого нет."}</div>`;
+  $("ls").innerHTML=(!q&&L.length>=3?podium(L.slice(0,3))+L.slice(3).map(card).join(""):L.map(card).join(""))||`<div class="mu">${window.ERR?"Не удалось прочитать players.json (проверь кавычки и запятые в файле).":"Пока никого нет."}</div>`;
 }
 
 function histHtml(p){
@@ -480,10 +534,10 @@ function init2(){
     $("rs").onclick=async()=>{if(!confirm("Отбросить все локальные правки?"))return;
       try{localStorage.removeItem("tiers_draft")}catch(e){}
       try{P=await published()}catch(e){P=[]}render()};
-    $("ls").onclick=e=>{const r=e.target.closest(".pc");if(!r)return;
+    $("ls").onclick=e=>{const r=e.target.closest(".pc,.pd");if(!r)return;
       const p=find(r.dataset.n);$("nn").value=p.name;grid(p.tiers);tgrid(p.titles);$("dl").hidden=false;scrollTo(0,0)};
   }else{
-    $("ls").onclick=e=>{const r=e.target.closest(".pc");if(r)openP(r.dataset.n)};
+    $("ls").onclick=e=>{const r=e.target.closest(".pc,.pd");if(r)openP(r.dataset.n)};
   }
   $("md").onclick=e=>{if(e.target.id==="md"||e.target.classList.contains("x"))$("md").hidden=true};
   addEventListener("keydown",e=>{if(e.key==="Escape"){$("md").hidden=true;$("mn").hidden=true}});
