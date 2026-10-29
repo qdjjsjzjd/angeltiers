@@ -184,6 +184,8 @@ a.tgb{background:#229ed9;border-color:#229ed9;color:#fff;font-weight:700}
 .tabs2{background:rgba(14,14,16,.85)}
 h1{font-size:15px}.hh{font-size:26px;line-height:1.2}.sec{font-size:19px}.ps b{font-size:26px}.mc h2{font-size:24px}
 .ped{font-size:34px}.pd .nm2{font-size:13px}
+.me{display:flex;align-items:center;gap:14px;margin:14px 0}.mav{width:64px;height:64px;border-radius:16px;flex:none;background:#101013}
+.mwide.dcb{background:#5865f2;color:#fff;font-weight:700}
 </style></head><body><div class="w">
 <div class="topbar"><h1><svg class="lg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="14" fill="#1b1b1b"/><ellipse cx="32" cy="12" rx="14" ry="5" fill="none" stroke="#f5b942" stroke-width="3.5"/><path d="M16 53 32 21 48 53M23 41h18" fill="none" stroke="#f5b942" stroke-width="6.5" stroke-linecap="round" stroke-linejoin="round"/></svg><em>Angel<span>Tiers</span></em></h1><div class="hb"><button class="mb" id="sbtn" aria-label="Поиск">🔍</button><button class="mb" id="mbtn" aria-label="Меню">☰</button></div></div>
 <div class="hero"><div class="hk">MINECRAFT PVP · СНГ</div><div class="hh">Докажи свою<br><span>силу и власть</span></div><div class="hp">Рейтинг лучших PvP-игроков по режимам. Пройди тест, получи тир и поднимись в топ.</div><div class="hs" id="hs"></div><div class="hc"><button class="b jn" id="jb2">⚔️ Хочу в рейтинг</button><a class="hl2 dc" href="https://discord.gg/RZdtGK94A4" target="_blank" rel="noopener">💬 Discord</a><a class="hl2 tgl" href="https://t.me/angeltierlist" target="_blank" rel="noopener">✈️ Telegram</a></div></div>
@@ -199,6 +201,7 @@ h1{font-size:15px}.hh{font-size:26px;line-height:1.2}.sec{font-size:19px}.ps b{f
     <button class="b" id="sv">Сохранить</button><button class="b" id="rn">Переименовать</button><button class="b" id="dl" hidden>Удалить</button></div>
   <div class="g" id="gr"></div>
   <div class="mu" style="margin-top:10px">Титулы:</div><div class="bar" id="tt2" style="margin-top:4px"></div>
+  <div class="mu" style="margin-top:10px">Привязка Discord (ID игрока):</div><div class="bar" style="margin-top:4px"><input id="dcid" inputmode="numeric" placeholder="Discord ID, 17–19 цифр"><button class="b" id="dcun">Отвязать</button></div><div class="mu" id="dcst"></div>
   <label class="ck" style="margin-top:10px;width:fit-content"><input type="checkbox" id="hl" checked> Записывать изменения тиров в историю</label>
   <div class="bar" style="margin-top:12px">
     <button class="b" id="pb" style="background:var(--ac);color:#111;border-color:var(--ac);font-weight:600">☁ Опубликовать на сайт</button>
@@ -219,6 +222,7 @@ const MODES=[["DIAMONDPOT","🧪"],["NETHERITEPOT","🛡️"],["BEAST","⚔️"]
 const TIERS=["HT1","LT1","HT2","LT2","HT3","LT3","HT4","LT4","HT5","LT5"];
 const PTS=[60,44,28,16,10,6,4,3,2,1];
 const MC={DIAMONDPOT:"#5c1a36",NETHERITEPOT:"#5a1c1c",BEAST:"#1c3a57",CARTPVP:"#5a2d1a",CRYSTALPVP:"#46206b",NETHERSMP:"#5f3a1a",DIAMONDSMP:"#38205c",UHC:"#5c4a14",AXE:"#1d4a4d",MACE:"#2c3140",SPEARMACE:"#33262f",OP:"#174a35",CREEPER:"#1a4d1c"};
+const DISCORD_CLIENT_ID="";   // ID приложения из discord.com/developers (раздел General Information)
 const TG_URL="https://t.me/angeltierlist";
 const JOIN_URL="https://discord.gg/RZdtGK94A4";   // сюда вставь ссылку на Discord-сервер, например "https://discord.gg/xxxx"
 const RET=["RHT1","RLT1","RHT2","RLT2"];
@@ -244,7 +248,7 @@ function tabs(){
   $("sec").innerHTML=mode==="ALL"?"🏆 Общий рейтинг":mode==="CHANGES"?"🕘 Последние изменения":icon(mode,em)+" "+lb(mode);
   $("tb").innerHTML=[["ALL","🏆"],["CHANGES","🕘"],...MODES].map(([m,e])=>`<button class="tb${m===mode?" on":""}" data-m="${m}">${m==="ALL"||m==="CHANGES"?`<span class="tbe">${e}</span>`:icon(m,e)}<span>${lb(m)}</span></button>`).join("");
   const a=$("tb").querySelector(".on");if(a)$("tb").scrollLeft=a.offsetLeft-($("tb").clientWidth-a.offsetWidth)/2;
-  $("mp").innerHTML=`<div class="mh"><b>Меню</b><button class="mx">×</button></div><div class="mwide" data-m="ALL"><span class="mie">🏆</span><span>Общий рейтинг</span></div><div class="mwide" data-m="CHANGES"><span class="mie">🕘</span><span>Последние изменения</span></div><div class="mwide jn" data-j="1"><span class="mie">⚔️</span><span>Хочу в рейтинг</span></div><a class="mwide tg" href="https://t.me/angeltierlist" target="_blank" rel="noopener"><span class="mie">✈️</span><span>Telegram-канал</span></a><div class="ms">Тир-листы</div><div class="mgrid">${MODES.map(([m,e])=>`<div class="mt${m===mode?" on":""}" data-m="${m}"><span class="mi2" style="background:${MC[m]||"#2a2a30"}">${icon(m,e)}</span><span>${lb(m)}</span></div>`).join("")}</div>`;
+  $("mp").innerHTML=`<div class="mh"><b>Меню</b><button class="mx">×</button></div><div class="mwide" data-m="ALL"><span class="mie">🏆</span><span>Общий рейтинг</span></div><div class="mwide" data-m="CHANGES"><span class="mie">🕘</span><span>Последние изменения</span></div><div class="mwide jn" data-j="1"><span class="mie">⚔️</span><span>Хочу в рейтинг</span></div><a class="mwide tg" href="https://t.me/angeltierlist" target="_blank" rel="noopener"><span class="mie">✈️</span><span>Telegram-канал</span></a><div class="mwide dcb" data-d="1"><span class="mie">🪪</span><span>${DU()?"Мой профиль":"Войти через Discord"}</span></div><div class="ms">Тир-листы</div><div class="mgrid">${MODES.map(([m,e])=>`<div class="mt${m===mode?" on":""}" data-m="${m}"><span class="mi2" style="background:${MC[m]||"#2a2a30"}">${icon(m,e)}</span><span>${lb(m)}</span></div>`).join("")}</div>`;
 }
 $("tb").onclick=e=>{const b=e.target.closest("[data-m]");if(b){mode=b.dataset.m;tabs();render()}};
 $("jb").onclick=()=>openJoin();$("jb2").onclick=()=>openJoin();
@@ -253,6 +257,7 @@ $("mbtn").onclick=()=>{$("mn").hidden=false};
 $("mn").onclick=e=>{
   const b=e.target.closest("[data-m]");
   if(b){mode=b.dataset.m;tabs();render();$("mn").hidden=true;scrollTo(0,0)}
+  else if(e.target.closest("[data-d]")){$("mn").hidden=true;openMe()}
   else if(e.target.closest("[data-j]")){$("mn").hidden=true;openJoin()}
   else if(e.target.id==="mn"||e.target.closest(".mx"))$("mn").hidden=true;
 };
@@ -334,6 +339,32 @@ function feed(q){
   if(!E.length)return '<div class="mu">Изменений пока нет: они появятся, когда тиры игроков начнут меняться через админку.</div>';
   return E.slice(0,60).map(({p,h})=>{const e=(MODES.find(x=>x[0]===h.m)||[])[1]||"";const {ch,cl}=chg(h);const dt=h.d?new Date(h.d+"T00:00").toLocaleDateString("ru-RU",{day:"numeric",month:"short"}):"";
     return`<div class="pc fi" data-n="${esc(p.name)}"><img class="fav" src="https://minotar.net/helm/${encodeURIComponent(p.name)}/64.png" alt="" loading="lazy" onerror="this.style.visibility='hidden'"><div style="flex:1;min-width:0"><div class="pn2" style="font-size:16px">${esc(p.name)}</div><div class="mu">${icon(h.m,e)} ${esc(lb(h.m))} · ${dt}</div></div><div class="hv ${cl}">${ch}</div></div>`}).join("");
+}
+const DU=()=>{try{return JSON.parse(localStorage.getItem("dc_user")||"null")}catch(e){return null}};
+async function sha(s){const b=await crypto.subtle.digest("SHA-256",new TextEncoder().encode("angeltiers:"+s));return[...new Uint8Array(b)].map(x=>x.toString(16).padStart(2,"0")).join("")}
+const dcAvatar=u=>u.avatar?`https://cdn.discordapp.com/avatars/${u.id}/${u.avatar}.png?size=128`:`https://cdn.discordapp.com/embed/avatars/${Number((BigInt(u.id)>>22n)%6n)}.png`;
+function dcLogin(){
+  if(!DISCORD_CLIENT_ID){alert("Вход через Discord ещё настраивается.");return}
+  const st=[...crypto.getRandomValues(new Uint32Array(4))].join("-");
+  try{sessionStorage.setItem("dc_state",st)}catch(e){}
+  location.href=`https://discord.com/oauth2/authorize?client_id=${DISCORD_CLIENT_ID}&response_type=token&redirect_uri=${encodeURIComponent(location.origin+location.pathname)}&scope=identify&state=${st}`;
+}
+async function dcReturn(){
+  const h=location.hash;if(!h.includes("access_token="))return false;
+  const q=new URLSearchParams(h.slice(1)),tk=q.get("access_token"),st=q.get("state");
+  history.replaceState(null,"",location.pathname+location.search);
+  let ok=false;try{ok=!!st&&st===sessionStorage.getItem("dc_state")}catch(e){}
+  if(!tk||!ok)return false;
+  try{const r=await fetch("https://discord.com/api/users/@me",{headers:{Authorization:"Bearer "+tk}});if(!r.ok)return false;const u=await r.json();localStorage.setItem("dc_user",JSON.stringify({id:u.id,username:u.username,global_name:u.global_name,avatar:u.avatar}));return true}catch(e){return false}
+}
+async function openMe(){
+  const u=DU();if(!u){dcLogin();return}
+  const hh=await sha(u.id),p=P.find(x=>x.dh===hh);
+  $("mc").innerHTML=`<div class="mhd"><span class="pill">✦ МОЙ ПРОФИЛЬ</span><button class="x">×</button></div><div class="me"><img class="mav" src="${dcAvatar(u)}" alt=""><div style="min-width:0"><div class="pn2">${esc(u.global_name||u.username)}</div><div class="mu">@${esc(u.username)}</div></div></div>${p?`<div class="ai on" style="margin-bottom:10px"><span class="ae">✅</span><div><b>Аккаунт подтверждён</b><small>Игровой ник: ${esc(p.name)}</small></div></div><button class="b ac" id="mp" style="width:100%">Открыть игровой профиль</button>`:`<div class="ai" style="opacity:1;filter:none"><span class="ae">🔗</span><div><b>Minecraft-ник пока не привязан</b><small>Скопируй свой Discord ID и отправь тестеру в тикете. После проверки привязка появится здесь.</small></div></div>`}<div class="pb"><button class="b" id="cid">📋 Скопировать мой ID</button><button class="b" id="lo">Выйти</button></div>`;
+  $("cid").onclick=async()=>{try{await navigator.clipboard.writeText(u.id);$("cid").textContent="✓ Скопировано"}catch(e){prompt("Твой Discord ID:",u.id)}};
+  $("lo").onclick=()=>{try{localStorage.removeItem("dc_user")}catch(e){}$("md").hidden=true;tabs()};
+  if(p)$("mp").onclick=()=>openP(p.name);
+  $("md").hidden=false;
 }
 function openJoin(){
   $("mc").innerHTML=`<div class="mhd"><span class="pill">✦ ANGELTIERS</span><button class="x">×</button></div><h2>Хочу в рейтинг</h2><div class="mu" style="line-height:1.5">Чтобы попасть в тирлист, нужно пройти тест у наших тестеров.</div><div class="ag" style="grid-template-columns:1fr;margin-top:12px"><div class="ai on"><span class="ae">1️⃣</span><div><b>Зайди на наш сервер</b><small>Ссылка на Discord ниже</small></div></div><div class="ai on"><span class="ae">2️⃣</span><div><b>Открой тикет</b><small>Выбери режим, в котором хочешь получить тир</small></div></div><div class="ai on"><span class="ae">3️⃣</span><div><b>Пройди бой с тестером</b><small>По результату получишь свой тир</small></div></div></div>${JOIN_URL?`<a class="b ac" href="${esc(JOIN_URL)}" target="_blank" rel="noopener">Перейти на сервер</a>`:`<div class="mu" style="margin-top:12px">Ссылку на сервер скоро добавим.</div>`}<a class="b tgb" href="${TG_URL}" target="_blank" rel="noopener">✈️ Telegram-канал</a>`;
@@ -448,7 +479,7 @@ function openP(n){
   const T=[...MODES].sort((x,y)=>pts(p.tiers?.[y[0]])-pts(p.tiers?.[x[0]]));
   const A=achOf(p),got=A.filter(x=>x.got).length;
   const ah=`<div class="ah"><b>Достижения</b><span>${got}/${A.length}</span></div><div class="ag">${[...A].sort((x,y)=>y.got-x.got).map(({a,got})=>`<div class="ai${got?" on":""}"><span class="ae">${a.i}</span><div><b>${a.n}</b><small>${a.k==="first"&&got?"Первым получил LT2+: "+(CTX.first.get(p.name)||[]).map(lb).join(", "):a.k==="lead"&&got?"Лучший тир в: "+(CTX.lead.get(p.name)||[]).map(lb).join(", "):a.d}</small></div></div>`).join("")}</div>`;
-  $("mc").innerHTML=`<div class="mhd"><span class="pill">✦ ANGELTIERS</span><button class="x">×</button></div><div class="pr1">${skin(p,"ps3")}</div><h2>${esc(p.name)}</h2><div class="ttc" style="justify-content:flex-start">${badges(p)}</div><div class="ov"><div class="rb ${RB(rank)}"><i>${rank}.</i></div><b>OVERALL</b><span>(${pl(total(p))})</span></div><div class="cr wrap">${T.map(([m,e])=>circ(p,m,e)).join("")}</div>${ah}<div class="pb"><button class="b" id="cn" title="Скопировать ник">📋</button><button class="b" id="lk" title="Скопировать ссылку">🔗</button><button class="b" id="sh" title="Скриншот профиля">📷</button><button class="b" id="hb" style="flex:1">📜 История тиров</button></div><div id="hist" hidden></div>`;
+  $("mc").innerHTML=`<div class="mhd"><span class="pill">✦ ANGELTIERS</span><button class="x">×</button></div><div class="pr1">${skin(p,"ps3")}</div><h2>${esc(p.name)}</h2><div class="ttc" style="justify-content:flex-start">${badges(p)}${p.dh?'<span class="tt" style="--c:#8b97ff">DISCORD ✓</span>':""}</div><div class="ov"><div class="rb ${RB(rank)}"><i>${rank}.</i></div><b>OVERALL</b><span>(${pl(total(p))})</span></div><div class="cr wrap">${T.map(([m,e])=>circ(p,m,e)).join("")}</div>${ah}<div class="pb"><button class="b" id="cn" title="Скопировать ник">📋</button><button class="b" id="lk" title="Скопировать ссылку">🔗</button><button class="b" id="sh" title="Скриншот профиля">📷</button><button class="b" id="hb" style="flex:1">📜 История тиров</button></div><div id="hist" hidden></div>`;
   const cp=async(id,txt,ic)=>{try{await navigator.clipboard.writeText(txt);$(id).textContent="✓"}catch(e){prompt("Скопируй:",txt)}setTimeout(()=>{$(id).textContent=ic},1500)};
   $("cn").onclick=()=>cp("cn",p.name,"📋");
   $("sh").onclick=()=>shotView(p);
@@ -465,18 +496,21 @@ function tgrid(sel=[]){
 function grid(t={}){
   $("gr").innerHTML=MODES.map(([m])=>`<div><label>${m}</label><select data-m="${m}"><option value="">—</option>${ALLT.map(x=>`<option ${t[m]===x?"selected":""}>${x}</option>`).join("")}</select></div>`).join("");
 }
-function save(){
+async function save(){
   const name=$("nn").value.trim(); if(!name)return;
   const tiers={}; document.querySelectorAll("#gr select").forEach(s=>{if(s.value)tiers[s.dataset.m]=s.value});
   const titles=[...document.querySelectorAll("#tt2 input:checked")].map(i=>i.dataset.t);
   const ex=find(name);
+  const dcv=$("dcid").value.trim();let dh=null;
+  if(dcv){if(!/^\d{15,22}$/.test(dcv)){alert("Discord ID — это 17–19 цифр.");return}dh=await sha(dcv);if(P.some(x=>x.dh===dh&&x!==ex)){alert("Этот Discord уже привязан к другому игроку.");return}}
   const old=ex?(ex.tiers||{}):{};
   const dd=new Date(),d=`${dd.getFullYear()}-${String(dd.getMonth()+1).padStart(2,"0")}-${String(dd.getDate()).padStart(2,"0")}`;
   const ch=$("hl").checked?MODES.map(([m])=>({m,f:old[m]||null,t:tiers[m]||null,d})).filter(x=>x.f!==x.t):[];
-  if(ex){ex.tiers=tiers;if(titles.length)ex.titles=titles;else delete ex.titles;if(ch.length)ex.history=[...(ex.history||[]),...ch]}
-  else{const o={name,tiers};if(titles.length)o.titles=titles;if(ch.length)o.history=ch;P.push(o)}
-  draft();render();$("dl").hidden=false;
+  if(ex){if(dh)ex.dh=dh;ex.tiers=tiers;if(titles.length)ex.titles=titles;else delete ex.titles;if(ch.length)ex.history=[...(ex.history||[]),...ch]}
+  else{const o={name,tiers};if(dh)o.dh=dh;if(titles.length)o.titles=titles;if(ch.length)o.history=ch;P.push(o)}
+  draft();render();$("dl").hidden=false;$("dcid").value="";dcui(find(name));
 }
+function dcui(p){$("dcst").textContent=p?(p.dh?"Discord: привязан ✓":"Discord: не привязан"):"";$("dcid").value=""}
 function ren(){
   const p=find($("nn").value);
   if(!p){alert("Сначала выбери игрока: впиши его старый ник или нажми на него в списке.");return}
@@ -488,7 +522,7 @@ function ren(){
 }
 function del(){
   const ex=find($("nn").value); if(!ex||!confirm("Удалить "+ex.name+"?"))return;
-  P=P.filter(x=>x!==ex);draft();render();$("nn").value="";grid();tgrid();$("dl").hidden=true;
+  P=P.filter(x=>x!==ex);draft();render();$("nn").value="";grid();tgrid();dcui();$("dl").hidden=true;
 }
 function exportJson(){
   const blob=new Blob([JSON.stringify(P,null,2)],{type:"application/json"});
@@ -525,17 +559,17 @@ async function init(){
   init2()}
 function init2(){
   if(ADMIN){
-    $("adm").hidden=false;grid();tgrid();
+    $("adm").hidden=false;grid();tgrid();dcui();
     try{const d=localStorage.getItem("tiers_draft");if(d)P=JSON.parse(d)}catch(e){}
-    $("nn").oninput=e=>{const p=find(e.target.value);$("dl").hidden=!p;grid(p?.tiers);tgrid(p?.titles)};
-    $("sv").onclick=save;$("dl").onclick=del;$("ex").onclick=exportJson;$("pb").onclick=publish;$("rn").onclick=ren;
+    $("nn").oninput=e=>{const p=find(e.target.value);$("dl").hidden=!p;grid(p?.tiers);tgrid(p?.titles);dcui(p)};
+    $("sv").onclick=save;$("dl").onclick=del;$("ex").onclick=exportJson;$("pb").onclick=publish;$("dcun").onclick=()=>{const p=find($("nn").value);if(!p||!p.dh)return;delete p.dh;draft();render();dcui(p);ps("Привязка снята. Нажми «Опубликовать на сайт».")};$("rn").onclick=ren;
     if(tok())$("tk").placeholder="Токен сохранён ✓ (вставь новый, чтобы заменить)";
     $("tks").onclick=()=>{const v=$("tk").value.trim();if(!v)return;try{localStorage.setItem("gh_token",v)}catch(e){}$("tk").value="";$("tk").placeholder="Токен сохранён ✓";ps("Токен сохранён в этом браузере.")};
     $("rs").onclick=async()=>{if(!confirm("Отбросить все локальные правки?"))return;
       try{localStorage.removeItem("tiers_draft")}catch(e){}
       try{P=await published()}catch(e){P=[]}render()};
     $("ls").onclick=e=>{const r=e.target.closest(".pc,.pd");if(!r)return;
-      const p=find(r.dataset.n);$("nn").value=p.name;grid(p.tiers);tgrid(p.titles);$("dl").hidden=false;scrollTo(0,0)};
+      const p=find(r.dataset.n);$("nn").value=p.name;grid(p.tiers);tgrid(p.titles);dcui(p);$("dl").hidden=false;scrollTo(0,0)};
   }else{
     $("ls").onclick=e=>{const r=e.target.closest(".pc,.pd");if(r)openP(r.dataset.n)};
   }
@@ -543,6 +577,7 @@ function init2(){
   addEventListener("keydown",e=>{if(e.key==="Escape"){$("md").hidden=true;$("mn").hidden=true}});
   render();
   const pq=new URLSearchParams(location.search).get("p");if(pq&&find(pq))openP(pq);
+  dcReturn().then(ok=>{if(ok){tabs();openMe()}});
 }
 let qt;$("q").oninput=()=>{clearTimeout(qt);qt=setTimeout(render,120)};
 init();
