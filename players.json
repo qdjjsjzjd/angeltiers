@@ -1032,5 +1032,75 @@
     "tiers": {
       "BEAST": "LT4"
     }
+  },
+  {
+    "name": "TargetPvPer",
+    "tiers": {
+      "DIAMONDPOT": "LT3",
+      "NETHERITEPOT": "LT3",
+      "BEAST": "LT3",
+      "CRYSTALPVP": "LT3",
+      "NETHERSMP": "LT3",
+      "DIAMONDSMP": "LT3",
+      "UHC": "LT3",
+      "MACE": "LT3",
+      "OP": "LT3"
+    },
+    "history": [
+      {
+        "m": "DIAMONDPOT",
+        "f": null,
+        "t": "LT3",
+        "d": "2026-10-30"
+      },
+      {
+        "m": "NETHERITEPOT",
+        "f": null,
+        "t": "LT3",
+        "d": "2026-10-30"
+      },
+      {
+        "m": "BEAST",
+        "f": null,
+        "t": "LT3",
+        "d": "2026-10-30"
+      },
+      {
+        "m": "CRYSTALPVP",
+        "f": null,
+        "t": "LT3",
+        "d": "2026-10-30"
+      },
+      {
+        "m": "NETHERSMP",
+        "f": null,
+        "t": "LT3",
+        "d": "2026-10-30"
+      },
+      {
+        "m": "DIAMONDSMP",
+        "f": null,
+        "t": "LT3",
+        "d": "2026-10-30"
+      },
+      {
+        "m": "UHC",
+        "f": null,
+        "t": "LT3",
+        "d": "2026-10-30"
+      },
+      {
+        "m": "MACE",
+        "f": null,
+        "t": "LT3",
+        "d": "2026-10-30"
+      },
+      {
+        "m": "OP",
+        "f": null,
+        "t": "LT3",
+        "d": "2026-10-30"
+      }
+    ]
   }
 ]
