@@ -1102,5 +1102,26 @@
         "d": "2026-10-30"
       }
     ]
+  },
+  {
+    "name": "airchekkk2012",
+    "tiers": {
+      "MACE": "HT4",
+      "SPEARMACE": "HT4"
+    },
+    "history": [
+      {
+        "m": "MACE",
+        "f": null,
+        "t": "HT4",
+        "d": "2026-10-30"
+      },
+      {
+        "m": "SPEARMACE",
+        "f": null,
+        "t": "HT4",
+        "d": "2026-10-30"
+      }
+    ]
   }
 ]
