@@ -476,10 +476,12 @@
     "name": "forlandac",
     "tiers": {
       "DIAMONDPOT": "HT4",
+      "NETHERITEPOT": "LT3",
       "BEAST": "LT3",
       "CARTPVP": "LT3",
       "CRYSTALPVP": "HT4",
       "MACE": "LT3",
+      "SPEARMACE": "HT2",
       "ROCKETMACE": "HT3",
       "OP": "LT3"
     },
