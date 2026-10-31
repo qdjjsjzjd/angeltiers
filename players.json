@@ -694,7 +694,8 @@
     "tiers": {
       "DIAMONDPOT": "HT4",
       "BEAST": "LT3",
-      "SPEARMACE": "HT4",
+      "SPEARMACE": "LT3",
+      "OP": "LT3",
       "CREEPER": "LT3"
     },
     "history": [
@@ -721,6 +722,18 @@
         "f": null,
         "t": "LT3",
         "d": "2026-10-26"
+      },
+      {
+        "m": "SPEARMACE",
+        "f": "HT4",
+        "t": "LT3",
+        "d": "2026-10-31"
+      },
+      {
+        "m": "OP",
+        "f": null,
+        "t": "LT3",
+        "d": "2026-10-31"
       }
     ]
   },
@@ -1071,7 +1084,9 @@
   {
     "name": "vodesee",
     "tiers": {
-      "MACE": "LT3"
+      "BEAST": "LT3",
+      "MACE": "LT3",
+      "OP": "LT3"
     },
     "history": [
       {
@@ -1079,6 +1094,18 @@
         "f": null,
         "t": "LT3",
         "d": "2026-10-30"
+      },
+      {
+        "m": "BEAST",
+        "f": null,
+        "t": "LT3",
+        "d": "2026-10-31"
+      },
+      {
+        "m": "OP",
+        "f": null,
+        "t": "LT3",
+        "d": "2026-10-31"
       }
     ]
   },
@@ -1110,6 +1137,34 @@
         "m": "BEAST",
         "f": null,
         "t": "LT3",
+        "d": "2026-10-31"
+      }
+    ]
+  },
+  {
+    "name": "sharp1ns",
+    "tiers": {
+      "UHC": "LT3",
+      "AXE": "HT5",
+      "MACE": "HT5"
+    },
+    "history": [
+      {
+        "m": "UHC",
+        "f": null,
+        "t": "LT3",
+        "d": "2026-10-31"
+      },
+      {
+        "m": "AXE",
+        "f": null,
+        "t": "HT5",
+        "d": "2026-10-31"
+      },
+      {
+        "m": "MACE",
+        "f": null,
+        "t": "HT5",
         "d": "2026-10-31"
       }
     ]
