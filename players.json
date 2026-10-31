@@ -481,7 +481,8 @@
       "CARTPVP": "LT3",
       "CRYSTALPVP": "HT4",
       "MACE": "LT3",
-      "ROCKETMACE": "HT3",
+      "SPEARMACE": "LT1",
+      "ROCKETMACE": "HT1",
       "OP": "LT3"
     },
     "history": [
