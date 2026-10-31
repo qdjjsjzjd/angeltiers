@@ -218,10 +218,10 @@ h1{font-size:15px}.hh{font-size:26px;line-height:1.2}.sec{font-size:19px}.ps b{f
 <div id="mn" hidden><div class="mp" id="mp"></div></div>
 <div id="md" hidden><div class="mc" id="mc"></div></div>
 <script>
-const MODES=[["DIAMONDPOT","🧪"],["NETHERITEPOT","🛡️"],["BEAST","⚔️"],["CARTPVP","🚃"],["CRYSTALPVP","💎"],["NETHERSMP","🚪"],["DIAMONDSMP","🔮"],["UHC","🪣"],["AXE","🪓"],["MACE","🔨"],["SPEARMACE","🔱"],["OP","🌀"],["CREEPER","💚"]];
+const MODES=[["DIAMONDPOT","🧪"],["NETHERITEPOT","🛡️"],["BEAST","⚔️"],["CARTPVP","🚃"],["CRYSTALPVP","💎"],["NETHERSMP","🚪"],["DIAMONDSMP","🔮"],["UHC","🪣"],["AXE","🪓"],["MACE","🔨"],["SPEARMACE","🔱"],["ROCKETMACE","🚀"],["OP","🌀"],["CREEPER","💚"]];
 const TIERS=["HT1","LT1","HT2","LT2","HT3","LT3","HT4","LT4","HT5","LT5"];
 const PTS=[60,44,28,16,10,6,4,3,2,1];
-const MC={DIAMONDPOT:"#5c1a36",NETHERITEPOT:"#5a1c1c",BEAST:"#1c3a57",CARTPVP:"#5a2d1a",CRYSTALPVP:"#46206b",NETHERSMP:"#5f3a1a",DIAMONDSMP:"#38205c",UHC:"#5c4a14",AXE:"#1d4a4d",MACE:"#2c3140",SPEARMACE:"#33262f",OP:"#174a35",CREEPER:"#1a4d1c"};
+const MC={DIAMONDPOT:"#5c1a36",NETHERITEPOT:"#5a1c1c",BEAST:"#1c3a57",CARTPVP:"#5a2d1a",CRYSTALPVP:"#46206b",NETHERSMP:"#5f3a1a",DIAMONDSMP:"#38205c",UHC:"#5c4a14",AXE:"#1d4a4d",MACE:"#2c3140",SPEARMACE:"#33262f",ROCKETMACE:"#4a2630",OP:"#174a35",CREEPER:"#1a4d1c"};
 const DISCORD_CLIENT_ID="1565263213149556816";   // ID приложения из discord.com/developers (раздел General Information)
 const TG_URL="https://t.me/angeltierlist";
 const JOIN_URL="https://discord.gg/RZdtGK94A4";   // сюда вставь ссылку на Discord-сервер, например "https://discord.gg/xxxx"
@@ -241,7 +241,7 @@ const $=id=>document.getElementById(id);
 const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 const color=n=>{let h=0;for(const c of n)h=(h*31+c.charCodeAt(0))%360;return`hsl(${h} 45% 45%)`};
 
-const LB={CHANGES:"Изменения",DIAMONDPOT:"DiaPot",NETHERITEPOT:"NethPot",BEAST:"Beast",CARTPVP:"Cart",CRYSTALPVP:"Crystal",NETHERSMP:"NethSMP",DIAMONDSMP:"DiaSMP",UHC:"UHC",AXE:"Axe",MACE:"Mace",SPEARMACE:"SpearMace",OP:"OP",CREEPER:"Creeper"};
+const LB={CHANGES:"Изменения",DIAMONDPOT:"DiaPot",NETHERITEPOT:"NethPot",BEAST:"Beast",CARTPVP:"Cart",CRYSTALPVP:"Crystal",NETHERSMP:"NethSMP",DIAMONDSMP:"DiaSMP",UHC:"UHC",AXE:"Axe",MACE:"Mace",SPEARMACE:"SpearMace",ROCKETMACE:"RocketMace",OP:"OP",CREEPER:"Creeper"};
 const lb=m=>m==="ALL"?"Общий":(LB[m]||m);
 function tabs(){
   const em=(MODES.find(x=>x[0]===mode)||[])[1];
