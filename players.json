@@ -1322,7 +1322,8 @@
   {
     "name": "freyzix",
     "tiers": {
-      "AXE": "LT4"
+      "AXE": "LT4",
+      "ROCKETMACE": "HT4"
     },
     "history": [
       {
@@ -1330,8 +1331,15 @@
         "f": null,
         "t": "LT4",
         "d": "2026-11-02"
+      },
+      {
+        "m": "ROCKETMACE",
+        "f": null,
+        "t": "HT4",
+        "d": "2026-11-02"
       }
-    ]
+    ],
+    "dh": "1fe871057c5f65607396cca990a609df531ddcb960eacaf8f0864f7ca666d24b"
   },
   {
     "name": "dachi_Via",
