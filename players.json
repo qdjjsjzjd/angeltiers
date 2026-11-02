@@ -188,9 +188,7 @@
       "AXE": "LT3",
       "MACE": "LT3",
       "SPEARMACE": "LT3",
-      "OP": "LT3",
-      "ROCKETMACE": "LT3",
-      "CRYSTALPVP": "HT5"
+      "OP": "LT3"
     },
     "history": [
       {
@@ -240,25 +238,12 @@
         "f": null,
         "t": "LT3",
         "d": "2026-10-19"
-      },
-      {
-        "m": "ROCKETMACE",
-        "f": null,
-        "t": "LT3",
-        "d": "2026-11-01"
-      },
-      {
-        "m": "CRYSTALPVP",
-        "f": null,
-        "t": "HT5",
-        "d": "2026-11-01"
       }
     ],
     "titles": [
       "admin",
       "tester"
-    ],
-    "dh": "ce6f03b8c2d379015facac39c36f5b555f948b934a3d8235bab73d2c76cffcd9"
+    ]
   },
   {
     "name": "Znakharchik",
@@ -378,10 +363,7 @@
       "DIAMONDPOT": "LT3",
       "NETHERITEPOT": "LT3",
       "BEAST": "RLT2",
-      "AXE": "LT3",
-      "ROCKETMACE": "LT3",
-      "UHC": "LT3",
-      "CARTPVP": "HT5"
+      "AXE": "LT3"
     },
     "history": [
       {
@@ -419,38 +401,13 @@
         "f": null,
         "t": "LT3",
         "d": "2026-10-20"
-      },
-      {
-        "m": "ROCKETMACE",
-        "f": null,
-        "t": "LT5",
-        "d": "2026-10-31"
-      },
-      {
-        "m": "ROCKETMACE",
-        "f": "LT5",
-        "t": "LT3",
-        "d": "2026-11-01"
-      },
-      {
-        "m": "UHC",
-        "f": null,
-        "t": "LT3",
-        "d": "2026-11-01"
-      },
-      {
-        "m": "CARTPVP",
-        "f": null,
-        "t": "HT5",
-        "d": "2026-11-01"
       }
     ],
     "titles": [
       "ss",
       "seniortester",
       "tester"
-    ],
-    "dh": "30a74e847898716838df907348f1e02536fc268d7491c063005b757f61b82508"
+    ]
   },
   {
     "name": "shamblBrosX",
@@ -524,9 +481,8 @@
       "CARTPVP": "LT3",
       "CRYSTALPVP": "HT4",
       "MACE": "LT3",
-      "ROCKETMACE": "HT3",
-      "OP": "LT3",
-      "DIAMONDSMP": "LT4"
+      "ROCKETMACE": "LT2",
+      "OP": "LT3"
     },
     "history": [
       {
@@ -572,14 +528,15 @@
         "d": "2026-10-31"
       },
       {
-        "m": "DIAMONDSMP",
-        "f": null,
-        "t": "LT4",
-        "d": "2026-11-01"
+        "m": "ROCKETMACE",
+        "f": "HT3",
+        "t": "LT2",
+        "d": "2026-11-02"
       }
     ],
     "titles": [
-      "manager",
+      "admin",
+      "tester",
       "famous"
     ],
     "dh": "52f97d8e6ee76f91b7bf944e4d7055e05324860f09128a3ba44372918bf97093"
@@ -745,6 +702,8 @@
     "tiers": {
       "DIAMONDPOT": "HT4",
       "BEAST": "LT3",
+      "NETHERSMP": "LT3",
+      "MACE": "LT3",
       "SPEARMACE": "LT3",
       "OP": "LT3",
       "CREEPER": "LT3"
@@ -785,6 +744,18 @@
         "f": null,
         "t": "LT3",
         "d": "2026-10-31"
+      },
+      {
+        "m": "NETHERSMP",
+        "f": null,
+        "t": "LT3",
+        "d": "2026-11-02"
+      },
+      {
+        "m": "MACE",
+        "f": null,
+        "t": "LT3",
+        "d": "2026-11-02"
       }
     ]
   },
@@ -1114,8 +1085,14 @@
   {
     "name": "airchekkk2012",
     "tiers": {
+      "NETHERITEPOT": "HT4",
+      "BEAST": "LT4",
+      "CRYSTALPVP": "LT5",
+      "NETHERSMP": "HT5",
       "MACE": "HT4",
-      "SPEARMACE": "HT4"
+      "SPEARMACE": "HT4",
+      "ROCKETMACE": "HT5",
+      "OP": "HT5"
     },
     "history": [
       {
@@ -1137,10 +1114,7 @@
     "tiers": {
       "BEAST": "LT3",
       "MACE": "LT3",
-      "OP": "LT3",
-      "UHC": "LT3",
-      "NETHERSMP": "LT3",
-      "CREEPER": "LT3"
+      "OP": "LT3"
     },
     "history": [
       {
@@ -1160,27 +1134,8 @@
         "f": null,
         "t": "LT3",
         "d": "2026-10-31"
-      },
-      {
-        "m": "UHC",
-        "f": null,
-        "t": "LT3",
-        "d": "2026-11-01"
-      },
-      {
-        "m": "NETHERSMP",
-        "f": null,
-        "t": "LT3",
-        "d": "2026-11-01"
-      },
-      {
-        "m": "CREEPER",
-        "f": null,
-        "t": "LT3",
-        "d": "2026-11-01"
       }
-    ],
-    "dh": "43612b0b91fb472ee5b0a833da94a88769a643cb7a2d0d82867b15259a06323b"
+    ]
   },
   {
     "name": "DonT__KnoW",
@@ -1239,12 +1194,6 @@
         "f": null,
         "t": "LT3",
         "d": "2026-10-31"
-      },
-      {
-        "m": "AXE",
-        "f": "HT3",
-        "t": "LT2",
-        "d": "2026-11-01"
       }
     ],
     "titles": [
@@ -1280,273 +1229,41 @@
     ]
   },
   {
-    "name": "v1kazzz",
-    "tiers": {
-      "NETHERITEPOT": "LT5"
-    },
-    "dh": "3ab3525ad0df4955970290aae69d623448a1ec3ab71f3f882f0491ee13b614ab",
-    "history": [
-      {
-        "m": "NETHERITEPOT",
-        "f": null,
-        "t": "LT5",
-        "d": "2026-10-31"
-      }
-    ]
-  },
-  {
     "name": "BananaSait",
     "tiers": {
-      "NETHERSMP": "LT3",
       "CARTPVP": "LT4",
-      "AXE": "HT4"
+      "NETHERSMP": "LT3",
+      "UHC": "LT3",
+      "AXE": "HT4",
+      "ROCKETMACE": "HT5"
     },
-    "dh": "08c23c776d8522ffaf02f68e200cbce40fc8c47fa3060fa1796ad51098d3a8a8",
     "history": [
-      {
-        "m": "NETHERSMP",
-        "f": null,
-        "t": "LT3",
-        "d": "2026-11-01"
-      },
       {
         "m": "CARTPVP",
         "f": null,
         "t": "LT4",
-        "d": "2026-11-01"
-      },
-      {
-        "m": "AXE",
-        "f": null,
-        "t": "HT4",
         "d": "2026-11-02"
-      }
-    ]
-  },
-  {
-    "name": "juixyaa",
-    "tiers": {
-      "ROCKETMACE": "LT3",
-      "MACE": "HT4"
-    },
-    "dh": "487ac3ddb9e0754448d5b35a010198698da83b83b12aa9650f8ff016a211cb82",
-    "history": [
-      {
-        "m": "ROCKETMACE",
-        "f": null,
-        "t": "LT3",
-        "d": "2026-11-01"
       },
       {
-        "m": "MACE",
-        "f": null,
-        "t": "HT4",
-        "d": "2026-11-01"
-      }
-    ]
-  },
-  {
-    "name": "ExistForHer",
-    "tiers": {
-      "MACE": "LT4"
-    },
-    "dh": "03a1c00daa5fc7d14fb15f4d609c3b1dd1b54a527dbf83c6c4d229ce48ab0f24",
-    "history": [
-      {
-        "m": "MACE",
-        "f": null,
-        "t": "LT4",
-        "d": "2026-11-01"
-      }
-    ]
-  },
-  {
-    "name": "tyffa_",
-    "tiers": {
-      "BEAST": "LT3",
-      "UHC": "HT4",
-      "NETHERITEPOT": "LT3"
-    },
-    "dh": "1e47f82eb68457d1e75f0532072dcf14774b04e12c3cf3af8c0a507d4f1bc351",
-    "history": [
-      {
-        "m": "BEAST",
+        "m": "NETHERSMP",
         "f": null,
         "t": "LT3",
-        "d": "2026-11-01"
+        "d": "2026-11-02"
       },
       {
         "m": "UHC",
         "f": null,
-        "t": "HT4",
-        "d": "2026-11-01"
+        "t": "LT3",
+        "d": "2026-11-02"
       },
       {
-        "m": "NETHERITEPOT",
+        "m": "AXE",
         "f": null,
-        "t": "LT3",
-        "d": "2026-11-01"
-      }
-    ]
-  },
-  {
-    "name": "kaTLETKA",
-    "tiers": {
-      "SPEARMACE": "LT3",
-      "ROCKETMACE": "LT3"
-    },
-    "dh": "c114452c3ea33bdb2029cc749a46f1b81dfb79233c46184956b57672f162d45a",
-    "history": [
-      {
-        "m": "SPEARMACE",
-        "f": null,
-        "t": "LT3",
-        "d": "2026-11-01"
+        "t": "HT4",
+        "d": "2026-11-02"
       },
       {
         "m": "ROCKETMACE",
-        "f": null,
-        "t": "LT3",
-        "d": "2026-11-01"
-      }
-    ]
-  },
-  {
-    "name": "shintaro_chan",
-    "tiers": {
-      "MACE": "LT4"
-    },
-    "dh": "0a343866c064c9120bdd6e21fc5767639d9c7b8f89f0b7abafb550e2a492e9d0",
-    "history": [
-      {
-        "m": "MACE",
-        "f": null,
-        "t": "LT4",
-        "d": "2026-11-01"
-      }
-    ]
-  },
-  {
-    "name": "kvacek1",
-    "tiers": {
-      "MACE": "LT4"
-    },
-    "dh": "d9c2f903ba4e3997bac45dadebf1d401a8f05b1a84e1aa9730ca75c281eef3f8",
-    "history": [
-      {
-        "m": "MACE",
-        "f": null,
-        "t": "LT4",
-        "d": "2026-11-01"
-      }
-    ]
-  },
-  {
-    "name": "Nikitos281",
-    "tiers": {
-      "NETHERSMP": "HT5"
-    },
-    "dh": "c3b7ec8f4ce23caf641e0480a30566a7b36137e221b4724da8f7734f406cfc97",
-    "history": [
-      {
-        "m": "NETHERSMP",
-        "f": null,
-        "t": "HT5",
-        "d": "2026-11-01"
-      }
-    ]
-  },
-  {
-    "name": "NamePvPer",
-    "tiers": {
-      "MACE": "LT5",
-      "SPEARMACE": "LT4"
-    },
-    "dh": "98fefdf93c4d8fd59f87859d714a9cf078835963f0e6a5c413ce7fcbfbc9eb1b",
-    "history": [
-      {
-        "m": "MACE",
-        "f": null,
-        "t": "LT5",
-        "d": "2026-11-01"
-      },
-      {
-        "m": "SPEARMACE",
-        "f": null,
-        "t": "LT4",
-        "d": "2026-11-01"
-      }
-    ]
-  },
-  {
-    "name": "trueman",
-    "tiers": {
-      "AXE": "HT5"
-    },
-    "dh": "b44010f40b193231d01a03b1f1616071620dc7473f8d2f4a46d86fa3cd9e3149",
-    "history": [
-      {
-        "m": "AXE",
-        "f": null,
-        "t": "HT5",
-        "d": "2026-11-01"
-      }
-    ]
-  },
-  {
-    "name": "CorvineCastle100",
-    "tiers": {
-      "AXE": "HT4"
-    },
-    "dh": "d84072e4244380e00cae510e8d82d8ff2298acd2adf3cac8df7f3f68264d32fd",
-    "history": [
-      {
-        "m": "AXE",
-        "f": null,
-        "t": "HT4",
-        "d": "2026-11-02"
-      }
-    ]
-  },
-  {
-    "name": "dachi_Via",
-    "tiers": {
-      "AXE": "LT3"
-    },
-    "dh": "3b0ed0da6cfe2424f266b820128a5bfc1b6aa2e00a12e53d60ac9fa620ea7ec7",
-    "history": [
-      {
-        "m": "AXE",
-        "f": null,
-        "t": "LT3",
-        "d": "2026-11-02"
-      }
-    ]
-  },
-  {
-    "name": "freyzix",
-    "tiers": {
-      "AXE": "LT4"
-    },
-    "dh": "1fe871057c5f65607396cca990a609df531ddcb960eacaf8f0864f7ca666d24b",
-    "history": [
-      {
-        "m": "AXE",
-        "f": null,
-        "t": "LT4",
-        "d": "2026-11-02"
-      }
-    ]
-  },
-  {
-    "name": "V3ror",
-    "tiers": {
-      "AXE": "HT5"
-    },
-    "dh": "8fdee10b4348cb223388c0648fa19b412a0fcf3ecc57aa346afe077f5a73a306",
-    "history": [
-      {
-        "m": "AXE",
         "f": null,
         "t": "HT5",
         "d": "2026-11-02"
