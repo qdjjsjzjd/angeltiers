@@ -1522,5 +1522,20 @@
         "d": "2026-11-02"
       }
     ]
+  },
+  {
+    "name": "freyzix",
+    "tiers": {
+      "AXE": "LT4"
+    },
+    "dh": "1fe871057c5f65607396cca990a609df531ddcb960eacaf8f0864f7ca666d24b",
+    "history": [
+      {
+        "m": "AXE",
+        "f": null,
+        "t": "LT4",
+        "d": "2026-11-02"
+      }
+    ]
   }
 ]
