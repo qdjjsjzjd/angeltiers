@@ -1507,5 +1507,20 @@
         "d": "2026-11-02"
       }
     ]
+  },
+  {
+    "name": "dachi_Via",
+    "tiers": {
+      "AXE": "LT3"
+    },
+    "dh": "3b0ed0da6cfe2424f266b820128a5bfc1b6aa2e00a12e53d60ac9fa620ea7ec7",
+    "history": [
+      {
+        "m": "AXE",
+        "f": null,
+        "t": "LT3",
+        "d": "2026-11-02"
+      }
+    ]
   }
 ]
