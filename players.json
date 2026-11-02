@@ -1485,5 +1485,20 @@
         "d": "2026-11-01"
       }
     ]
+  },
+  {
+    "name": "CorvineCastle100",
+    "tiers": {
+      "AXE": "HT4"
+    },
+    "dh": "d84072e4244380e00cae510e8d82d8ff2298acd2adf3cac8df7f3f68264d32fd",
+    "history": [
+      {
+        "m": "AXE",
+        "f": null,
+        "t": "HT4",
+        "d": "2026-11-02"
+      }
+    ]
   }
 ]
