@@ -1361,7 +1361,8 @@
     "name": "CorvineCastle100",
     "tiers": {
       "AXE": "HT4",
-      "BEAST": "HT4"
+      "BEAST": "HT4",
+      "CARTPVP": "LT3"
     },
     "history": [
       {
@@ -1374,6 +1375,12 @@
         "m": "BEAST",
         "f": null,
         "t": "HT4",
+        "d": "2026-11-03"
+      },
+      {
+        "m": "CARTPVP",
+        "f": null,
+        "t": "LT3",
         "d": "2026-11-03"
       }
     ],
