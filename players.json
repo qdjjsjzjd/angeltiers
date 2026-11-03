@@ -1536,5 +1536,20 @@
         "d": "2026-11-03"
       }
     ]
+  },
+  {
+    "name": "_ailo_",
+    "tiers": {
+      "ROCKETMACE": "LT4"
+    },
+    "dh": "e4e1360fa50842d68c93ea2e6e57eb06283a62e0f951569027cf94033a5398e2",
+    "history": [
+      {
+        "m": "ROCKETMACE",
+        "f": null,
+        "t": "LT4",
+        "d": "2026-11-03"
+      }
+    ]
   }
 ]
