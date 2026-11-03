@@ -1559,5 +1559,20 @@
         "d": "2026-11-03"
       }
     ]
+  },
+  {
+    "name": "MarlowwwInject",
+    "tiers": {
+      "ROCKETMACE": "LT3"
+    },
+    "dh": "e63dec8f33a834ad3d9ac35fe4448c95aa48cf061129c69c52c7c62fbd64b479",
+    "history": [
+      {
+        "m": "ROCKETMACE",
+        "f": null,
+        "t": "LT3",
+        "d": "2026-11-03"
+      }
+    ]
   }
 ]
