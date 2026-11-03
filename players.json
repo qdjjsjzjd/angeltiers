@@ -1518,7 +1518,8 @@
   {
     "name": "br1zik",
     "tiers": {
-      "CARTPVP": "LT4"
+      "CARTPVP": "LT4",
+      "ROCKETMACE": "HT4"
     },
     "dh": "d350e7842f9f2718f0da312461728fadc9b3d6ee3b8664e1cc1ac99196ebbf3d",
     "history": [
@@ -1526,6 +1527,12 @@
         "m": "CARTPVP",
         "f": null,
         "t": "LT4",
+        "d": "2026-11-03"
+      },
+      {
+        "m": "ROCKETMACE",
+        "f": null,
+        "t": "HT4",
         "d": "2026-11-03"
       }
     ]
