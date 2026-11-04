@@ -190,8 +190,7 @@
       "MACE": "LT3",
       "SPEARMACE": "LT3",
       "ROCKETMACE": "LT3",
-      "OP": "LT3",
-      "CREEPER": "LT4"
+      "OP": "LT3"
     },
     "history": [
       {
@@ -253,19 +252,12 @@
         "f": null,
         "t": "LT3",
         "d": "2026-11-02"
-      },
-      {
-        "m": "CREEPER",
-        "f": null,
-        "t": "LT4",
-        "d": "2026-11-04"
       }
     ],
     "titles": [
       "admin",
       "tester"
-    ],
-    "dh": "ce6f03b8c2d379015facac39c36f5b555f948b934a3d8235bab73d2c76cffcd9"
+    ]
   },
   {
     "name": "Znakharchik",
@@ -433,10 +425,12 @@
       }
     ],
     "titles": [
+      "owner",
       "ss",
       "seniortester",
       "tester"
-    ]
+    ],
+    "dh": "30a74e847898716838df907348f1e02536fc268d7491c063005b757f61b82508"
   },
   {
     "name": "shamblBrosX",
@@ -785,39 +779,8 @@
         "f": null,
         "t": "LT3",
         "d": "2026-11-02"
-      },
-      {
-        "m": "MACE",
-        "f": "LT3",
-        "t": "HT3",
-        "d": "2026-11-03"
-      },
-      {
-        "m": "MACE",
-        "f": "HT3",
-        "t": "HT4",
-        "d": "2026-11-03"
-      },
-      {
-        "m": "MACE",
-        "f": "HT4",
-        "t": "LT3",
-        "d": "2026-11-03"
-      },
-      {
-        "m": "MACE",
-        "f": "LT3",
-        "t": "HT4",
-        "d": "2026-11-03"
-      },
-      {
-        "m": "MACE",
-        "f": "HT4",
-        "t": "LT3",
-        "d": "2026-11-03"
       }
-    ],
-    "dh": "9a20da914f539bbb9965541892fc21060bc86c62e0a3560b816feca8994592bc"
+    ]
   },
   {
     "name": "zzhhasss",
@@ -1237,7 +1200,7 @@
     "tiers": {
       "DIAMONDPOT": "LT3",
       "NETHERITEPOT": "LT3",
-      "BEAST": "HT3",
+      "BEAST": "LT3",
       "AXE": "LT2",
       "OP": "LT3"
     },
@@ -1272,12 +1235,6 @@
         "f": null,
         "t": "LT3",
         "d": "2026-10-31"
-      },
-      {
-        "m": "BEAST",
-        "f": "LT3",
-        "t": "HT3",
-        "d": "2026-11-03"
       }
     ],
     "titles": [
@@ -1371,10 +1328,7 @@
   {
     "name": "freyzix",
     "tiers": {
-      "AXE": "LT4",
-      "MACE": "HT4",
-      "NETHERSMP": "HT5",
-      "BEAST": "LT4"
+      "AXE": "LT4"
     },
     "history": [
       {
@@ -1382,27 +1336,8 @@
         "f": null,
         "t": "LT4",
         "d": "2026-11-02"
-      },
-      {
-        "m": "MACE",
-        "f": null,
-        "t": "HT4",
-        "d": "2026-11-03"
-      },
-      {
-        "m": "NETHERSMP",
-        "f": null,
-        "t": "HT5",
-        "d": "2026-11-04"
-      },
-      {
-        "m": "BEAST",
-        "f": null,
-        "t": "LT4",
-        "d": "2026-11-04"
       }
-    ],
-    "dh": "1fe871057c5f65607396cca990a609df531ddcb960eacaf8f0864f7ca666d24b"
+    ]
   },
   {
     "name": "dachi_Via",
@@ -1421,10 +1356,7 @@
   {
     "name": "CorvineCastle100",
     "tiers": {
-      "AXE": "HT4",
-      "BEAST": "HT4",
-      "CARTPVP": "LT3",
-      "MACE": "HT4"
+      "AXE": "HT4"
     },
     "history": [
       {
@@ -1432,33 +1364,13 @@
         "f": null,
         "t": "HT4",
         "d": "2026-11-02"
-      },
-      {
-        "m": "BEAST",
-        "f": null,
-        "t": "HT4",
-        "d": "2026-11-03"
-      },
-      {
-        "m": "CARTPVP",
-        "f": null,
-        "t": "LT3",
-        "d": "2026-11-03"
-      },
-      {
-        "m": "MACE",
-        "f": null,
-        "t": "HT4",
-        "d": "2026-11-03"
       }
-    ],
-    "dh": "d84072e4244380e00cae510e8d82d8ff2298acd2adf3cac8df7f3f68264d32fd"
+    ]
   },
   {
     "name": "trueman",
     "tiers": {
-      "AXE": "HT5",
-      "MACE": "HT4"
+      "AXE": "HT5"
     },
     "history": [
       {
@@ -1466,15 +1378,8 @@
         "f": null,
         "t": "HT5",
         "d": "2026-11-02"
-      },
-      {
-        "m": "MACE",
-        "f": null,
-        "t": "HT4",
-        "d": "2026-11-04"
       }
-    ],
-    "dh": "b44010f40b193231d01a03b1f1616071620dc7473f8d2f4a46d86fa3cd9e3149"
+    ]
   },
   {
     "name": "NamePvPer",
@@ -1536,221 +1441,6 @@
         "f": null,
         "t": "LT3",
         "d": "2026-11-02"
-      }
-    ]
-  },
-  {
-    "name": "4135",
-    "tiers": {
-      "AXE": "HT5"
-    },
-    "dh": "e2752c9ac5a8a13ef9ed0e91181c16f5a767cc7fb463127560dab4ead7fe9702",
-    "history": [
-      {
-        "m": "AXE",
-        "f": null,
-        "t": "HT5",
-        "d": "2026-11-03"
-      }
-    ]
-  },
-  {
-    "name": "NotProgres",
-    "tiers": {
-      "AXE": "LT3"
-    },
-    "dh": "a722e76c2940d3c1fc857ea309f4bac34139a8e98c7ccce9813730729428ddbf",
-    "history": [
-      {
-        "m": "AXE",
-        "f": null,
-        "t": "LT3",
-        "d": "2026-11-03"
-      }
-    ]
-  },
-  {
-    "name": "Project_1940",
-    "tiers": {
-      "BEAST": "HT4"
-    },
-    "dh": "e0275d838684573222d4905c0b6eb7c3f94c97c2af3daca9b87d385d1b06131a",
-    "history": [
-      {
-        "m": "BEAST",
-        "f": null,
-        "t": "HT4",
-        "d": "2026-11-03"
-      }
-    ]
-  },
-  {
-    "name": "br1zik",
-    "tiers": {
-      "CARTPVP": "LT4",
-      "ROCKETMACE": "HT4"
-    },
-    "dh": "d350e7842f9f2718f0da312461728fadc9b3d6ee3b8664e1cc1ac99196ebbf3d",
-    "history": [
-      {
-        "m": "CARTPVP",
-        "f": null,
-        "t": "LT4",
-        "d": "2026-11-03"
-      },
-      {
-        "m": "ROCKETMACE",
-        "f": null,
-        "t": "HT4",
-        "d": "2026-11-03"
-      }
-    ]
-  },
-  {
-    "name": "_ailo_",
-    "tiers": {
-      "ROCKETMACE": "LT4"
-    },
-    "dh": "e4e1360fa50842d68c93ea2e6e57eb06283a62e0f951569027cf94033a5398e2",
-    "history": [
-      {
-        "m": "ROCKETMACE",
-        "f": null,
-        "t": "LT4",
-        "d": "2026-11-03"
-      }
-    ]
-  },
-  {
-    "name": "MarlowwwInject",
-    "tiers": {
-      "ROCKETMACE": "LT3"
-    },
-    "dh": "e63dec8f33a834ad3d9ac35fe4448c95aa48cf061129c69c52c7c62fbd64b479",
-    "history": [
-      {
-        "m": "ROCKETMACE",
-        "f": null,
-        "t": "LT3",
-        "d": "2026-11-03"
-      }
-    ]
-  },
-  {
-    "name": "bebro341",
-    "tiers": {
-      "MACE": "LT4"
-    },
-    "dh": "c3b7ec8f4ce23caf641e0480a30566a7b36137e221b4724da8f7734f406cfc97",
-    "history": [
-      {
-        "m": "MACE",
-        "f": null,
-        "t": "LT4",
-        "d": "2026-11-03"
-      }
-    ]
-  },
-  {
-    "name": "KOMUNALKIN",
-    "tiers": {
-      "MACE": "LT4"
-    },
-    "dh": "29cc771fb4e2c255f09a469641255894ace2ecc78db8a1d5247d8e83326e5050",
-    "history": [
-      {
-        "m": "MACE",
-        "f": null,
-        "t": "LT4",
-        "d": "2026-11-04"
-      }
-    ]
-  },
-  {
-    "name": "tvelf1",
-    "tiers": {
-      "BEAST": "LT3",
-      "NETHERSMP": "LT3"
-    },
-    "dh": "f50641f8901ad9b77e132f29a52a5bcfccb78b60b3be00f8ec61ffb7d014bc72",
-    "history": [
-      {
-        "m": "BEAST",
-        "f": null,
-        "t": "LT3",
-        "d": "2026-11-04"
-      },
-      {
-        "m": "NETHERSMP",
-        "f": null,
-        "t": "LT3",
-        "d": "2026-11-04"
-      }
-    ]
-  },
-  {
-    "name": "_OBMAN",
-    "tiers": {
-      "BEAST": "HT5"
-    },
-    "dh": "0db8f7ab50da6bc47b20709e3a0ed90a20d005860a28d529ebc10c266db3fcbd",
-    "history": [
-      {
-        "m": "BEAST",
-        "f": null,
-        "t": "HT5",
-        "d": "2026-11-04"
-      }
-    ]
-  },
-  {
-    "name": "0_ZaKa_0",
-    "tiers": {
-      "BEAST": "LT5"
-    },
-    "dh": "d3bf2812ecd84e055a8636cd3afa4923f875808aa6920457765bf50de4abb987",
-    "history": [
-      {
-        "m": "BEAST",
-        "f": null,
-        "t": "LT5",
-        "d": "2026-11-04"
-      }
-    ]
-  },
-  {
-    "name": "W2ll3r",
-    "tiers": {
-      "MACE": "LT4"
-    },
-    "dh": "913517dd541f95b2fe9559cda7b0c725d54e549a43e1173b556c64e28d90b3ea",
-    "history": [
-      {
-        "m": "MACE",
-        "f": null,
-        "t": "HT4",
-        "d": "2026-11-04"
-      },
-      {
-        "m": "MACE",
-        "f": "HT4",
-        "t": "LT4",
-        "d": "2026-11-04"
-      }
-    ]
-  },
-  {
-    "name": "amfick",
-    "tiers": {
-      "BEAST": "LT3"
-    },
-    "dh": "99a204d79424299bdf807420cff29f793530f1ba7e7e85318d06598260b7f31f",
-    "history": [
-      {
-        "m": "BEAST",
-        "f": null,
-        "t": "LT3",
-        "d": "2026-11-04"
       }
     ]
   }
