@@ -1680,5 +1680,20 @@
         "d": "2026-11-04"
       }
     ]
+  },
+  {
+    "name": "_OBMAN",
+    "tiers": {
+      "BEAST": "HT5"
+    },
+    "dh": "0db8f7ab50da6bc47b20709e3a0ed90a20d005860a28d529ebc10c266db3fcbd",
+    "history": [
+      {
+        "m": "BEAST",
+        "f": null,
+        "t": "HT5",
+        "d": "2026-11-04"
+      }
+    ]
   }
 ]
