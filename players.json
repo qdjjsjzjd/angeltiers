@@ -1657,5 +1657,20 @@
         "d": "2026-11-04"
       }
     ]
+  },
+  {
+    "name": "tvelf1",
+    "tiers": {
+      "BEAST": "LT3"
+    },
+    "dh": "f50641f8901ad9b77e132f29a52a5bcfccb78b60b3be00f8ec61ffb7d014bc72",
+    "history": [
+      {
+        "m": "BEAST",
+        "f": null,
+        "t": "LT3",
+        "d": "2026-11-04"
+      }
+    ]
   }
 ]
