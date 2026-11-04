@@ -1365,7 +1365,8 @@
     "tiers": {
       "AXE": "LT4",
       "MACE": "HT4",
-      "NETHERSMP": "HT5"
+      "NETHERSMP": "HT5",
+      "BEAST": "LT4"
     },
     "history": [
       {
@@ -1384,6 +1385,12 @@
         "m": "NETHERSMP",
         "f": null,
         "t": "HT5",
+        "d": "2026-11-04"
+      },
+      {
+        "m": "BEAST",
+        "f": null,
+        "t": "LT4",
         "d": "2026-11-04"
       }
     ],
