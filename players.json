@@ -1364,7 +1364,8 @@
     "name": "freyzix",
     "tiers": {
       "AXE": "LT4",
-      "MACE": "HT4"
+      "MACE": "HT4",
+      "NETHERSMP": "HT5"
     },
     "history": [
       {
@@ -1378,6 +1379,12 @@
         "f": null,
         "t": "HT4",
         "d": "2026-11-03"
+      },
+      {
+        "m": "NETHERSMP",
+        "f": null,
+        "t": "HT5",
+        "d": "2026-11-04"
       }
     ],
     "dh": "1fe871057c5f65607396cca990a609df531ddcb960eacaf8f0864f7ca666d24b"
