@@ -190,7 +190,8 @@
       "MACE": "LT3",
       "SPEARMACE": "LT3",
       "ROCKETMACE": "LT3",
-      "OP": "LT3"
+      "OP": "LT3",
+      "CREEPER": "LT4"
     },
     "history": [
       {
@@ -252,12 +253,19 @@
         "f": null,
         "t": "LT3",
         "d": "2026-11-02"
+      },
+      {
+        "m": "CREEPER",
+        "f": null,
+        "t": "LT4",
+        "d": "2026-11-04"
       }
     ],
     "titles": [
       "admin",
       "tester"
-    ]
+    ],
+    "dh": "ce6f03b8c2d379015facac39c36f5b555f948b934a3d8235bab73d2c76cffcd9"
   },
   {
     "name": "Znakharchik",
