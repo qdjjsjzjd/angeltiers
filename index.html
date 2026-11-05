@@ -221,9 +221,33 @@ body::before{background:radial-gradient(80% 45% at 50% -8%,rgba(245,185,66,.22),
 #adm #pb{background:#4f46e5!important;color:#fff!important;border-color:#4f46e5!important}
 #adm .ck{background:#fff;border:1px solid #cfd3ee}
 #adm #ps{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:12px}
+
+/* ===== REDESIGN v3 (крупный): нижняя панель, лидеры по китам ===== */
+.w{padding-bottom:112px}
+#mbtn,#jb{display:none}
+.hero{padding:28px 20px 22px;margin-bottom:12px}
+.hh{font-size:32px}
+#ld{margin-bottom:6px}
+.lh{font:700 12px/1 var(--px);letter-spacing:.14em;color:var(--mu);text-transform:uppercase;margin:8px 2px 10px}
+.lr{display:flex;gap:10px;overflow-x:auto;scrollbar-width:none;padding-bottom:6px;margin-bottom:6px}
+.lr::-webkit-scrollbar{display:none}
+.lc{flex:none;width:120px;padding:12px 10px;border-radius:18px;cursor:pointer;background:linear-gradient(180deg,#171a27,#10121b);border:1px solid var(--line);box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--tc) 20%,transparent)}
+.lk{display:flex;align-items:center;gap:6px;font-size:12px;color:var(--mu)}.lk .ic{width:22px;height:22px}
+.ln{font-weight:700;margin:10px 0 6px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.lt{display:inline-block;font-weight:800;font-size:12px;padding:3px 9px;border-radius:9px;color:var(--tc);background:color-mix(in srgb,var(--tc) 16%,#0e0e12)}
+.tabs2{position:sticky;top:60px;z-index:20;margin:0 -16px 10px;padding:8px 16px;background:linear-gradient(var(--bg) 75%,transparent)}
+.bn{position:fixed;left:0;right:0;bottom:0;z-index:25;display:flex;align-items:flex-end;justify-content:space-around;padding:8px 8px calc(8px + env(safe-area-inset-bottom));background:rgba(11,12,19,.97);border-top:1px solid var(--line)}
+.bn button{flex:1;display:flex;flex-direction:column;align-items:center;gap:3px;background:none;border:0;color:var(--mu);font:600 11px Manrope,system-ui,sans-serif;padding:6px 0;border-radius:14px;cursor:pointer}
+.bn .e{font-size:21px;line-height:1}
+.bn button.on{color:var(--tx);background:rgba(245,185,66,.12)}
+.bn .jc{flex:0 0 60px;height:60px;margin:-26px 4px 0;border-radius:50%;background:linear-gradient(135deg,#ffe08a,#f5b942);color:#15120a;border:4px solid var(--bg);box-shadow:0 10px 24px -8px rgba(245,185,66,.9);justify-content:center;padding:0}
+.bn .jc .e{font-size:26px}
+#mn{z-index:40}#md{z-index:50}
+.mc{background:linear-gradient(180deg,#1a1d2d 0,#10121b 190px)}
 </style></head><body><div class="w">
 <div class="topbar"><h1><svg class="lg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="14" fill="#1b1b1b"/><ellipse cx="32" cy="12" rx="14" ry="5" fill="none" stroke="#f5b942" stroke-width="3.5"/><path d="M16 53 32 21 48 53M23 41h18" fill="none" stroke="#f5b942" stroke-width="6.5" stroke-linecap="round" stroke-linejoin="round"/></svg><em>Angel<span>Tiers</span></em></h1><div class="hb"><button class="mb" id="sbtn" aria-label="Поиск">🔍</button><button class="mb" id="mbtn" aria-label="Меню">☰</button></div></div>
 <div class="hero"><div class="hk">MINECRAFT PVP · СНГ</div><div class="hh">Докажи свою<br><span>силу и власть</span></div><div class="hp">Рейтинг лучших PvP-игроков по режимам. Пройди тест, получи тир и поднимись в топ.</div><div class="hs" id="hs"></div><div class="hc"><button class="b jn" id="jb2">⚔️ Хочу в рейтинг</button><a class="hl2 dc" href="https://discord.gg/RZdtGK94A4" target="_blank" rel="noopener">💬 Discord</a><a class="hl2 tgl" href="https://t.me/angeltierlist" target="_blank" rel="noopener">✈️ Telegram</a></div></div>
+<div id="ld"></div>
 <div class="tabs2" id="tb"></div>
 <div class="bar" id="sb" hidden><input id="q" placeholder="Поиск игрока по нику…"></div>
 <div class="secrow"><div class="sec" id="sec"></div><button class="b jn" id="jb">⚔️ В рейтинг</button></div>
@@ -250,6 +274,13 @@ body::before{background:radial-gradient(80% 45% at 50% -8%,rgba(245,185,66,.22),
 <div class="foot"><div class="ft">Присоединяйся к сообществу AngelTiers</div><div class="fb"><a class="dc" href="https://discord.gg/RZdtGK94A4" target="_blank" rel="noopener">💬 Discord</a><a class="tgl" href="https://t.me/angeltierlist" target="_blank" rel="noopener">✈️ Telegram</a></div></div>
 <div class="mu" id="ft" style="margin-top:14px;text-align:center"></div>
 </div>
+<nav class="bn" id="bn">
+<button data-n="top"><span class="e">🏆</span>Топ</button>
+<button data-n="chg"><span class="e">🕘</span>Лента</button>
+<button data-n="join" class="jc" aria-label="Хочу в рейтинг"><span class="e">⚔️</span></button>
+<button data-n="kits"><span class="e">🧩</span>Киты</button>
+<button data-n="me"><span class="e">🪪</span>Профиль</button>
+</nav>
 <div id="mn" hidden><div class="mp" id="mp"></div></div>
 <div id="md" hidden><div class="mc" id="mc"></div></div>
 <script>
@@ -310,56 +341,15 @@ function feat(p){
   return`<div class="fc f${p.r}" data-n="${esc(p.name)}">${skin(p,"sk")}<div><div class="fn">${p.r}. ${esc(p.name)}</div><div class="nl">${badges(p)}</div><div class="mu">${p.s} очков</div><div class="ft">${tiles}</div></div></div>`;
 }
 const ixb=t=>TIERS.indexOf(base(t));
-let CTX={rank:new Map(),first:new Map(),lead:new Map()};
-function buildCtx(){
-  const all=[...P].sort((a,b)=>total(b)-total(a)||a.name.localeCompare(b.name));
-  const rank=new Map(all.map((p,i)=>[p.name,i+1]));
-  const first=new Map();
-  MODES.forEach(([m])=>{let best=null;P.forEach(p=>(p.history||[]).forEach(h=>{if(h.m===m&&h.t&&h.d&&ixb(h.t)>=0&&ixb(h.t)<=3&&(!best||h.d<best.d))best={n:p.name,d:h.d}}));if(best){if(!first.has(best.n))first.set(best.n,[]);first.get(best.n).push(m)}});
-  const lead=new Map();
-  MODES.forEach(([m])=>{const L=P.filter(p=>p.tiers?.[m]&&ixb(p.tiers[m])>=0);if(L.length<2)return;const b=Math.min(...L.map(p=>ixb(p.tiers[m])));const W=L.filter(p=>ixb(p.tiers[m])===b);if(W.length===1){const n=W[0].name;if(!lead.has(n))lead.set(n,[]);lead.get(n).push(m)}});
-  CTX={rank,first,lead};
-}
-const ACH=[
-{k:"top1",i:"👑",n:"Король",d:"1 место в общем рейтинге",f:c=>c.rank===1},
-{k:"top3",i:"🥇",n:"Пьедестал",d:"Топ-3 общего рейтинга",f:c=>c.rank<=3},
-{k:"top10",i:"🏆",n:"Элита",d:"Топ-10 общего рейтинга",f:c=>c.rank<=10},
-{k:"ht1",i:"💎",n:"Вершина",d:"HT1 хотя бы в одном режиме",f:c=>c.min===0},
-{k:"t2",i:"🔥",n:"Высший класс",d:"HT2 или выше в режиме",f:c=>c.min>=0&&c.min<=2},
-{k:"uni5",i:"🎯",n:"Универсал",d:"Тиры в 5 режимах",f:c=>c.n>=5},
-{k:"uni10",i:"🌟",n:"Мастер на все руки",d:"Тиры в 10 режимах",f:c=>c.n>=10},
-{k:"solid",i:"🛡️",n:"Стабильный",d:"LT3 или выше в 3 режимах",f:c=>c.good3>=3},
-{k:"p50",i:"⭐",n:"50 очков",d:"Набрать 50 очков",f:c=>c.pts>=50},
-{k:"p100",i:"✨",n:"100 очков",d:"Набрать 100 очков",f:c=>c.pts>=100},
-{k:"p200",i:"🌠",n:"200 очков",d:"Набрать 200 очков",f:c=>c.pts>=200},
-{k:"up3",i:"📈",n:"Восходящий",d:"Повысить тир 3 раза",f:c=>c.ups>=3},
-{k:"first",i:"🚩",n:"Первопроходец",d:"Первым получить LT2+ в режиме",f:c=>c.firsts.length>0},
-{k:"ret",i:"🏛️",n:"Легенда",d:"Ретайр-тир (RHT/RLT)",f:c=>c.ret},
-{k:"start",i:"🌱",n:"Первый шаг",d:"Получить первый тир",f:c=>c.n>=1},
-{k:"all",i:"🧩",n:"Коллекционер",d:"Тиры во всех режимах",f:c=>c.n>=MODES.length},
-{k:"h3x3",i:"🔱",n:"Тройная угроза",d:"HT3 или выше в 3 режимах",f:c=>c.ht3>=3},
-{k:"h1x2",i:"🏔️",n:"Двойная вершина",d:"HT1 в 2 режимах",f:c=>c.ht1n>=2},
-{k:"lead",i:"🥷",n:"Лидер режима",d:"Единственный с лучшим тиром в режиме",f:c=>c.leads.length>0},
-{k:"up10",i:"🚀",n:"Неудержимый",d:"Повысить тир 10 раз",f:c=>c.ups>=10},
-{k:"flawless",i:"💠",n:"Без слабых мест",d:"5+ режимов, все не ниже LT3",f:c=>c.n>=5&&c.good3===c.n},
-{k:"p300",i:"🌌",n:"300 очков",d:"Набрать 300 очков",f:c=>c.pts>=300},
-{k:"ret1",i:"🦅",n:"Живая легенда",d:"Ретайр RHT1 или RLT1",f:c=>c.ret1},
-{k:"crew",i:"🛠️",n:"Команда",d:"Есть титул команды сайта",f:c=>(c.p.titles||[]).some(t=>t!=="restricted"&&t!=="famous")},
-{k:"fam",i:"🎖️",n:"Знаменитость",d:"Титул FAMOUS",f:c=>(c.p.titles||[]).includes("famous")}
-];
-function achOf(p){
-  const ts=MODES.map(([m])=>(p.tiers||{})[m]).filter(t=>t&&ixb(t)>=0);
-  const ix=ts.map(ixb);
-  const c={p,rank:CTX.rank.get(p.name)||999,pts:total(p),n:ts.length,min:ix.length?Math.min(...ix):-1,good3:ix.filter(i=>i<=5).length,ups:(p.history||[]).filter(h=>h.f&&h.t&&ixb(h.t)>=0&&ixb(h.t)<ixb(h.f)).length,ret:ts.some(t=>t[0]==="R"),firsts:CTX.first.get(p.name)||[],ht3:ix.filter(i=>i<=4).length,ht1n:ix.filter(i=>i===0).length,leads:CTX.lead.get(p.name)||[],ret1:ts.some(t=>t==="RHT1"||t==="RLT1")};
-  return ACH.map(a=>({a,got:!!a.f(c)}));
-}
+let CTX={rank:new Map()};
+function buildCtx(){const all=[...P].sort((a,b)=>total(b)-total(a)||a.name.localeCompare(b.name));CTX={rank:new Map(all.map((p,k)=>[p.name,k+1]))}}
 const pl=n=>{const a=n%100,b=n%10;return n+" "+(a>10&&a<15?"очков":b===1?"очко":b>1&&b<5?"очка":"очков")};
 const RB=r=>r<=3?"r"+r:"r0";
 const TCOL=t=>t[0]==="R"?"#b794ff":({HT1:"#ffd45a",LT1:"#e6b13a",HT2:"#6fb7ff",LT2:"#7fa6d6",HT3:"#f0a060",LT3:"#d48650",HT4:"#b5b9c4",LT4:"#9a9eaa",HT5:"#8a8f9c",LT5:"#7a7f8a"})[t]||"#8a8f9c";
 const circ=(p,m,e)=>{const t=p.tiers?.[m];return t?`<div class="ci" style="--tc:${TCOL(t)}"><div class="cc">${icon(m,e)}</div><span class="cp">${t}</span></div>`:`<div class="ci em"><div class="cc"></div><span class="cp">—</span></div>`};
 function card(p){
   const T=mode==="ALL"?best(p):[[mode,(MODES.find(x=>x[0]===mode)||[])[1]]];
-  return`<div class="pc" data-n="${esc(p.name)}"><div class="ph2"><div class="rb ${RB(p.r)}"><i>${p.r}.</i>${skin(p,"sk")}</div><div class="pi"><div class="pn2">${esc(p.name)}</div><div class="pp">${pl(p.s)}${(()=>{const g=achOf(p).filter(x=>x.got).length;return g?` · 🏅${g}`:""})()}</div><div class="nl">${badges(p)}</div></div></div><div class="cr">${T.map(([m,e])=>circ(p,m,e)).join("")}</div></div>`;
+  return`<div class="pc" data-n="${esc(p.name)}"><div class="ph2"><div class="rb ${RB(p.r)}"><i>${p.r}.</i>${skin(p,"sk")}</div><div class="pi"><div class="pn2">${esc(p.name)}</div><div class="pp">${pl(p.s)}</div><div class="nl">${badges(p)}</div></div></div><div class="cr">${T.map(([m,e])=>circ(p,m,e)).join("")}</div></div>`;
 }
 function chg(h){
   const t=esc(h.t||""),f=esc(h.f||"");
@@ -477,8 +467,21 @@ function podium(a){
     return`<div class="pd p${p.r}" data-n="${esc(p.name)}"><div class="hd3">${skin(p,"sk")}</div><div class="nm2">${esc(p.name)}</div><div class="pt2">${pl(p.s)}</div><div class="chs">${T.map(([m,e])=>`<span class="t ${tc(p.tiers[m])}">${icon(m,e)} ${p.tiers[m]}</span>`).join("")}</div><div class="ped">${p.r}</div></div>`};
   return`<div class="pod">${one(a[1])}${one(a[0])}${one(a[2])}</div>`;
 }
+function leaders(){
+  const out=[];
+  MODES.forEach(([m,e])=>{let b=null,bi=99;
+    P.forEach(p=>{const t=(p.tiers||{})[m],k=t?ixb(t):-1;if(k>=0&&(k<bi||(k===bi&&total(p)>total(b)))){b=p;bi=k}});
+    if(b)out.push(`<div class="lc" data-n="${esc(b.name)}" style="--tc:${TCOL(b.tiers[m])}"><div class="lk">${icon(m,e)}<span>${lb(m)}</span></div><div class="ln">${esc(b.name)}</div><div class="lt">${b.tiers[m]}</div></div>`)});
+  return out.length?`<div class="lh">Лидеры по китам</div><div class="lr">${out.join("")}</div>`:"";
+}
+function bnMark(){document.querySelectorAll("#bn [data-n]").forEach(x=>{const n=x.dataset.n;x.classList.toggle("on",(n==="top"&&mode==="ALL")||(n==="chg"&&mode==="CHANGES")||(n==="kits"&&mode!=="ALL"&&mode!=="CHANGES"))})}
+function chrome(){
+  const h=document.querySelector(".hero");if(h)h.hidden=mode!=="ALL";
+  $("ld").innerHTML=mode==="ALL"?leaders():"";
+  bnMark();
+}
 function render(){
-  buildCtx();heroStats();
+  buildCtx();heroStats();chrome();
   const th0=document.querySelector(".th");if(th0)th0.hidden=mode==="CHANGES";
   if(mode==="CHANGES"){$("cnt").textContent="";$("ls").innerHTML=feed($("q").value.trim().toLowerCase());return}
   const q=$("q").value.trim().toLowerCase();
@@ -512,9 +515,7 @@ function openP(n){
   const all=[...P].sort((a,b)=>total(b)-total(a)||a.name.localeCompare(b.name));
   const rank=all.indexOf(p)+1;
   const T=[...MODES].sort((x,y)=>pts(p.tiers?.[y[0]])-pts(p.tiers?.[x[0]]));
-  const A=achOf(p),got=A.filter(x=>x.got).length;
-  const ah=`<div class="ah"><b>Достижения</b><span>${got}/${A.length}</span></div><div class="ag">${[...A].sort((x,y)=>y.got-x.got).map(({a,got})=>`<div class="ai${got?" on":""}"><span class="ae">${a.i}</span><div><b>${a.n}</b><small>${a.k==="first"&&got?"Первым получил LT2+: "+(CTX.first.get(p.name)||[]).map(lb).join(", "):a.k==="lead"&&got?"Лучший тир в: "+(CTX.lead.get(p.name)||[]).map(lb).join(", "):a.d}</small></div></div>`).join("")}</div>`;
-  $("mc").innerHTML=`<div class="mhd"><span class="pill">✦ ANGELTIERS</span><button class="x">×</button></div><div class="pr1">${skin(p,"ps3")}</div><h2>${esc(p.name)}</h2><div class="ttc" style="justify-content:flex-start">${badges(p)}${p.dh?'<span class="tt" style="--c:#8b97ff">DISCORD ✓</span>':""}</div><div class="ov"><div class="rb ${RB(rank)}"><i>${rank}.</i></div><b>OVERALL</b><span>(${pl(total(p))})</span></div><div class="cr wrap">${T.map(([m,e])=>circ(p,m,e)).join("")}</div>${ah}<div class="pb"><button class="b" id="cn" title="Скопировать ник">📋</button><button class="b" id="lk" title="Скопировать ссылку">🔗</button><button class="b" id="sh" title="Скриншот профиля">📷</button><button class="b" id="hb" style="flex:1">📜 История тиров</button></div><div id="hist" hidden></div>`;
+  $("mc").innerHTML=`<div class="mhd"><span class="pill">✦ ANGELTIERS</span><button class="x">×</button></div><div class="pr1">${skin(p,"ps3")}</div><h2>${esc(p.name)}</h2><div class="ttc" style="justify-content:flex-start">${badges(p)}${p.dh?'<span class="tt" style="--c:#8b97ff">DISCORD ✓</span>':""}</div><div class="ov"><div class="rb ${RB(rank)}"><i>${rank}.</i></div><b>OVERALL</b><span>(${pl(total(p))})</span></div><div class="cr wrap">${T.map(([m,e])=>circ(p,m,e)).join("")}</div><div class="pb"><button class="b" id="cn" title="Скопировать ник">📋</button><button class="b" id="lk" title="Скопировать ссылку">🔗</button><button class="b" id="sh" title="Скриншот профиля">📷</button><button class="b" id="hb" style="flex:1">📜 История тиров</button></div><div id="hist" hidden></div>`;
   const cp=async(id,txt,ic)=>{try{await navigator.clipboard.writeText(txt);$(id).textContent="✓"}catch(e){prompt("Скопируй:",txt)}setTimeout(()=>{$(id).textContent=ic},1500)};
   $("cn").onclick=()=>cp("cn",p.name,"📋");
   $("sh").onclick=()=>shotView(p);
@@ -603,10 +604,10 @@ function init2(){
     $("rs").onclick=async()=>{if(!confirm("Отбросить все локальные правки?"))return;
       try{localStorage.removeItem("tiers_draft")}catch(e){}
       try{P=await published()}catch(e){P=[]}render()};
-    $("ls").onclick=e=>{const r=e.target.closest(".pc,.pd");if(!r)return;
+    $("ls").onclick=e=>{const r=e.target.closest(".pc,.pd,.lc");if(!r)return;
       const p=find(r.dataset.n);$("nn").value=p.name;grid(p.tiers);tgrid(p.titles);dcui(p);$("dl").hidden=false;scrollTo(0,0)};
   }else{
-    $("ls").onclick=e=>{const r=e.target.closest(".pc,.pd");if(r)openP(r.dataset.n)};
+    $("ls").onclick=e=>{const r=e.target.closest(".pc,.pd,.lc");if(r)openP(r.dataset.n)};
   }
   $("md").onclick=e=>{if(e.target.id==="md"||e.target.classList.contains("x"))$("md").hidden=true};
   addEventListener("keydown",e=>{if(e.key==="Escape"){$("md").hidden=true;$("mn").hidden=true}});
@@ -615,5 +616,10 @@ function init2(){
   dcReturn().then(ok=>{if(ok){tabs();openMe()}});
 }
 let qt;$("q").oninput=()=>{clearTimeout(qt);qt=setTimeout(render,120)};
+$("bn").onclick=e=>{const b=e.target.closest("[data-n]");if(!b)return;const n=b.dataset.n;
+  if(n==="top"||n==="chg"){mode=n==="top"?"ALL":"CHANGES";tabs();render();scrollTo(0,0)}
+  else if(n==="join")openJoin();
+  else if(n==="kits")$("mn").hidden=false;
+  else if(n==="me")openMe()};
 init();
 </script></body></html>
