@@ -1493,5 +1493,20 @@
         "d": "2026-11-05"
       }
     ]
+  },
+  {
+    "name": "_itsk1ma_",
+    "tiers": {
+      "ROCKETMACE": "LT4"
+    },
+    "dh": "b65fe6a34d27e6349ff92a33137973b43bb0e452391b71d697b1a93f2632972f",
+    "history": [
+      {
+        "m": "ROCKETMACE",
+        "f": null,
+        "t": "LT4",
+        "d": "2026-11-05"
+      }
+    ]
   }
 ]
