@@ -1508,5 +1508,20 @@
         "d": "2026-11-05"
       }
     ]
+  },
+  {
+    "name": "kw1xik",
+    "tiers": {
+      "ROCKETMACE": "LT3"
+    },
+    "dh": "7dbcce040f9fbfa342fa4f05a9275c78cd3c06ef157190023074f7eb33ebb8d6",
+    "history": [
+      {
+        "m": "ROCKETMACE",
+        "f": null,
+        "t": "LT3",
+        "d": "2026-11-05"
+      }
+    ]
   }
 ]
