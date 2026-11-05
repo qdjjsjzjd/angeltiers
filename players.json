@@ -1478,5 +1478,20 @@
         "d": "2026-11-05"
       }
     ]
+  },
+  {
+    "name": "coldrayz",
+    "tiers": {
+      "ROCKETMACE": "HT4"
+    },
+    "dh": "b1d791b14a2f1456595acc4662c5c9aa93a268363355020839e9f613580d5f71",
+    "history": [
+      {
+        "m": "ROCKETMACE",
+        "f": null,
+        "t": "HT4",
+        "d": "2026-11-05"
+      }
+    ]
   }
 ]
