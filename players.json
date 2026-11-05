@@ -1385,7 +1385,8 @@
     "name": "NamePvPer",
     "tiers": {
       "MACE": "LT5",
-      "SPEARMACE": "LT4"
+      "SPEARMACE": "LT4",
+      "ROCKETMACE": "LT4"
     },
     "history": [
       {
@@ -1399,8 +1400,15 @@
         "f": null,
         "t": "LT5",
         "d": "2026-11-02"
+      },
+      {
+        "m": "ROCKETMACE",
+        "f": null,
+        "t": "LT4",
+        "d": "2026-11-05"
       }
-    ]
+    ],
+    "dh": "98fefdf93c4d8fd59f87859d714a9cf078835963f0e6a5c413ce7fcbfbc9eb1b"
   },
   {
     "name": "kvacek1",
