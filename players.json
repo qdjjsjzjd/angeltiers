@@ -1467,7 +1467,8 @@
   {
     "name": "Rimiklol",
     "tiers": {
-      "ROCKETMACE": "HT5"
+      "ROCKETMACE": "HT5",
+      "MACE": "LT5"
     },
     "dh": "d062ab2430aae071201df60bc4975b38a212a4ed53035bb47dc8dc5e11dbd62f",
     "history": [
@@ -1476,6 +1477,12 @@
         "f": null,
         "t": "HT5",
         "d": "2026-11-05"
+      },
+      {
+        "m": "MACE",
+        "f": null,
+        "t": "LT5",
+        "d": "2026-11-06"
       }
     ]
   },
