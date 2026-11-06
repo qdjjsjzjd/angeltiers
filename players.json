@@ -1612,5 +1612,20 @@
         "d": "2026-11-06"
       }
     ]
+  },
+  {
+    "name": "XviDeath",
+    "tiers": {
+      "MACE": "HT4"
+    },
+    "dh": "90fa361844f14e7d0636db7bf83d1f8b59336eab3d245bfa584226042aab4ff9",
+    "history": [
+      {
+        "m": "MACE",
+        "f": null,
+        "t": "HT4",
+        "d": "2026-11-06"
+      }
+    ]
   }
 ]
