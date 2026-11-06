@@ -1590,5 +1590,20 @@
         "d": "2026-11-06"
       }
     ]
+  },
+  {
+    "name": "rodya61",
+    "tiers": {
+      "MACE": "LT4"
+    },
+    "dh": "5a63da21abc50277505deb7d13ca53acdf73fcaaad810ee10f4f9d54086208d3",
+    "history": [
+      {
+        "m": "MACE",
+        "f": null,
+        "t": "LT4",
+        "d": "2026-11-06"
+      }
+    ]
   }
 ]
