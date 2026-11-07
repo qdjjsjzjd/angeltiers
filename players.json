@@ -555,18 +555,6 @@
         "f": "HT3",
         "t": "LT2",
         "d": "2026-11-02"
-      },
-      {
-        "m": "ROCKETMACE",
-        "f": "LT2",
-        "t": "HT5",
-        "d": "2026-11-05"
-      },
-      {
-        "m": "ROCKETMACE",
-        "f": "HT5",
-        "t": "LT2",
-        "d": "2026-11-05"
       }
     ],
     "titles": [
@@ -1397,8 +1385,7 @@
     "name": "NamePvPer",
     "tiers": {
       "MACE": "LT5",
-      "SPEARMACE": "LT4",
-      "ROCKETMACE": "LT4"
+      "SPEARMACE": "LT4"
     },
     "history": [
       {
@@ -1412,15 +1399,8 @@
         "f": null,
         "t": "LT5",
         "d": "2026-11-02"
-      },
-      {
-        "m": "ROCKETMACE",
-        "f": null,
-        "t": "LT4",
-        "d": "2026-11-05"
       }
-    ],
-    "dh": "98fefdf93c4d8fd59f87859d714a9cf078835963f0e6a5c413ce7fcbfbc9eb1b"
+    ]
   },
   {
     "name": "kvacek1",
@@ -1465,166 +1445,23 @@
     ]
   },
   {
-    "name": "Rimiklol",
+    "name": "delyya",
     "tiers": {
-      "ROCKETMACE": "HT5",
-      "MACE": "LT5"
-    },
-    "dh": "d062ab2430aae071201df60bc4975b38a212a4ed53035bb47dc8dc5e11dbd62f",
-    "history": [
-      {
-        "m": "ROCKETMACE",
-        "f": null,
-        "t": "HT5",
-        "d": "2026-11-05"
-      },
-      {
-        "m": "MACE",
-        "f": null,
-        "t": "LT5",
-        "d": "2026-11-06"
-      }
-    ]
-  },
-  {
-    "name": "coldrayz",
-    "tiers": {
-      "ROCKETMACE": "HT4"
-    },
-    "dh": "b1d791b14a2f1456595acc4662c5c9aa93a268363355020839e9f613580d5f71",
-    "history": [
-      {
-        "m": "ROCKETMACE",
-        "f": null,
-        "t": "HT4",
-        "d": "2026-11-05"
-      }
-    ]
-  },
-  {
-    "name": "_itsk1ma_",
-    "tiers": {
-      "ROCKETMACE": "LT4"
-    },
-    "dh": "b65fe6a34d27e6349ff92a33137973b43bb0e452391b71d697b1a93f2632972f",
-    "history": [
-      {
-        "m": "ROCKETMACE",
-        "f": null,
-        "t": "LT4",
-        "d": "2026-11-05"
-      }
-    ]
-  },
-  {
-    "name": "kw1xik",
-    "tiers": {
-      "ROCKETMACE": "LT3"
-    },
-    "dh": "7dbcce040f9fbfa342fa4f05a9275c78cd3c06ef157190023074f7eb33ebb8d6",
-    "history": [
-      {
-        "m": "ROCKETMACE",
-        "f": null,
-        "t": "LT3",
-        "d": "2026-11-05"
-      }
-    ]
-  },
-  {
-    "name": "sa1zy_07",
-    "tiers": {
-      "OP": "LT4",
-      "MACE": "HT5"
-    },
-    "dh": "01bd7e6ba729773f587f6b0a5811d4c917697a3dd5456a2a213a0590219142e5",
-    "history": [
-      {
-        "m": "OP",
-        "f": null,
-        "t": "LT4",
-        "d": "2026-11-05"
-      },
-      {
-        "m": "MACE",
-        "f": null,
-        "t": "HT5",
-        "d": "2026-11-06"
-      }
-    ]
-  },
-  {
-    "name": "BOUMA50000",
-    "tiers": {
-      "MACE": "LT3"
-    },
-    "dh": "c2d664011ae6050060851a936c3bba38fc443156186ae97895c630015f692f6c",
-    "history": [
-      {
-        "m": "MACE",
-        "f": null,
-        "t": "LT3",
-        "d": "2026-11-06"
-      }
-    ]
-  },
-  {
-    "name": "NotProgres",
-    "tiers": {
-      "MACE": "HT4"
-    },
-    "dh": "a722e76c2940d3c1fc857ea309f4bac34139a8e98c7ccce9813730729428ddbf",
-    "history": [
-      {
-        "m": "MACE",
-        "f": null,
-        "t": "HT4",
-        "d": "2026-11-06"
-      }
-    ]
-  },
-  {
-    "name": "Reelax_YT",
-    "tiers": {
-      "MACE": "LT3"
-    },
-    "dh": "0296d75047b23a11f7d282354d1fe9d25e1bdf29b126791b06058c33817bddf3",
-    "history": [
-      {
-        "m": "MACE",
-        "f": null,
-        "t": "LT3",
-        "d": "2026-11-06"
-      }
-    ]
-  },
-  {
-    "name": "rodya61",
-    "tiers": {
+      "BEAST": "HT3",
       "MACE": "LT4"
     },
-    "dh": "5a63da21abc50277505deb7d13ca53acdf73fcaaad810ee10f4f9d54086208d3",
     "history": [
+      {
+        "m": "BEAST",
+        "f": null,
+        "t": "HT3",
+        "d": "2026-11-07"
+      },
       {
         "m": "MACE",
         "f": null,
         "t": "LT4",
-        "d": "2026-11-06"
-      }
-    ]
-  },
-  {
-    "name": "XviDeath",
-    "tiers": {
-      "MACE": "HT4"
-    },
-    "dh": "90fa361844f14e7d0636db7bf83d1f8b59336eab3d245bfa584226042aab4ff9",
-    "history": [
-      {
-        "m": "MACE",
-        "f": null,
-        "t": "HT4",
-        "d": "2026-11-06"
+        "d": "2026-11-07"
       }
     ]
   }
