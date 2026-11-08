@@ -1474,5 +1474,20 @@
       }
     ],
     "dh": "0a343866c064c9120bdd6e21fc5767639d9c7b8f89f0b7abafb550e2a492e9d0"
+  },
+  {
+    "name": "nefins",
+    "tiers": {
+      "AXE": "HT5"
+    },
+    "dh": "1d057df3a179193322394b66c528dbeb33825ef40066be468dd1dec43ec712dc",
+    "history": [
+      {
+        "m": "AXE",
+        "f": null,
+        "t": "HT5",
+        "d": "2026-11-08"
+      }
+    ]
   }
 ]
