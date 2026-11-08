@@ -1492,5 +1492,20 @@
         "d": "2026-11-08"
       }
     ]
+  },
+  {
+    "name": "Ghostik",
+    "tiers": {
+      "AXE": "HT4"
+    },
+    "dh": "d062ab2430aae071201df60bc4975b38a212a4ed53035bb47dc8dc5e11dbd62f",
+    "history": [
+      {
+        "m": "AXE",
+        "f": null,
+        "t": "HT4",
+        "d": "2026-11-08"
+      }
+    ]
   }
 ]
