@@ -1470,7 +1470,7 @@
   {
     "name": "l1llod",
     "tiers": {
-      "ROCKETMACE": "HT2"
+      "ROCKETMACE": "LT2"
     },
     "history": [
       {
@@ -1483,6 +1483,12 @@
         "m": "ROCKETMACE",
         "f": "HT3",
         "t": "HT2",
+        "d": "2026-11-08"
+      },
+      {
+        "m": "ROCKETMACE",
+        "f": "HT2",
+        "t": "LT2",
         "d": "2026-11-08"
       }
     ]
