@@ -504,7 +504,7 @@
       "CARTPVP": "LT3",
       "CRYSTALPVP": "HT4",
       "MACE": "LT3",
-      "ROCKETMACE": "LT2",
+      "ROCKETMACE": "HT2",
       "OP": "LT3"
     },
     "history": [
@@ -567,6 +567,12 @@
         "f": "HT2",
         "t": "LT2",
         "d": "2026-11-09"
+      },
+      {
+        "m": "ROCKETMACE",
+        "f": "LT2",
+        "t": "HT2",
+        "d": "2026-11-08"
       }
     ],
     "titles": [
