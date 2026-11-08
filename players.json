@@ -1329,8 +1329,7 @@
   {
     "name": "freyzix",
     "tiers": {
-      "AXE": "LT4",
-      "CARTPVP": "LT4"
+      "AXE": "LT4"
     },
     "history": [
       {
@@ -1338,15 +1337,8 @@
         "f": null,
         "t": "LT4",
         "d": "2026-11-02"
-      },
-      {
-        "m": "CARTPVP",
-        "f": null,
-        "t": "LT4",
-        "d": "2026-11-07"
       }
-    ],
-    "dh": "1fe871057c5f65607396cca990a609df531ddcb960eacaf8f0864f7ca666d24b"
+    ]
   },
   {
     "name": "dachi_Via",
@@ -1476,46 +1468,15 @@
     "dh": "0a343866c064c9120bdd6e21fc5767639d9c7b8f89f0b7abafb550e2a492e9d0"
   },
   {
-    "name": "nefins",
+    "name": "l1llod",
     "tiers": {
-      "AXE": "HT5"
+      "ROCKETMACE": "HT3"
     },
-    "dh": "1d057df3a179193322394b66c528dbeb33825ef40066be468dd1dec43ec712dc",
     "history": [
       {
-        "m": "AXE",
+        "m": "ROCKETMACE",
         "f": null,
-        "t": "HT5",
-        "d": "2026-11-08"
-      }
-    ]
-  },
-  {
-    "name": "Corvine",
-    "tiers": {
-      "AXE": "LT3"
-    },
-    "dh": "d84072e4244380e00cae510e8d82d8ff2298acd2adf3cac8df7f3f68264d32fd",
-    "history": [
-      {
-        "m": "AXE",
-        "f": null,
-        "t": "LT3",
-        "d": "2026-11-08"
-      }
-    ]
-  },
-  {
-    "name": "LIMONnub",
-    "tiers": {
-      "AXE": "LT3"
-    },
-    "dh": "71299999f9f263a83230260930f086bfafd04357ce81733ee2b98363acf23538",
-    "history": [
-      {
-        "m": "AXE",
-        "f": null,
-        "t": "LT3",
+        "t": "HT3",
         "d": "2026-11-08"
       }
     ]
