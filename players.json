@@ -1418,20 +1418,6 @@
     ]
   },
   {
-    "name": "shintaro_chan",
-    "tiers": {
-      "MACE": "LT4"
-    },
-    "history": [
-      {
-        "m": "MACE",
-        "f": null,
-        "t": "LT4",
-        "d": "2026-11-02"
-      }
-    ]
-  },
-  {
     "name": "kaTLETKA",
     "tiers": {
       "ROCKETMACE": "LT3"
@@ -1489,21 +1475,6 @@
         "m": "ROCKETMACE",
         "f": "HT2",
         "t": "LT2",
-        "d": "2026-11-08"
-      }
-    ]
-  },
-  {
-    "name": "Ghostik",
-    "tiers": {
-      "AXE": "HT4"
-    },
-    "dh": "d062ab2430aae071201df60bc4975b38a212a4ed53035bb47dc8dc5e11dbd62f",
-    "history": [
-      {
-        "m": "AXE",
-        "f": null,
-        "t": "HT4",
         "d": "2026-11-08"
       }
     ]
