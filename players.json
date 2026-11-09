@@ -1526,5 +1526,20 @@
         "d": "2026-11-09"
       }
     ]
+  },
+  {
+    "name": "Abyselly",
+    "tiers": {
+      "ROCKETMACE": "LT4"
+    },
+    "dh": "31d9592a7103e1ce2465665fb1a988343f975098a7e3899cfacece318a826527",
+    "history": [
+      {
+        "m": "ROCKETMACE",
+        "f": null,
+        "t": "LT4",
+        "d": "2026-11-09"
+      }
+    ]
   }
 ]
