@@ -1511,5 +1511,20 @@
         "d": "2026-11-09"
       }
     ]
+  },
+  {
+    "name": "Dragonboy771",
+    "tiers": {
+      "AXE": "LT3"
+    },
+    "dh": "ccc7e3cf7228ab7602fd0442b3e5144d6a9258d32647ec5b06ff38f0ced61fb9",
+    "history": [
+      {
+        "m": "AXE",
+        "f": null,
+        "t": "LT3",
+        "d": "2026-11-09"
+      }
+    ]
   }
 ]
