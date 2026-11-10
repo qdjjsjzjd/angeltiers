@@ -504,7 +504,7 @@
       "CARTPVP": "LT3",
       "CRYSTALPVP": "HT4",
       "MACE": "LT3",
-      "ROCKETMACE": "LT2",
+      "ROCKETMACE": "HT2",
       "OP": "LT3"
     },
     "history": [
@@ -567,6 +567,12 @@
         "f": "HT2",
         "t": "LT2",
         "d": "2026-11-09"
+      },
+      {
+        "m": "ROCKETMACE",
+        "f": "LT2",
+        "t": "HT2",
+        "d": "2026-11-10"
       }
     ],
     "titles": [
@@ -1369,8 +1375,7 @@
   {
     "name": "CorvineCastle100",
     "tiers": {
-      "AXE": "HT4",
-      "BEAST": "LT4"
+      "AXE": "HT4"
     },
     "history": [
       {
@@ -1378,15 +1383,8 @@
         "f": null,
         "t": "HT4",
         "d": "2026-11-02"
-      },
-      {
-        "m": "BEAST",
-        "f": null,
-        "t": "LT4",
-        "d": "2026-11-10"
       }
-    ],
-    "dh": "d84072e4244380e00cae510e8d82d8ff2298acd2adf3cac8df7f3f68264d32fd"
+    ]
   },
   {
     "name": "trueman",
@@ -1507,80 +1505,5 @@
       "MACE": "HT4",
       "ROCKETMACE": "LT3"
     }
-  },
-  {
-    "name": "amreVault",
-    "tiers": {
-      "BEAST": "LT4"
-    },
-    "dh": "062262dd77949e63df2b5645426a25ae269cf21f7e534789c37211ff26d9d43c",
-    "history": [
-      {
-        "m": "BEAST",
-        "f": null,
-        "t": "LT4",
-        "d": "2026-11-10"
-      }
-    ]
-  },
-  {
-    "name": "s9line",
-    "tiers": {
-      "BEAST": "HT4"
-    },
-    "dh": "0543b43f399c39fc94453857a29ac1c64cba9c6d22cc54c6f005ec1c0b31518d",
-    "history": [
-      {
-        "m": "BEAST",
-        "f": null,
-        "t": "HT4",
-        "d": "2026-11-10"
-      }
-    ]
-  },
-  {
-    "name": "opexxx_xx",
-    "tiers": {
-      "BEAST": "HT4"
-    },
-    "dh": "4a379664dfec4a590396b7ce257f1a36dd0ebce63e555d9c22ddc365d84e06fb",
-    "history": [
-      {
-        "m": "BEAST",
-        "f": null,
-        "t": "HT4",
-        "d": "2026-11-10"
-      }
-    ]
-  },
-  {
-    "name": "glebaba_8",
-    "tiers": {
-      "BEAST": "HT4"
-    },
-    "dh": "dbad277e07347fb9a4099273faa51eab0f94d0a4071649638c8ad08f2bc475bb",
-    "history": [
-      {
-        "m": "BEAST",
-        "f": null,
-        "t": "HT4",
-        "d": "2026-11-10"
-      }
-    ]
-  },
-  {
-    "name": "Fers48",
-    "tiers": {
-      "BEAST": "HT4"
-    },
-    "dh": "d2ba16e6697ec75e166979638a13d768445e18f8c12475aa7b6f5e3db6150673",
-    "history": [
-      {
-        "m": "BEAST",
-        "f": null,
-        "t": "HT4",
-        "d": "2026-11-10"
-      }
-    ]
   }
 ]
