@@ -504,7 +504,7 @@
       "CARTPVP": "LT3",
       "CRYSTALPVP": "HT4",
       "MACE": "LT3",
-      "ROCKETMACE": "HT2",
+      "ROCKETMACE": "LT2",
       "OP": "LT3"
     },
     "history": [
@@ -567,12 +567,6 @@
         "f": "HT2",
         "t": "LT2",
         "d": "2026-11-09"
-      },
-      {
-        "m": "ROCKETMACE",
-        "f": "LT2",
-        "t": "HT2",
-        "d": "2026-11-08"
       }
     ],
     "titles": [
@@ -1498,48 +1492,12 @@
     ]
   },
   {
-    "name": "NotProgres",
+    "name": "juixyaa",
     "tiers": {
-      "AXE": "LT3"
-    },
-    "dh": "a722e76c2940d3c1fc857ea309f4bac34139a8e98c7ccce9813730729428ddbf",
-    "history": [
-      {
-        "m": "AXE",
-        "f": null,
-        "t": "LT3",
-        "d": "2026-11-09"
-      }
-    ]
-  },
-  {
-    "name": "Dragonboy771",
-    "tiers": {
-      "AXE": "LT3"
-    },
-    "dh": "ccc7e3cf7228ab7602fd0442b3e5144d6a9258d32647ec5b06ff38f0ced61fb9",
-    "history": [
-      {
-        "m": "AXE",
-        "f": null,
-        "t": "LT3",
-        "d": "2026-11-09"
-      }
-    ]
-  },
-  {
-    "name": "Abyselly",
-    "tiers": {
-      "ROCKETMACE": "LT4"
-    },
-    "dh": "31d9592a7103e1ce2465665fb1a988343f975098a7e3899cfacece318a826527",
-    "history": [
-      {
-        "m": "ROCKETMACE",
-        "f": null,
-        "t": "LT4",
-        "d": "2026-11-09"
-      }
-    ]
+      "BEAST": "LT3",
+      "NETHERSMP": "LT3",
+      "MACE": "HT4",
+      "ROCKETMACE": "LT3"
+    }
   }
 ]
