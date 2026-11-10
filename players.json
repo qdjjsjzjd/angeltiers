@@ -1552,5 +1552,20 @@
         "d": "2026-11-10"
       }
     ]
+  },
+  {
+    "name": "glebaba_8",
+    "tiers": {
+      "BEAST": "HT4"
+    },
+    "dh": "dbad277e07347fb9a4099273faa51eab0f94d0a4071649638c8ad08f2bc475bb",
+    "history": [
+      {
+        "m": "BEAST",
+        "f": null,
+        "t": "HT4",
+        "d": "2026-11-10"
+      }
+    ]
   }
 ]
