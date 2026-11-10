@@ -1499,5 +1499,20 @@
       "MACE": "HT4",
       "ROCKETMACE": "LT3"
     }
+  },
+  {
+    "name": "amreVault",
+    "tiers": {
+      "BEAST": "LT4"
+    },
+    "dh": "062262dd77949e63df2b5645426a25ae269cf21f7e534789c37211ff26d9d43c",
+    "history": [
+      {
+        "m": "BEAST",
+        "f": null,
+        "t": "LT4",
+        "d": "2026-11-10"
+      }
+    ]
   }
 ]
