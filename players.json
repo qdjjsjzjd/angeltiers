@@ -1404,7 +1404,8 @@
     "name": "NamePvPer",
     "tiers": {
       "MACE": "LT5",
-      "SPEARMACE": "LT4"
+      "SPEARMACE": "LT4",
+      "ROCKETMACE": "LT4"
     },
     "history": [
       {
@@ -1418,6 +1419,12 @@
         "f": null,
         "t": "LT5",
         "d": "2026-11-02"
+      },
+      {
+        "m": "ROCKETMACE",
+        "f": null,
+        "t": "LT4",
+        "d": "2026-11-11"
       }
     ]
   },
