@@ -1292,7 +1292,7 @@
     "name": "BananaSait",
     "tiers": {
       "CARTPVP": "LT4",
-      "NETHERSMP": "HT4",
+      "NETHERSMP": "LT3",
       "UHC": "LT3",
       "AXE": "HT4",
       "ROCKETMACE": "HT5"
@@ -1327,15 +1327,8 @@
         "f": null,
         "t": "HT5",
         "d": "2026-11-02"
-      },
-      {
-        "m": "NETHERSMP",
-        "f": "LT3",
-        "t": "HT4",
-        "d": "2026-11-11"
       }
-    ],
-    "dh": "08c23c776d8522ffaf02f68e200cbce40fc8c47fa3060fa1796ad51098d3a8a8"
+    ]
   },
   {
     "name": "v3ror",
