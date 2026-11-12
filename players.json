@@ -1519,5 +1519,20 @@
       "MACE": "HT4",
       "ROCKETMACE": "LT3"
     }
+  },
+  {
+    "name": "Abyselly",
+    "tiers": {
+      "CRYSTALPVP": "LT5"
+    },
+    "dh": "31d9592a7103e1ce2465665fb1a988343f975098a7e3899cfacece318a826527",
+    "history": [
+      {
+        "m": "CRYSTALPVP",
+        "f": null,
+        "t": "LT5",
+        "d": "2026-11-12"
+      }
+    ]
   }
 ]
